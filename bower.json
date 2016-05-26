@@ -1,0 +1,22 @@
+{
+  "name": "fifatraider",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Philip <molo4nik11@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.5",
+    "jquery": "~2.2.4"
+  }
+}

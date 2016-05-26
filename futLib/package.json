@@ -1,0 +1,86 @@
+{
+  "_args": [
+    [
+      "fut-api",
+      "/Users/philip/work/fifatraider"
+    ]
+  ],
+  "_from": "fut-api@*",
+  "_id": "fut-api@0.2.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/fut-api",
+  "_nodeVersion": "4.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-8-eu.internal.npmjs.com",
+    "tmp": "tmp/fut-api-0.2.4.tgz_1454354149456_0.45622104639187455"
+  },
+  "_npmUser": {
+    "email": "L.hilpert@live.de ",
+    "name": "lorenzh"
+  },
+  "_npmVersion": "3.3.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "fut-api",
+    "raw": "fut-api",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/fut-api/-/fut-api-0.2.4.tgz",
+  "_shasum": "7953acd21b18a0371b0c0727f2911787f907a8ed",
+  "_shrinkwrap": null,
+  "_spec": "fut-api",
+  "_where": "/Users/philip/work/fifatraider",
+  "author": {
+    "name": "lorenzh"
+  },
+  "bugs": {
+    "url": "https://github.com/lorenzh/fut-api/issues"
+  },
+  "dependencies": {
+    "request": "2.67.0",
+    "tough-cookie": "2.2.1",
+    "underscore": "^1.8.3"
+  },
+  "description": "fifa 16 web-app api",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7953acd21b18a0371b0c0727f2911787f907a8ed",
+    "tarball": "https://registry.npmjs.org/fut-api/-/fut-api-0.2.4.tgz"
+  },
+  "gitHead": "943d10bb9dbe78f589e74c7213148adc87a645a0",
+  "homepage": "https://github.com/lorenzh/fut-api#readme",
+  "keywords": [
+    "16",
+    "api",
+    "fifa",
+    "fut",
+    "ultimate-team"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "lorenzh",
+      "email": "lorenz.hilpert@gmail.com"
+    }
+  ],
+  "name": "fut-api",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorenzh/fut-api.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.4"
+}
