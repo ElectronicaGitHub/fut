@@ -197,9 +197,9 @@ Trader.prototype.search = function (object, callback) {
 	var self = this;
 	this.playersList = null;
 	var time = self.randomTime();
-	
+
 	setTimeout(function () {
-		this.apiClient.search(object, function (error, response) {
+		self.apiClient.search(object, function (error, response) {
 			if (!response.auctionInfo) {
 				return console.log(response);
 			}
@@ -215,7 +215,6 @@ Trader.prototype.search = function (object, callback) {
 			}
 		});
 	}, time);
-	return this;
 }
 Trader.prototype.bid = function (player, callback) {
 	console.log('bid', player);
