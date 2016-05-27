@@ -7,9 +7,8 @@ var futapi = require("./futLib/index.js");
 var _ = require('lodash');
 
 console.log = function(d) {
-	arguments.push(UTILS.getTime());
-	log_file.write(util.format.apply(null, arguments) + '\n');
-	log_stdout.write(util.format.apply(null, arguments) + '\n');
+	log_file.write(util.format.apply(null, [UTILS.getTime()].concat(arguments)) + '\n');
+	log_stdout.write(util.format.apply(null, [UTILS.getTime()].concat(arguments)) + '\n');
 };
 
 function Trader(apiClient) {
