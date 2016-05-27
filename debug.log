@@ -1,34 +1,74 @@
-2016-05-27 17:54:19 | Node app is running on port 8080 
-2016-05-27 17:54:28 | get session 
-2016-05-27 17:54:30 | get phishing 
-2016-05-27 17:54:30 | get phishing 395065168601969718 
-2016-05-27 17:54:30 | logged in. 
-2016-05-27 17:54:31 | CREDITS:: 6707 
-2016-05-27 17:54:31 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 17:54:31 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
-2016-05-27 17:54:31 | startTrading:: TRADING CYCLE COMPLETED 
-2016-05-27 17:54:33 | get session 
-2016-05-27 17:54:35 | get phishing 
-2016-05-27 17:54:35 | get phishing 6646151379474125712 
-2016-05-27 17:54:35 | logged in. 
-2016-05-27 17:54:36 | CREDITS:: 6707 
-2016-05-27 17:54:36 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 17:54:36 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
-2016-05-27 17:54:36 | startTrading:: TRADING CYCLE COMPLETED 
-2016-05-27 17:54:38 | get session 
-2016-05-27 17:54:40 | get phishing 
-2016-05-27 17:54:41 | get phishing 9007624425426857867 
-2016-05-27 17:54:41 | logged in. 
-2016-05-27 17:54:41 | CREDITS:: 6707 
-2016-05-27 17:54:41 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 17:54:41 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
-2016-05-27 17:54:41 | startTrading:: TRADING CYCLE COMPLETED 
-2016-05-27 17:54:43 | get session 
-2016-05-27 17:54:45 | get phishing 
-2016-05-27 17:54:45 | get phishing 2471358550393986978 
-2016-05-27 17:54:45 | logged in. 
-2016-05-27 17:54:46 | CREDITS:: 6707 
-2016-05-27 17:54:46 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 17:54:46 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
-2016-05-27 17:54:46 | startTrading:: TRADING CYCLE COMPLETED 
-2016-05-27 17:54:48 | get session 
+2016-05-27 22:15:13 | Node app is running on port 8080 
+2016-05-27 22:15:18 | get session 
+2016-05-27 22:15:20 | get phishing 
+2016-05-27 22:15:20 | get phishing 292354827590531570 
+2016-05-27 22:15:20 | logged in. 
+2016-05-27 22:15:20 | ******************************************************* 
+2016-05-27 22:15:20 | ******************************************************* 
+2016-05-27 22:15:20 | ******************************************************* 
+2016-05-27 22:15:20 | CREDITS:: 2913 
+2016-05-27 22:15:21 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 22:15:21 | handler::NEW CYCLE 
+2016-05-27 22:15:22 | search:: { type: 'player', lev: 'bronze', maxb: 200, start: 0, num: 10 } 
+2016-05-27 22:15:22 | [ { id: 104903824200, rare: 1, rating: 63, buyNowPrice: 200 },
+  { id: 104951465860, rare: 1, rating: 59, buyNowPrice: 200 },
+  { id: 105370397710, rare: 1, rating: 52, buyNowPrice: 200 },
+  { id: 104967135274, rare: 0, rating: 64, buyNowPrice: 200 },
+  { id: 105361959072, rare: 1, rating: 59, buyNowPrice: 200 },
+  { id: 104841925338, rare: 1, rating: 62, buyNowPrice: 200 },
+  { id: 105370745917, rare: 0, rating: 56, buyNowPrice: 200 },
+  { id: 104921245729, rare: 1, rating: 63, buyNowPrice: 200 },
+  { id: 105362516388, rare: 0, rating: 58, buyNowPrice: 200 },
+  { id: 104919736582, rare: 1, rating: 60, buyNowPrice: 200 } ] 
+2016-05-27 22:15:22 | search::completed, found : 10 elements 
+2016-05-27 22:15:27 | buyMin::PLAYERS FOUND BY ID 210806 NUMBER 1 
+2016-05-27 22:15:33 | buyMin::prices for current [ 200 ] 
+2016-05-27 22:15:33 | buyMin::BUY FOR * 200 
+2016-05-27 22:15:33 | buyMin::AVERAGE COST * 350 
+2016-05-27 22:15:33 | buyMin::PLAYER 4069673257 WITH RATING * 63 * BOUGHT FOR 200 
+2016-05-27 22:15:33 | toTradepile::player 104903824200 
+2016-05-27 22:15:39 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
+2016-05-27 22:15:39 | toTradepile::ONE MORE TRY 0 
+2016-05-27 22:15:39 | toTradepile::player 104903824200 
+2016-05-27 22:15:47 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
+2016-05-27 22:15:47 | toTradepile::ONE MORE TRY 1 
+2016-05-27 22:15:47 | toTradepile::player 104903824200 
+2016-05-27 22:15:54 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
+2016-05-27 22:15:54 | toTradepile::ONE MORE TRY 2 
+2016-05-27 22:15:54 | toTradepile::EXIT AFTER SOME TIMES 
+2016-05-27 22:15:54 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-27 22:15:54 | ------------------ 
+2016-05-27 22:15:59 | buyMin::PLAYERS FOUND BY ID 214550 NUMBER 16 
+2016-05-27 22:16:04 | buyMin::prices for current [ 200, 200, 200, 200, 200 ] 
+2016-05-27 22:16:04 | buyMin::BUY FOR * 200 
+2016-05-27 22:16:04 | buyMin::AVERAGE COST * 250 
+2016-05-27 22:16:05 | buyMin::PLAYER 4069676305 WITH RATING * 59 * BOUGHT FOR 200 
+2016-05-27 22:16:05 | toTradepile::player 104951465860 
+2016-05-27 22:16:12 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
+2016-05-27 22:16:12 | toTradepile::ONE MORE TRY 0 
+2016-05-27 22:16:12 | toTradepile::player 104951465860 
+2016-05-27 22:16:17 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
+2016-05-27 22:16:17 | toTradepile::ONE MORE TRY 1 
+2016-05-27 22:16:17 | toTradepile::player 104951465860 
+2016-05-27 22:16:21 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
+2016-05-27 22:16:21 | toTradepile::ONE MORE TRY 2 
+2016-05-27 22:16:21 | toTradepile::EXIT AFTER SOME TIMES 
+2016-05-27 22:16:21 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-27 22:16:21 | ------------------ 
+2016-05-27 22:16:27 | buyMin::PLAYERS FOUND BY ID 221502 NUMBER 10 
+2016-05-27 22:16:33 | buyMin::prices for current [ 200, 200, 200 ] 
+2016-05-27 22:16:33 | buyMin::BUY FOR * 200 
+2016-05-27 22:16:33 | buyMin::AVERAGE COST * 250 
+2016-05-27 22:16:55 | buyMin::PLAYER 4069686409 WITH RATING * 52 * BOUGHT FOR 200 
+2016-05-27 22:16:55 | toTradepile::player 105370397710 
+2016-05-27 22:17:02 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
+2016-05-27 22:17:02 | toTradepile::ONE MORE TRY 0 
+2016-05-27 22:17:02 | toTradepile::player 105370397710 
+2016-05-27 22:17:07 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
+2016-05-27 22:17:07 | toTradepile::ONE MORE TRY 1 
+2016-05-27 22:17:07 | toTradepile::player 105370397710 
+2016-05-27 22:17:12 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
+2016-05-27 22:17:12 | toTradepile::ONE MORE TRY 2 
+2016-05-27 22:17:12 | toTradepile::EXIT AFTER SOME TIMES 
+2016-05-27 22:17:12 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-27 22:17:12 | ------------------ 

@@ -416,6 +416,10 @@ Trader.prototype.toTradepile = function (player, callback) {
 	// Проверка на количество повторений действий
 	if (this.toTradePileTries > 2) {
 		this.toTradePileTries = 0;
+		this.iterateParams.costs[player.tradeId] = this.iterateParams.costs[player.tradeId] || {};
+		this.iterateParams.costs[player.tradeId].was = true;
+		console.log('toTradepile::EXIT AFTER SOME TIMES');
+		return callback(null);
 	} else {
 		this.toTradePileTries = this.toTradePileTries || 0;
 	}
@@ -437,6 +441,7 @@ Trader.prototype.toTradepile = function (player, callback) {
 			if (ok.itemData[0].success == false) {
 				console.log('toTradepile::answer', ok);
 				if (self.toTradePileTries <= 2) {
+					console.log('toTradepile::ONE MORE TRY', self.toTradePileTries);
 					self.toTradePileTries++;
 					return self.toTradepile(player, callback);
 				} else {
