@@ -1,1 +1,1 @@
-web: node bot.js
+web: npm i && node bot.js
