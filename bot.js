@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var port = process.env.PORT || 8080;
 
 var options = {
 	saveCookie : true,
@@ -36,8 +36,8 @@ app.get('/stop', function (req, res, next) {
 app.get('/log', function (req, res) {
     res.sendfile('debug.log');
 });
-app.listen(8080, function() {
-  console.log('Node app is running on port 8080');
+app.listen(port, function() {
+  console.log('Node app is running on port', port);
 });
 
 function twoFactorCodeCb(next) {
