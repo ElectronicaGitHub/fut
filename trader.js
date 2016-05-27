@@ -411,6 +411,13 @@ Trader.prototype.buyMin = function (player, callback) {
 	return this;
 }
 Trader.prototype.toTradepile = function (player, callback) {
+	// Проверка на количество повторений действий
+	if (this.toTradePileTries > 2) {
+		this.toTradePileTries = 0;
+	} else {
+		this.toTradePileTries = this.toTradePileTries || 0;
+	}
+
 	var self = this, time = this.randomTime();
 	var id = player.itemData.id;
 	if (this.iterateParams.costs[player.tradeId]) {
@@ -427,7 +434,12 @@ Trader.prototype.toTradepile = function (player, callback) {
 		self.apiClient.sendToTradepile(id, function (err, ok) {
 			if (ok.itemData[0].success == false) {
 				console.log('toTradepile::answer', ok);
-				return callback(new Error('MONEY IS NOT ENOUGHT FO BUYING'));
+				if (self.toTradePileTries <= 2) {
+					self.toTradePileTries++;
+					return self.toTradepile(player, callback);
+				} else {
+					return callback(new Error('MULTITIME TRADEPILE ANSWER ERROR'));
+				}
 			} else {
 				console.log('toTradepile::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRADEPILE');	
 				return callback(null);
