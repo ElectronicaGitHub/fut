@@ -76,10 +76,10 @@ Trader.prototype.startNonStopTrading = function (methods, time) {
  * @param  {number} itemsLimit максимальное количество вещей купленных в стратегии
  */
 Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, buyMinNoiseCoef, moneyLimit, itemsLimit, callback) {
-	// if (this.credits < findObject.maxb) {
-	// 	console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
-	// 	return callback(null);
-	// }
+	if (this.credits < findObject.maxb) {
+		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
+		return callback(null);
+	}
 	moneyLimit = moneyLimit || this.credits;
 	itemsLimit = itemsLimit || 5;
 	var self = this, stack = [];
