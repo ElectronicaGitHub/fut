@@ -1,3 +1,15 @@
+
+var express = require('express');
+var app = express();
+
+app.get('/', function(request, response) {
+  send
+});
+
+app.listen(8080, function() {
+  console.log('Node app is running on port 8080');
+});
+
 var options = {
 	saveCookie : true,
 	saveCookiePath : './cookie/mycookie',

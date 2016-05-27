@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fut-api": "^0.2.4",
     "lodash": "^4.13.1"
   }
 }
