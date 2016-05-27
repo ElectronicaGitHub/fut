@@ -228,7 +228,7 @@ var futapi = function(options){
       return str.substr(0, str.length - 1);
   }
   
-  function sendRequest(url,options,cb){
+  function sendRequest(url,options,cb) {
       var defaultOptions = {
           xHttpMethod: "GET",
           headers: {}
@@ -246,13 +246,18 @@ var futapi = function(options){
       
       loginResponse.apiRequest.post(url,
       defaultOptions,
-      function(error, response, body){
+      function (error, response, body){
           if(error) return cb(error,null);
           if(response.statusCode == 404) return cb(new Error(response.statusMessage),null);
+
+          // если сессия заэкспайрилась то мы ее кароч продляем 
+          // и заново последнюю функцию вызываем
           if (body.code == 401) {
+            console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
             futApi.keepAlive(function () {
-              // НАДО ВЫЗЫВАТЬ ЗАНОВО ЭТОТ ЗАПРОС ПОСЛЕ ТОГО КАК КИПЭЛАЙВНУЛИ
-              return cb(null, body);
+              console.log('FUTAPI::INDEX.JS KEEPALIVE SUCCESS');
+              return sendRequest(url, options, cb);
+              // return cb(null, body);
             });
           }
           if(utils.isApiMessage(body)) cb(new Error(JSON.stringify(body)), null);

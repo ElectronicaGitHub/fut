@@ -1,14 +1,15 @@
-// EXAMPLES
-
-// var trader = new Trader();
-// trader
-//         .set({ bidPricePlus : 100, buyNowPricePlus : 1500 })
-//         .search({ type : 'player', micr : 150})
-//         .each(trader.buy, trader.toTradepile, trader.sell);
-
+var fs = require('fs');
+var util = require('util');
+var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
+var log_stdout = process.stdout;
 var async = require('async');
-var futapi = require("fut-api");
+var futapi = require("./futLib/index.js");
 var _ = require('lodash');
+
+console.log = function(d) {
+  log_file.write(util.format.apply(null, arguments) + '\n');
+  log_stdout.write(util.format.apply(null, arguments) + '\n');
+};
 
 function Trader(apiClient) {
 	this.playersList = null;
@@ -32,6 +33,25 @@ Trader.prototype.randomTime = function () {
     return Math.random() * (this.timeoutTime.max - this.timeoutTime.min) + this.timeoutTime.min;
 }
 /**
+ * Метод начинающий постоянно с интервалом делать заданные действия
+ * @return {[type]} [description]
+ */
+Trader.prototype.startTrading = function (methods, time) {
+	var self = this;
+	iterator();
+	this._tradingIntervalFunction = setInterval(function () {
+		iterator();
+	}, time);
+	
+	function iterator() {
+		self.getCredits(function () {
+			async.series(methods, function (err, k) {
+				console.log('startTrading:: TRADING CYCLE COMPLETED');
+			})
+		})
+	}
+}
+/**
  * Стратегия последовательного поиска начиная с меньшей цены
  * через step доходя до максимальной цены с условием выхода по достижении
  * максимальной суммы траты либо покупки максимального количества вещей
@@ -42,10 +62,17 @@ Trader.prototype.randomTime = function () {
  * @param  {number} moneyLimit максимальная разрешимая для траты в стратегии сумма
  * @param  {number} itemsLimit максимальное количество вещей купленных в стратегии
  */
-Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, buyMinNoiseCoef, moneyLimit, itemsLimit) {
-	moneyLimit = moneyLimit || 5000;
+Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, buyMinNoiseCoef, moneyLimit, itemsLimit, callback) {
+	if (this.credits < findObject.maxb) {
+		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
+		callback(null);
+	}
+	moneyLimit = moneyLimit || this.credits;
 	itemsLimit = itemsLimit || 5;
 	var self = this, stack = [];
+	this.iterateParams = {
+		costs : {}
+	};
 	this.currentStrategyData = {
 		spendMoney : 0,
 		boughtItems : 0,
@@ -59,11 +86,12 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			return res;
 		}
 	};
+	this.options.lowerCostCountForSkip = 3;
 	this.options.buyMinNoiseCoef = buyMinNoiseCoef;
 	findObject.maxb = findObject.maxb - step;
 	// вспомогательная функция для нормального пуша
 	var exit = function (callback) { callback(null); }
-
+	// главная функция которая разруливает что делать дальше на каждой итерации
 	var handler = function () {
 		return function (callback) {
 			console.log('handler::NEW CYCLE');
@@ -74,7 +102,10 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 						self.each.bind(self, false, [self.buyMin, self.toTradepile, self.sell]), 
 						handler(callback)
 					);
-					findObject.maxb += step;	
+					findObject.maxb += step;
+					if (findObject.minb) {
+						findObject.minb += step;
+					}	
 				}
 				callback(null);
 			}, 1000);
@@ -89,12 +120,8 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			return;
 		}
 		console.log('buyAndSellWithIncreasingCost::STRATEGY ENDED');
+		callback(null);
 	})
-	// this.search(findObject).each(this.buyMin, this.toTradepile, this.sell);
-
-	// стартуем наш цикл с минимальной стоимости 
-	// Если никого не нашли то повышаем ставку + step
-	// Если дошли до moneyLimit || itemsLimit то останавливаемся
 }
 
 
@@ -181,7 +208,6 @@ Trader.prototype.buy = function (player, callback) {
 	console.log('buy', player.tradeId);
 	setTimeout(function () {
 		self.apiClient.placeBid(player.tradeId, player.buyNowPrice, function (err, pl) {
-			if (err) throw err;
 			console.log('buy::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'BOUGHT WITH ', player.buyNowPrice);
 			time = self.randomTime();
 			callback(null);
@@ -200,8 +226,7 @@ Trader.prototype.openPack = function () {
 
 	self.apiClient.openPack(100, isFree, function (err, response) {
 		if (!response.itemList) {
-			console.log(response);
-			return
+			return console.log(response);
 		}
 		console.log('openPack::PACK OPENED AND HAS', response.itemList.length, 'ITEMS');
 
@@ -256,6 +281,14 @@ Trader.prototype.keepAlive = function () {
 Trader.prototype.buyMin = function (player, callback) {
 	var self = this, time = this.randomTime();
 
+	//проверка на повторного игрока
+	if (self.iterateParams.costs[player.tradeId]) {
+		self.iterateParams.costs[player.tradeId].was = true;
+		console.log('buyMin::PLAYER WITH ID', player.tradeId, 'IS ALREADY BOUGHT');
+		return callback(null);
+	}
+	// НАДО СДЕЛАТЬ ЧТОБЫ ПЕРЕД ПОКУПКОЙ ПРОВЕРЯТЬ ХВАТАЕТ ЛИ У НАС ДЕНЕГ НА ЭТУ ПОКУПКУ
+
 	async.waterfall([
 		function (cb) {
 			time = self.randomTime();
@@ -278,6 +311,9 @@ Trader.prototype.buyMin = function (player, callback) {
 		},
 		function (players, cb) {
 			if (!players.length) {
+				self.iterateParams.costs[player.tradeId] = {
+					was : true
+				};
 				return cb(null);
 			}
 			console.log('buyMin::PLAYERS FOUND BY ID', player.itemData.assetId, 'NUMBER', players.length);
@@ -293,38 +329,63 @@ Trader.prototype.buyMin = function (player, callback) {
 					return cost < buyPlayerFor * self.options.buyMinNoiseCoef;
 				});
 				console.log('buyMin::prices for current', filteredCosts);
+
+				var minCostCount = filteredCosts.filter(function (cost) {
+					return cost == buyPlayerFor;
+				}).length;
+
+				// если количество мелких цен меньше указанного то скипаем [1, 1, 1, 1, 2, 3, 4, 5];
+				// много единиц -> скипаем
+				if (minCostCount >= self.options.lowerCostCountForSkip) {
+					console.log('buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE');
+					self.iterateParams.costs[player.tradeId] = {
+						was : true
+					};
+					return callback(null);
+				}
+
 				// ищем средние цены по рынку из фильтрованного списка
 				var buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
-				startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
+				// если цены совпали то увеличиваем немного цену
+				if (buyPlayerFor == buyNowPriceOnMarketAvg) {
+					buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(self.findAverage(filteredCosts));
+				}
+				var startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
 
+				// если в фильтранутом списке вдруг окажется лишь наша цена то мы выкупаем и
+				// переставляем на значение нашего коэффициента и да будет кайф
+				if (filteredCosts.length == 1) {
+					buyNowPriceOnMarketAvg *= self.options.buyMinNoiseCoef;
+				}
 				self.iterateParams.costs[player.tradeId] = { 
 					bid : startingBidOnMarketAvg, 
 					buyNow : buyNowPriceOnMarketAvg,
 					tradeId : minMaxPlayersSorted[0].tradeId,
 					id : minMaxPlayersSorted[0].itemData.id
 				};
-				// если в фильтранутом списке вдруг окажется лишь наша цена то мы выкупаем и
-				// переставляем на значение нашего коэффициента и да будет кайф
-				if (filteredCosts.length == 1) {
-					buyPlayerFor *= self.options.buyMinNoiseCoef;
-				}
 
-				console.log('buyMin::averages', self.iterateParams.costs[player.tradeId]);
-				console.log('buyMin::buyPlayerFor', buyPlayerFor);
+				console.log('buyMin::BUY FOR *', buyPlayerFor);
+				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 
-				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, minMaxPlayersSorted[0].buyNowPrice, function (err, pl) {
-					if (err) throw err;
-					console.log('buyMin::', pl);
-					console.log('buyMin::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'BOUGHT FOR', minMaxPlayersSorted[0].buyNowPrice);
-					self.currentStrategyData.spendMoney += buyPlayerFor;
-					self.currentStrategyData.boughtItems++;
+				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
+					if (pl.success == false) {
+						// ошибка при покупке
+						console.log('buyMin::ERROR', pl);
+						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
+					} else {
+						// все нормально покупка прошла успешно
+						self.currentStrategyData.spendMoney += buyPlayerFor;
+						self.currentStrategyData.boughtItems++;
 
-					cb(null);
+						console.log('buyMin::PLAYER', player.tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
+						return cb(null);
+					}
 				});
 
 			}, time);
 		}
-	], function (err, ok) {	
+	], function (err, ok) {
+		if (err) return callback(err);
 		callback(null);
 	});
 
@@ -334,16 +395,24 @@ Trader.prototype.toTradepile = function (player, callback) {
 	var self = this, time = this.randomTime();
 	var id = player.itemData.id;
 	if (this.iterateParams.costs[player.tradeId]) {
+		//проверка на повторного игрока
+		if (self.iterateParams.costs[player.tradeId].was) {
+			console.log('buyMin::PLAYER ALREADY BOUGHT');
+			return callback(null);
+		}
 		id = this.iterateParams.costs[player.tradeId].id;
 	}
 	console.log('toTradepile::player', player.itemData.id);
 
 	setTimeout(function () {
 		self.apiClient.sendToTradepile(id, function (err, ok) {
-			if (err) throw err;
-			console.log('toTradepile::answer', ok);
-			console.log('toTradepile::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRADEPILE');	
-			callback(null);
+			if (ok.itemData[0].success == false) {
+				console.log('toTradepile::answer', ok);
+				return callback(new Error('MONEY IS NOT ENOUGHT FO BUYING'));
+			} else {
+				console.log('toTradepile::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRADEPILE');	
+				return callback(null);
+			}
 		});
 	}, time);
 	return this;
@@ -357,6 +426,12 @@ Trader.prototype.sell = function (player, callback) {
 		buyNow : player.buyNowPrice + this.options.buyNowIncr
 	}
 	if (this.iterateParams.costs[player.tradeId]) {
+		//проверка на повторного игрока
+		if (self.iterateParams.costs[player.tradeId].was) {
+			console.log('buyMin::PLAYER ALREADY BOUGHT');
+			return callback(null);
+		}
+
 		id = this.iterateParams.costs[player.tradeId].id;
 		costs = {
 			bid : this.iterateParams.costs[player.tradeId].bid,
@@ -370,7 +445,6 @@ Trader.prototype.sell = function (player, callback) {
 			costs.bid,
 			costs.buyNow,
 			3600, function (err, ok) {
-				if (err) throw err;
 				console.log('sell::', ok);
 				console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
 				callback(null);
@@ -378,8 +452,8 @@ Trader.prototype.sell = function (player, callback) {
 	}, time);
 	return this;
 }
-Trader.prototype.reList = function () {
-	apiClient.relist(function (err, ok) {
+Trader.prototype.reList = function (callback) {
+	this.apiClient.relist(function (err, ok) {
 		console.log('reList::ALL RELISTED', ok);
 		callback(null);
 	});
@@ -395,6 +469,14 @@ Trader.prototype.findAverage = function (array, keyName) {
 	var average = array.reduce(function (a, b, c) { return a + b }) / array.length;
 	// console.log('average by', keyName, 'is', average);
 	return average;
+}
+Trader.prototype.getCredits = function (cb) {
+	var self = this;
+	this.apiClient.getCredits(function (err, result) {
+		console.log('CREDITS::', result.credits);
+		self.credits = result.credits;
+		cb();
+	});
 }
 
 Trader.prototype.minMaxSortWith = function (array, isMap, keyNames) {
@@ -427,6 +509,12 @@ module.exports = Trader;
 
 //quick sells https://utas.s3.fut.ea.com/ut/game/fifa16/item?itemIds=105366432847%2C105366558571
 //quick sell  https://utas.s3.fut.ea.com/ut/game/fifa16/item/105359618508
+//
+var UTILS = {
+	getTime : function () {
+		return new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+	}
+}
 
 
 
