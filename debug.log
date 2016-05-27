@@ -1,74 +1,35 @@
-2016-05-27 22:15:13 | Node app is running on port 8080 
-2016-05-27 22:15:18 | get session 
-2016-05-27 22:15:20 | get phishing 
-2016-05-27 22:15:20 | get phishing 292354827590531570 
-2016-05-27 22:15:20 | logged in. 
-2016-05-27 22:15:20 | ******************************************************* 
-2016-05-27 22:15:20 | ******************************************************* 
-2016-05-27 22:15:20 | ******************************************************* 
-2016-05-27 22:15:20 | CREDITS:: 2913 
-2016-05-27 22:15:21 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 22:15:21 | handler::NEW CYCLE 
-2016-05-27 22:15:22 | search:: { type: 'player', lev: 'bronze', maxb: 200, start: 0, num: 10 } 
-2016-05-27 22:15:22 | [ { id: 104903824200, rare: 1, rating: 63, buyNowPrice: 200 },
-  { id: 104951465860, rare: 1, rating: 59, buyNowPrice: 200 },
-  { id: 105370397710, rare: 1, rating: 52, buyNowPrice: 200 },
-  { id: 104967135274, rare: 0, rating: 64, buyNowPrice: 200 },
-  { id: 105361959072, rare: 1, rating: 59, buyNowPrice: 200 },
-  { id: 104841925338, rare: 1, rating: 62, buyNowPrice: 200 },
-  { id: 105370745917, rare: 0, rating: 56, buyNowPrice: 200 },
-  { id: 104921245729, rare: 1, rating: 63, buyNowPrice: 200 },
-  { id: 105362516388, rare: 0, rating: 58, buyNowPrice: 200 },
-  { id: 104919736582, rare: 1, rating: 60, buyNowPrice: 200 } ] 
-2016-05-27 22:15:22 | search::completed, found : 10 elements 
-2016-05-27 22:15:27 | buyMin::PLAYERS FOUND BY ID 210806 NUMBER 1 
-2016-05-27 22:15:33 | buyMin::prices for current [ 200 ] 
-2016-05-27 22:15:33 | buyMin::BUY FOR * 200 
-2016-05-27 22:15:33 | buyMin::AVERAGE COST * 350 
-2016-05-27 22:15:33 | buyMin::PLAYER 4069673257 WITH RATING * 63 * BOUGHT FOR 200 
-2016-05-27 22:15:33 | toTradepile::player 104903824200 
-2016-05-27 22:15:39 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
-2016-05-27 22:15:39 | toTradepile::ONE MORE TRY 0 
-2016-05-27 22:15:39 | toTradepile::player 104903824200 
-2016-05-27 22:15:47 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
-2016-05-27 22:15:47 | toTradepile::ONE MORE TRY 1 
-2016-05-27 22:15:47 | toTradepile::player 104903824200 
-2016-05-27 22:15:54 | toTradepile::answer { itemData: [ { id: 105377717218, pile: 'trade', success: true } ] } 
-2016-05-27 22:15:54 | toTradepile::ONE MORE TRY 2 
-2016-05-27 22:15:54 | toTradepile::EXIT AFTER SOME TIMES 
-2016-05-27 22:15:54 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-27 22:15:54 | ------------------ 
-2016-05-27 22:15:59 | buyMin::PLAYERS FOUND BY ID 214550 NUMBER 16 
-2016-05-27 22:16:04 | buyMin::prices for current [ 200, 200, 200, 200, 200 ] 
-2016-05-27 22:16:04 | buyMin::BUY FOR * 200 
-2016-05-27 22:16:04 | buyMin::AVERAGE COST * 250 
-2016-05-27 22:16:05 | buyMin::PLAYER 4069676305 WITH RATING * 59 * BOUGHT FOR 200 
-2016-05-27 22:16:05 | toTradepile::player 104951465860 
-2016-05-27 22:16:12 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
-2016-05-27 22:16:12 | toTradepile::ONE MORE TRY 0 
-2016-05-27 22:16:12 | toTradepile::player 104951465860 
-2016-05-27 22:16:17 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
-2016-05-27 22:16:17 | toTradepile::ONE MORE TRY 1 
-2016-05-27 22:16:17 | toTradepile::player 104951465860 
-2016-05-27 22:16:21 | toTradepile::answer { itemData: [ { id: 105009237937, pile: 'trade', success: true } ] } 
-2016-05-27 22:16:21 | toTradepile::ONE MORE TRY 2 
-2016-05-27 22:16:21 | toTradepile::EXIT AFTER SOME TIMES 
-2016-05-27 22:16:21 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-27 22:16:21 | ------------------ 
-2016-05-27 22:16:27 | buyMin::PLAYERS FOUND BY ID 221502 NUMBER 10 
-2016-05-27 22:16:33 | buyMin::prices for current [ 200, 200, 200 ] 
-2016-05-27 22:16:33 | buyMin::BUY FOR * 200 
-2016-05-27 22:16:33 | buyMin::AVERAGE COST * 250 
-2016-05-27 22:16:55 | buyMin::PLAYER 4069686409 WITH RATING * 52 * BOUGHT FOR 200 
-2016-05-27 22:16:55 | toTradepile::player 105370397710 
-2016-05-27 22:17:02 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
-2016-05-27 22:17:02 | toTradepile::ONE MORE TRY 0 
-2016-05-27 22:17:02 | toTradepile::player 105370397710 
-2016-05-27 22:17:07 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
-2016-05-27 22:17:07 | toTradepile::ONE MORE TRY 1 
-2016-05-27 22:17:07 | toTradepile::player 105370397710 
-2016-05-27 22:17:12 | toTradepile::answer { itemData: [ { id: 105347657781, pile: 'trade', success: true } ] } 
-2016-05-27 22:17:12 | toTradepile::ONE MORE TRY 2 
-2016-05-27 22:17:12 | toTradepile::EXIT AFTER SOME TIMES 
-2016-05-27 22:17:12 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-27 22:17:12 | ------------------ 
+2016-05-27 23:28:19 | Node app is running on port 8080 
+2016-05-27 23:28:39 | get session 
+2016-05-27 23:28:41 | get phishing 
+2016-05-27 23:28:42 | get phishing 1789392775271219151 
+2016-05-27 23:28:42 | logged in. 
+2016-05-27 23:28:42 | ******************************************************* 
+2016-05-27 23:28:42 | ******************************************************* 
+2016-05-27 23:28:42 | ******************************************************* 
+2016-05-27 23:28:42 | CREDITS:: 3060 
+2016-05-27 23:28:42 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 23:28:42 | handler::NEW CYCLE 
+2016-05-27 23:28:43 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 5300,
+  maxb: 7000,
+  start: 0,
+  num: 10 } 
+2016-05-27 23:28:50 | [ { id: 104962475793, rare: 11, rating: 74, buyNowPrice: 6300 },
+  { id: 105275660391, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105338962473, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105343220734, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105338444682, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105348873699, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105275570762, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105276598997, rare: 3, rating: 70, buyNowPrice: 6900 } ] 
+2016-05-27 23:28:50 | search::completed, found : 10 elements 
+2016-05-27 23:28:57 | buyMin::PLAYERS FOUND BY ID 209839 NUMBER 27 
+2016-05-27 23:29:03 | buyMin::prices for current [ 6500, 6600, 6800, 7000, 7400, 7500, 7600, 7700, 8000, 8100 ] 
+2016-05-27 23:29:03 | buyMin::BUY FOR * 6500 
+2016-05-27 23:29:03 | buyMin::AVERAGE COST * 7300 
+2016-05-27 23:29:03 | buyMin::NO MONEY FOR BUYING 
+2016-05-27 23:29:03 | error::STRATEGY ENDED WITH CONDITIONS [Error: NO MONEY FOR BUYING] 
+2016-05-27 23:29:03 | buyAndSellWithIncreasingCost::STRATEGY FINISHED WITH CONDITION 

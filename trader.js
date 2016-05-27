@@ -76,11 +76,11 @@ Trader.prototype.startNonStopTrading = function (methods, time) {
  * @param  {number} itemsLimit максимальное количество вещей купленных в стратегии
  */
 Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, buyMinNoiseCoef, moneyLimit, itemsLimit, callback) {
-	if (this.credits < findObject.maxb) {
-		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
-		return callback(null);
-	}
-	moneyLimit = moneyLimit || this.credits - 2000;
+	// if (this.credits < findObject.maxb) {
+	// 	console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
+	// 	return callback(null);
+	// }
+	moneyLimit = moneyLimit || this.credits;
 	itemsLimit = itemsLimit || 5;
 	var self = this, stack = [];
 	this.iterateParams = {
@@ -397,6 +397,10 @@ Trader.prototype.buyMin = function (player, callback) {
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 
 				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
+					if (pl.code == 470) {
+						console.log('buyMin::NO MONEY FOR BUYING');
+						return cb(new Error('NO MONEY FOR BUYING'));
+					}
 					if (pl.success == false) {
 						// ошибка при покупке
 						console.log('buyMin::ERROR', pl);
