@@ -76,10 +76,11 @@ function command() {
         
         // торговая страта
         // trader.startNonStopTrading([
+        // ], 1000 * 60 * 60);
         trader.tradeCycle([
             trader.reList.bind(trader),
             trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:10 }, 9000, 300, 1.25, null, 8)
-        ], 1000 * 60 * 60);
+        ]);
 
         // var a = trader
             // .set({ bidIncr : 150, buyNowIncr : 150, buyMinPercent : 90 })

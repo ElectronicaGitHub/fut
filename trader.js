@@ -7,8 +7,9 @@ var futapi = require("./futLib/index.js");
 var _ = require('lodash');
 
 console.log = function(d) {
-  log_file.write(util.format.apply(null, arguments) + '\n');
-  log_stdout.write(util.format.apply(null, arguments) + '\n');
+	arguments.push(UTILS.getTime());
+	log_file.write(util.format.apply(null, arguments) + '\n');
+	log_stdout.write(util.format.apply(null, arguments) + '\n');
 };
 
 function Trader(apiClient) {
@@ -368,6 +369,7 @@ Trader.prototype.buyMin = function (player, callback) {
 				// переставляем на значение нашего коэффициента и да будет кайф
 				if (filteredCosts.length == 1) {
 					buyNowPriceOnMarketAvg *= self.options.buyMinNoiseCoef;
+					buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
 				}
 
 				// Указываем параметры для удобной работы потом с ними внутри следующих методов по
