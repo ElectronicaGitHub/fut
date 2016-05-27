@@ -23,7 +23,7 @@ app.get('/start', function (req, res, next) {
     command();
     inter = setInterval(function () {
         command();
-    }, 1000 * 60 * 64);
+    }, 1000 * 60 * 34);
     botStatus = true;
     res.redirect('/log');
 });
