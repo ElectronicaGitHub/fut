@@ -1,66 +1,34 @@
-2016-05-27 13:44:10 | Node app is running on port 8080 
-2016-05-27 15:01:08 | Node app is running on port 8080 
-2016-05-27 15:01:11 | Node app is running on port 8080 
-2016-05-27 15:01:32 | Node app is running on port 8080 
-2016-05-27 15:02:08 | Node app is running on port 8080 
-2016-05-27 15:02:24 | get session 
-2016-05-27 15:02:26 | get phishing 
-2016-05-27 15:02:26 | body.question 1 
-2016-05-27 15:02:27 | logged in. 
-2016-05-27 15:02:27 | CREDITS:: 6742 
-2016-05-27 15:02:27 | login::session keeped alive 
-2016-05-27 15:02:28 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 15:02:28 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
-2016-05-27 15:02:28 | startTrading:: TRADING CYCLE COMPLETED 
-2016-05-27 15:02:28 | handler::NEW CYCLE 
-2016-05-27 15:02:29 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 5300,
-  maxb: 7000,
-  start: 0,
-  num: 10 } 
-2016-05-27 15:02:29 | [ { id: 104877544737, rare: 3, rating: 64, buyNowPrice: 5400 },
-  { id: 105397467311, rare: 3, rating: 74, buyNowPrice: 6000 },
-  { id: 105401741118, rare: 3, rating: 74, buyNowPrice: 6000 },
-  { id: 105377411419, rare: 3, rating: 70, buyNowPrice: 6000 },
-  { id: 105400338072, rare: 3, rating: 74, buyNowPrice: 6000 },
-  { id: 105390102996, rare: 3, rating: 74, buyNowPrice: 5300 },
-  { id: 100259456252, rare: 3, rating: 70, buyNowPrice: 6400 },
-  { id: 105405931377, rare: 3, rating: 74, buyNowPrice: 5700 },
-  { id: 105354744150, rare: 3, rating: 64, buyNowPrice: 5600 },
-  { id: 105348224090, rare: 3, rating: 64, buyNowPrice: 5600 } ] 
-2016-05-27 15:02:29 | search::completed, found : 10 elements 
-2016-05-27 15:02:35 | buyMin::PLAYERS FOUND BY ID 193613 NUMBER 4 
-2016-05-27 15:02:41 | buyMin::prices for current [ 4700, 4900, 5400 ] 
-2016-05-27 15:02:41 | buyMin::BUY FOR * 4700 
-2016-05-27 15:02:41 | buyMin::AVERAGE COST * 5000 
-2016-05-27 15:02:42 | buyMin::PLAYER 4061486426 WITH RATING * 64 * BOUGHT FOR 4700 
-2016-05-27 15:02:42 | toTradepile::player 104877544737 
-2016-05-27 16:29:31 | Node app is running on port 8080 
-2016-05-27 16:36:02 | get session 
-2016-05-27 16:36:04 | get phishing 
-2016-05-27 16:36:05 | body.question 1 
-2016-05-27 16:36:05 | logged in. 
-2016-05-27 16:36:05 | CREDITS:: 20567 
-2016-05-27 16:36:06 | reList::ALL RELISTED { tradeIdList: 
-   [ { id: 4064151134, idStr: '4064151134' },
-     { id: 4064148200, idStr: '4064148200' },
-     { id: 4064151137, idStr: '4064151137' } ] } 
-2016-05-27 16:36:06 | handler::NEW CYCLE 
-2016-05-27 16:36:07 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 5300,
-  maxb: 7000,
-  start: 0,
-  num: 10 } 
-2016-05-27 16:36:08 | [ { id: 105327795937, rare: 3, rating: 74, buyNowPrice: 5800 },
-  { id: 105396878456, rare: 3, rating: 74, buyNowPrice: 6200 },
-  { id: 105273922999, rare: 3, rating: 64, buyNowPrice: 5900 },
-  { id: 105395498926, rare: 3, rating: 74, buyNowPrice: 6000 },
-  { id: 105358604060, rare: 3, rating: 70, buyNowPrice: 6500 },
-  { id: 105406813676, rare: 3, rating: 74, buyNowPrice: 5800 },
-  { id: 105406825792, rare: 3, rating: 74, buyNowPrice: 5500 },
-  { id: 105407396819, rare: 3, rating: 74, buyNowPrice: 5500 },
-  { id: 105407541551, rare: 3, rating: 74, buyNowPrice: 6000 },
-  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 } ] 
-2016-05-27 16:36:08 | search::completed, found : 10 elements 
+2016-05-27 17:54:19 | Node app is running on port 8080 
+2016-05-27 17:54:28 | get session 
+2016-05-27 17:54:30 | get phishing 
+2016-05-27 17:54:30 | get phishing 395065168601969718 
+2016-05-27 17:54:30 | logged in. 
+2016-05-27 17:54:31 | CREDITS:: 6707 
+2016-05-27 17:54:31 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 17:54:31 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
+2016-05-27 17:54:31 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-27 17:54:33 | get session 
+2016-05-27 17:54:35 | get phishing 
+2016-05-27 17:54:35 | get phishing 6646151379474125712 
+2016-05-27 17:54:35 | logged in. 
+2016-05-27 17:54:36 | CREDITS:: 6707 
+2016-05-27 17:54:36 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 17:54:36 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
+2016-05-27 17:54:36 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-27 17:54:38 | get session 
+2016-05-27 17:54:40 | get phishing 
+2016-05-27 17:54:41 | get phishing 9007624425426857867 
+2016-05-27 17:54:41 | logged in. 
+2016-05-27 17:54:41 | CREDITS:: 6707 
+2016-05-27 17:54:41 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 17:54:41 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
+2016-05-27 17:54:41 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-27 17:54:43 | get session 
+2016-05-27 17:54:45 | get phishing 
+2016-05-27 17:54:45 | get phishing 2471358550393986978 
+2016-05-27 17:54:45 | logged in. 
+2016-05-27 17:54:46 | CREDITS:: 6707 
+2016-05-27 17:54:46 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-27 17:54:46 | buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY 
+2016-05-27 17:54:46 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-27 17:54:48 | get session 

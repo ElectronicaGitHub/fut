@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
+var fs = require('fs');
 
 var options = {
 	saveCookie : true,
@@ -24,7 +25,7 @@ app.get('/start', function (req, res, next) {
         command();
     }, 1000 * 60 * 64);
     botStatus = true;
-    res.redirect('/status');
+    res.redirect('/log');
 });
 app.get('/status', function (req, res) {
     res.send('СТАТУС СТРАТЕГИИ: ' + (botStatus ? 'ЗАПУЩЕН' : 'ВЫКЛЮЧЕН'));
@@ -37,7 +38,8 @@ app.get('/log', function (req, res) {
     res.sendfile('debug.log');
 });
 app.listen(port, function() {
-  console.log('Node app is running on port', port);
+    fs.writeFile(__dirname + '/debug.log', '', function(){});
+    console.log('Node app is running on port', port);
 });
 
 function twoFactorCodeCb(next) {
@@ -55,6 +57,9 @@ function command() {
             return console.log("Unable to login.");
         }
         console.log("logged in.");
+        console.log("*******************************************************");
+        console.log("*******************************************************");
+        console.log("*******************************************************");
 
         // Возможные ключи
         // leag : 13 // Barclays
