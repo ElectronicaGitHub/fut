@@ -301,6 +301,11 @@ Trader.prototype.keepAlive = function (cb) {
 Trader.prototype.buyMin = function (player, callback) {
 	var self = this, time = this.randomTime();
 
+	// проверяем не выполнились условия завершения
+	if (!self.currentStrategyData.continueStatus()) {
+		return callback(new Error('NO MORE MONEY FOR CONTINUE'));
+	}
+
 	//проверка на повторного игрока
 	if (self.iterateParams.costs[player.tradeId]) {
 		self.iterateParams.costs[player.tradeId].was = true;
