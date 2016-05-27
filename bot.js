@@ -27,7 +27,7 @@ app.get('/start', function (req, res, next) {
     res.redirect('/status');
 });
 app.get('/status', function (req, res) {
-    res.send('STATUS IS' + (botStatus ? 'ЗАПУЩЕН' : 'ВЫКЛЮЧЕН'));
+    res.send('СТАТУС СТРАТЕГИИ: ' + (botStatus ? 'ЗАПУЩЕН' : 'ВЫКЛЮЧЕН'));
 })
 app.get('/stop', function (req, res, next) {
     clearInterval(inter);
