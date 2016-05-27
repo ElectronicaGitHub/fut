@@ -196,21 +196,25 @@ Trader.prototype.search = function (object, callback) {
 	console.log('search::', object);
 	var self = this;
 	this.playersList = null;
-	this.apiClient.search(object, function (error, response) {
-		if (!response.auctionInfo) {
-			return console.log(response);
-		}
-		self.playersList = response.auctionInfo;
-		var b = response.auctionInfo.map(function (el) {
-			return { id: el.itemData.id, rare : el.itemData.rareflag, rating: el.itemData.rating, buyNowPrice : el.buyNowPrice }
-		});
-		console.log(b);
-		console.log('search::completed, found :', response.auctionInfo.length, 'elements');
+	var time = self.randomTime();
+	
+	setTimeout(function () {
+		this.apiClient.search(object, function (error, response) {
+			if (!response.auctionInfo) {
+				return console.log(response);
+			}
+			self.playersList = response.auctionInfo;
+			var b = response.auctionInfo.map(function (el) {
+				return { id: el.itemData.id, rare : el.itemData.rareflag, rating: el.itemData.rating, buyNowPrice : el.buyNowPrice }
+			});
+			console.log(b);
+			console.log('search::completed, found :', response.auctionInfo.length, 'elements');
 
-		if (callback && typeof callback == 'function') {
-			callback(null);
-		}
-	});
+			if (callback && typeof callback == 'function') {
+				callback(null);
+			}
+		});
+	}, time);
 	return this;
 }
 Trader.prototype.bid = function (player, callback) {
