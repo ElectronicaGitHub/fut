@@ -1,6 +1,6 @@
 var fs = require('fs');
 var util = require('util');
-var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
+var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
 var log_stdout = process.stdout;
 var async = require('async');
 var futapi = require("./futLib/index.js");
@@ -43,9 +43,11 @@ Trader.prototype.tradeCycle = function (methods) {
 	var self = this;
 
 	self.getCredits(function () {
-		async.series(methods, function (err, k) {
-			console.log('startTrading:: TRADING CYCLE COMPLETED');
-		});
+		self.keepAlive(function () {
+			async.series(methods, function (err, k) {
+				console.log('startTrading:: TRADING CYCLE COMPLETED');
+			});
+		})
 	});
 	
 }
@@ -76,7 +78,7 @@ Trader.prototype.startNonStopTrading = function (methods, time) {
 Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, buyMinNoiseCoef, moneyLimit, itemsLimit, callback) {
 	if (this.credits < findObject.maxb) {
 		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
-		callback(null);
+		return callback(null);
 	}
 	moneyLimit = moneyLimit || this.credits - 5000;
 	itemsLimit = itemsLimit || 5;
@@ -290,8 +292,8 @@ Trader.prototype.openPack = function () {
 		
 	});
 }
-Trader.prototype.keepAlive = function () {
-	this.apiClient.keepAlive();
+Trader.prototype.keepAlive = function (cb) {
+	this.apiClient.keepAlive(cb);
 }
 Trader.prototype.buyMin = function (player, callback) {
 	var self = this, time = this.randomTime();
@@ -477,8 +479,13 @@ Trader.prototype.sell = function (player, callback) {
 			costs.buyNow,
 			3600, function (err, ok) {
 				console.log('sell::', ok);
-				console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
-				callback(null);
+				if (ok.idStr) {
+					console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
+					callback(null);
+				} else {
+					console.log('sell::ERROR OCCURED');
+					callback(new Error('sell::SOME ERROR OCCURED'));
+				}
 		});
 	}, time);
 	return this;

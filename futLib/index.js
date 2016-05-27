@@ -254,7 +254,6 @@ var futapi = function(options){
           // и заново последнюю функцию вызываем
           if (body.code == 401) {
             console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
-
             var json = login.getCookieJarJSON();
             var xsrfValue = json.cookies.filter(function (el) {
               if (el.key == 'XSRF-TOKEN') return el;
@@ -264,6 +263,7 @@ var futapi = function(options){
               return sendRequest(url, options, cb);
             });
           }
+
           if(utils.isApiMessage(body)) cb(new Error(JSON.stringify(body)), null);
           cb(null,body);
       });
