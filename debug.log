@@ -1,8 +1,1 @@
-{ [Error: getaddrinfo ENOTFOUND www.easports.com www.easports.com:443]
-  code: 'ENOTFOUND',
-  errno: 'ENOTFOUND',
-  syscall: 'getaddrinfo',
-  hostname: 'www.easports.com',
-  host: 'www.easports.com',
-  port: 443 }
-Unable to login.
+Node app is running on port 8080

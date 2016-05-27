@@ -33,23 +33,31 @@ Trader.prototype.randomTime = function () {
     return Math.random() * (this.timeoutTime.max - this.timeoutTime.min) + this.timeoutTime.min;
 }
 /**
- * Метод начинающий постоянно с интервалом делать заданные действия
- * @return {[type]} [description]
+ * Единичный торговый цикл
+ * @param  {array} methods Методы
  */
-Trader.prototype.startTrading = function (methods, time) {
+Trader.prototype.tradeCycle = function (methods) {
 	var self = this;
-	iterator();
+
+	self.getCredits(function () {
+		async.series(methods, function (err, k) {
+			console.log('startTrading:: TRADING CYCLE COMPLETED');
+		});
+	});
+	
+}
+/**
+ * Фукнция последовательного повторения торговых методов
+ * @param  {array } methods Методы 
+ * @param  {number} time    Частота повторения
+ */
+Trader.prototype.startNonStopTrading = function (methods, time) {
+	var self = this;
+	self.tradeCycle(methods);
 	this._tradingIntervalFunction = setInterval(function () {
-		iterator();
+		self.tradeCycle(methods);
 	}, time);
 	
-	function iterator() {
-		self.getCredits(function () {
-			async.series(methods, function (err, k) {
-				console.log('startTrading:: TRADING CYCLE COMPLETED');
-			})
-		})
-	}
 }
 /**
  * Стратегия последовательного поиска начиная с меньшей цены
@@ -67,7 +75,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
 		callback(null);
 	}
-	moneyLimit = moneyLimit || this.credits;
+	moneyLimit = moneyLimit || this.credits - 5000;
 	itemsLimit = itemsLimit || 5;
 	var self = this, stack = [];
 	this.iterateParams = {
@@ -127,10 +135,14 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 
 
 
-
+/**
+ * Метод перебирающий единожды переданные в него методы
+ * @param  {bool} notSingle    запускаем ли мы интервально пока не будет игроков загружено
+ * @param  {array} functions    Методы
+ * @param  {function} MAINCALLBACK Колбек
+ */
 Trader.prototype.each = function (notSingle, functions, MAINCALLBACK) {
 	var args = functions, self = this;
-	// console.log('each::', self.playersList && self.playersList.length);
 
 	var fn = function () {
 		if (!self.playersList) {
@@ -152,7 +164,7 @@ Trader.prototype.each = function (notSingle, functions, MAINCALLBACK) {
 		}, function (err, ok) {
 			if (err) {
 				console.log('error::STRATEGY ENDED WITH CONDITIONS', err);
-				return callback(err);
+				return MAINCALLBACK(err);
 			} 
 			console.log('EACH COMPLETED');
 			if (MAINCALLBACK && typeof MAINCALLBACK == 'function') {
@@ -357,6 +369,9 @@ Trader.prototype.buyMin = function (player, callback) {
 				if (filteredCosts.length == 1) {
 					buyNowPriceOnMarketAvg *= self.options.buyMinNoiseCoef;
 				}
+
+				// Указываем параметры для удобной работы потом с ними внутри следующих методов по
+				// тому же плеер трейд id который был в списке, тк они меняются
 				self.iterateParams.costs[player.tradeId] = { 
 					bid : startingBidOnMarketAvg, 
 					buyNow : buyNowPriceOnMarketAvg,

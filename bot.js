@@ -1,35 +1,52 @@
-
 var express = require('express');
 var app = express();
 
-app.get('/', function(request, response) {
-  send
-});
-
-app.listen(8080, function() {
-  console.log('Node app is running on port 8080');
-});
 
 var options = {
 	saveCookie : true,
 	saveCookiePath : './cookie/mycookie',
 	loadCookieFromSavePath : './cookie/mycookie'
 }
-// var futapi = require("fut-api");
 var futapi = require("./futLib/index.js");
 var apiClient = new futapi(options);
 var async = require('async');
 var trader = new (require('./trader.js'))(apiClient);
 
+var botStatus = false, inter;
+
+
+app.get('/', function (req, res, next) {
+    res.sendfile('index.html');
+})
+app.get('/start', function (req, res, next) {
+    command();
+    inter = setInterval(function () {
+        command();
+    }, 1000 * 60 * 65);
+    botStatus = true;
+    res.redirect('/status');
+});
+app.get('/status', function (req, res) {
+    res.send('STATUS IS', botStatus ? 'ЗАПУЩЕН' : 'ВЫКЛЮЧЕН');
+})
+app.get('/stop', function (req, res, next) {
+    clearInterval(inter);
+    botStatus = false;
+})
+app.get('/log', function (req, res) {
+    res.sendfile('debug.log');
+});
+app.listen(8080, function() {
+  console.log('Node app is running on port 8080');
+});
+
 function twoFactorCodeCb(next) {
 	next("028870");
 }
 
-// apiClient.login("antonovphilipdev@gmail.com","F16FifaFut", "tatiana", "xone",
+function command() {
 
-
-setInterval(function () {
-
+    // apiClient.login("antonovphilipdev@gmail.com","F16FifaFut", "tatiana", "xone",
     apiClient.login("molo4nik11@gmail.com","Clorew321SSaa", "kopitin", "xone",
         twoFactorCodeCb,
         function (error,response) {
@@ -58,11 +75,11 @@ setInterval(function () {
         // raraflag : 11 тотс синяя с полоской золотой
         
         // торговая страта
-        // trader.startTrading([
-        //     trader.reList.bind(trader),
-        //     trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:10 }, 9000, 300, 1.25, null, 8)
-        // ], 1000 * 60 * 60);
-        // 
+        // trader.startNonStopTrading([
+        trader.tradeCycle([
+            trader.reList.bind(trader),
+            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:10 }, 9000, 300, 1.25, null, 8)
+        ], 1000 * 60 * 60);
 
         // var a = trader
             // .set({ bidIncr : 150, buyNowIncr : 150, buyMinPercent : 90 })
@@ -78,5 +95,4 @@ setInterval(function () {
             // .each(true, [trader.buy, trader.toTradepile, trader.sell]);
             // .openPack();
     });
-
-}, 1000* 60 * 65);
+}
