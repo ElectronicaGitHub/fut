@@ -80,7 +80,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
 		return callback(null);
 	}
-	moneyLimit = moneyLimit || this.credits - 5000;
+	moneyLimit = moneyLimit || this.credits - 2000;
 	itemsLimit = itemsLimit || 5;
 	var self = this, stack = [];
 	this.iterateParams = {
