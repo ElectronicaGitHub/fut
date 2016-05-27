@@ -9,8 +9,9 @@ var _ = require('lodash');
 console.log = function(d) {
 	var array = Array.prototype.slice.call(arguments, 0);
 	array.splice(0, 0, UTILS.getTime() + ' |');
-	log_file.write(util.format.apply(null, array, '\n'));
-	log_stdout.write(util.format.apply(null, array, '\n'));
+	array.push('\n');
+	log_file.write(util.format.apply(null, array));
+	log_stdout.write(util.format.apply(null, array));
 };
 
 function Trader(apiClient) {
