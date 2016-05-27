@@ -258,14 +258,14 @@ var futapi = function(options){
             var xsrfValue = json.cookies.filter(function (el) {
               if (el.key == 'XSRF-TOKEN') return el;
             })[0].value;
-            login.keepAlive(xsrfValue, function () {
+            return login.keepAlive(xsrfValue, function () {
               console.log('FUTAPI::INDEX.JS KEEPALIVE SUCCESS');
               return sendRequest(url, options, cb);
             });
           }
 
-          if(utils.isApiMessage(body)) cb(new Error(JSON.stringify(body)), null);
-          cb(null,body);
+          if(utils.isApiMessage(body)) return cb(new Error(JSON.stringify(body)), null);
+          return cb(null,body);
       });
   }
 

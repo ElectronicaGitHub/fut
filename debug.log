@@ -36,3 +36,31 @@
 2016-05-27 15:02:41 | buyMin::AVERAGE COST * 5000 
 2016-05-27 15:02:42 | buyMin::PLAYER 4061486426 WITH RATING * 64 * BOUGHT FOR 4700 
 2016-05-27 15:02:42 | toTradepile::player 104877544737 
+2016-05-27 16:29:31 | Node app is running on port 8080 
+2016-05-27 16:36:02 | get session 
+2016-05-27 16:36:04 | get phishing 
+2016-05-27 16:36:05 | body.question 1 
+2016-05-27 16:36:05 | logged in. 
+2016-05-27 16:36:05 | CREDITS:: 20567 
+2016-05-27 16:36:06 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4064151134, idStr: '4064151134' },
+     { id: 4064148200, idStr: '4064148200' },
+     { id: 4064151137, idStr: '4064151137' } ] } 
+2016-05-27 16:36:06 | handler::NEW CYCLE 
+2016-05-27 16:36:07 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 5300,
+  maxb: 7000,
+  start: 0,
+  num: 10 } 
+2016-05-27 16:36:08 | [ { id: 105327795937, rare: 3, rating: 74, buyNowPrice: 5800 },
+  { id: 105396878456, rare: 3, rating: 74, buyNowPrice: 6200 },
+  { id: 105273922999, rare: 3, rating: 64, buyNowPrice: 5900 },
+  { id: 105395498926, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105358604060, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105406813676, rare: 3, rating: 74, buyNowPrice: 5800 },
+  { id: 105406825792, rare: 3, rating: 74, buyNowPrice: 5500 },
+  { id: 105407396819, rare: 3, rating: 74, buyNowPrice: 5500 },
+  { id: 105407541551, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 } ] 
+2016-05-27 16:36:08 | search::completed, found : 10 elements 
