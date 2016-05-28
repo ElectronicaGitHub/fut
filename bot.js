@@ -43,7 +43,7 @@ app.listen(port, function() {
 });
 
 function twoFactorCodeCb(next) {
-	next("577011");
+	next("077520");
 }
 
 function command() {
