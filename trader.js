@@ -29,10 +29,11 @@ console.log = function(d) {
 
 function Trader(apiClient) {
 	this.playersList = null;
+	// defaults, change with .set({ obj })
 	this.options = {
-		bidIncr : null,
-		buyNowIncr : null,
-		buyMinPercent : null,
+		bidIncr : 150,
+		buyNowIncr : 150,
+		buyMinPercent : 90,
 		minPlayerSpeed : 75 
 	};
 	this.apiClient = apiClient;
