@@ -85,7 +85,7 @@ function command() {
         trader.set({minPlayerSpeed : 80})
             .tradeCycle([
             trader.reList.bind(trader),
-            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:10 }, 9000, 300, 1.25, null, 8)
+            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:10 }, 100000, 300, 1.25, null, 8)
         ]);
 
         // var a = trader
