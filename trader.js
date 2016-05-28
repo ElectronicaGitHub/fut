@@ -32,7 +32,8 @@ function Trader(apiClient) {
 	this.options = {
 		bidIncr : null,
 		buyNowIncr : null,
-		buyMinPercent : null
+		buyMinPercent : null,
+		minPlayerSpeed : 75 
 	};
 	this.apiClient = apiClient;
 	this.timeoutTime = { max : 7000, min : 4000 };
@@ -320,7 +321,7 @@ Trader.prototype.buyMin = function (player, callback) {
 	}
 
 	// проверка на пиздатую скорость
-	if (player.itemData.attributeList[0].value < 78) {
+	if (player.itemData.attributeList[0].value <= self.options.minPlayerSpeed) {
 		console.log('buyMin::TOO LOW SPEED, SKIP THIS PLAYER');
 		self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
 		self.iterateParams.costs[player.tradeId].was = true;
@@ -329,8 +330,8 @@ Trader.prototype.buyMin = function (player, callback) {
 
 	// тупая проверка на повторного игрока тк обновляется не сразу порой
 	if (self.iterateParams.costs[player.tradeId]) {
-		self.iterateParams.costs[player.tradeId].was = true;
 		console.log('buyMin::PLAYER WITH ID', player.tradeId, 'IS ALREADY BOUGHT');
+		self.iterateParams.costs[player.tradeId].was = true;
 		return callback(null);
 	}
 	// НАДО СДЕЛАТЬ ЧТОБЫ ПЕРЕД ПОКУПКОЙ ПРОВЕРЯТЬ ХВАТАЕТ ЛИ У НАС ДЕНЕГ НА ЭТУ ПОКУПКУ
