@@ -174,8 +174,8 @@ Trader.prototype.each = function (notSingle, functions, MAINCALLBACK) {
 				fn.call(self, player, callback);
 			}, function (err, ok) {
 				if (err) return callback(err);
-				callback(null);
 				console.log('------------------');
+				callback(null);
 			});
 			
 		}, function (err, ok) {
