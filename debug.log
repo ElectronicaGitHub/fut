@@ -1,23 +1,1991 @@
-2016-05-28 17:02:50 | Node app is running on port 5000 
-2016-05-28 17:03:05 | get session 
-2016-05-28 17:03:07 | get phishing 
-2016-05-28 17:03:08 | body.question 1 
-2016-05-28 17:03:08 | logged in. 
-2016-05-28 17:03:08 | ******************************************************* 
-2016-05-28 17:03:08 | ******************************************************* 
-2016-05-28 17:03:08 | ******************************************************* 
-2016-05-28 17:03:09 | CREDITS:: 33770 
-2016-05-28 17:03:09 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-28 17:03:09 | handler::NEW CYCLE 
-2016-05-28 17:03:10 | =============== 
-2016-05-28 17:03:10 | CONDITIONS CHECK 
-2016-05-28 17:03:10 | findObject.maxb 6700 
-2016-05-28 17:03:10 | spendMoney 0 
-2016-05-28 17:03:10 | boughtItems 0 
-2016-05-28 17:03:10 | =============== 
-2016-05-28 17:03:10 | search:: { type: 'player',
+2016-05-28 17:57:23 | Node app is running on port 5000 
+2016-05-28 17:58:15 | get session 
+2016-05-28 17:58:17 | get phishing 
+2016-05-28 17:58:17 | get phishing 3879505056224913486 
+2016-05-28 17:58:17 | logged in. 
+2016-05-28 17:58:17 | ******************************************************* 
+2016-05-28 17:58:17 | ******************************************************* 
+2016-05-28 17:58:17 | ******************************************************* 
+2016-05-28 17:58:17 | CREDITS:: 31622 
+2016-05-28 17:58:18 | login::session keeped alive 
+2016-05-28 17:58:20 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4089786576, idStr: '4089786576' },
+     { id: 4089781258, idStr: '4089781258' },
+     { id: 4089789708, idStr: '4089789708' },
+     { id: 4089784083, idStr: '4089784083' },
+     { id: 4089778744, idStr: '4089778744' },
+     { id: 4089786584, idStr: '4089786584' },
+     { id: 4089786588, idStr: '4089786588' },
+     { id: 4089789712, idStr: '4089789712' },
+     { id: 4089784091, idStr: '4089784091' },
+     { id: 4089789715, idStr: '4089789715' },
+     { id: 4089778757, idStr: '4089778757' },
+     { id: 4089786596, idStr: '4089786596' },
+     { id: 4089789728, idStr: '4089789728' },
+     { id: 4089792684, idStr: '4089792684' },
+     { id: 4089784107, idStr: '4089784107' },
+     { id: 4089792690, idStr: '4089792690' },
+     { id: 4089781295, idStr: '4089781295' },
+     { id: 4089786613, idStr: '4089786613' },
+     { id: 4089781297, idStr: '4089781297' },
+     { id: 4089778777, idStr: '4089778777' },
+     { id: 4089792699, idStr: '4089792699' },
+     { id: 4089781300, idStr: '4089781300' },
+     { id: 4089784117, idStr: '4089784117' },
+     { id: 4089786627, idStr: '4089786627' },
+     { id: 4089792702, idStr: '4089792702' } ] } 
+2016-05-28 17:58:20 | handler::NEW CYCLE 
+2016-05-28 17:58:21 | =============== 
+2016-05-28 17:58:21 | CONDITIONS CHECK 
+2016-05-28 17:58:21 | findObject.maxb 6700 ||| maxCost 100000 
+2016-05-28 17:58:21 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:21 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:21 | =============== 
+2016-05-28 17:58:21 | search:: { type: 'player',
   rare: 'SP',
   minb: 5300,
   maxb: 7000,
   start: 0,
-  num: 10 } 
+  num: 20 } 
+2016-05-28 17:58:27 | [ { id: 105268218900, rare: 3, rating: 70, buyNowPrice: 6200 },
+  { id: 105415679371, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 105334722417, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 104926749376, rare: 3, rating: 64, buyNowPrice: 6600 },
+  { id: 105342957028, rare: 3, rating: 70, buyNowPrice: 5600 },
+  { id: 105366594624, rare: 3, rating: 74, buyNowPrice: 5600 },
+  { id: 105315873076, rare: 3, rating: 70, buyNowPrice: 5600 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105407097689, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105426863045, rare: 3, rating: 74, buyNowPrice: 5300 },
+  { id: 104961626783, rare: 3, rating: 64, buyNowPrice: 6300 },
+  { id: 105400338072, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105409055812, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105181761018, rare: 3, rating: 64, buyNowPrice: 6400 },
+  { id: 104857136121, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 105408325484, rare: 3, rating: 74, buyNowPrice: 6200 },
+  { id: 104988156869, rare: 3, rating: 64, buyNowPrice: 6200 },
+  { id: 105405055748, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105395498926, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105433099510, rare: 3, rating: 72, buyNowPrice: 6000 } ] 
+2016-05-28 17:58:27 | search::completed, found : 20 elements 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | CONDITIONS CHECK 
+2016-05-28 17:58:27 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:27 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:27 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:27 | =============== 
+2016-05-28 17:58:27 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:27 | ------------------ 
+2016-05-28 17:58:27 | EACH COMPLETED 
+2016-05-28 17:58:27 | handler::NEW CYCLE 
+2016-05-28 17:58:28 | =============== 
+2016-05-28 17:58:28 | CONDITIONS CHECK 
+2016-05-28 17:58:28 | findObject.maxb 7000 ||| maxCost 100000 
+2016-05-28 17:58:28 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:28 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:28 | =============== 
+2016-05-28 17:58:28 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 5600,
+  maxb: 7300,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:58:35 | [ { id: 105268218900, rare: 3, rating: 70, buyNowPrice: 6200 },
+  { id: 105415679371, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 105334722417, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 104926749376, rare: 3, rating: 64, buyNowPrice: 6600 },
+  { id: 105342957028, rare: 3, rating: 70, buyNowPrice: 5600 },
+  { id: 105366594624, rare: 3, rating: 74, buyNowPrice: 5600 },
+  { id: 105315873076, rare: 3, rating: 70, buyNowPrice: 5600 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105265932240, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105407097689, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105413508875, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 104961626783, rare: 3, rating: 64, buyNowPrice: 6300 },
+  { id: 105400338072, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105409055812, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105181761018, rare: 3, rating: 64, buyNowPrice: 6400 },
+  { id: 104857136121, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 105408325484, rare: 3, rating: 74, buyNowPrice: 6200 },
+  { id: 104988156869, rare: 3, rating: 64, buyNowPrice: 6200 },
+  { id: 105405055748, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105395498926, rare: 3, rating: 74, buyNowPrice: 6000 } ] 
+2016-05-28 17:58:35 | search::completed, found : 20 elements 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | CONDITIONS CHECK 
+2016-05-28 17:58:35 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:35 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:35 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:35 | =============== 
+2016-05-28 17:58:35 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:35 | ------------------ 
+2016-05-28 17:58:35 | EACH COMPLETED 
+2016-05-28 17:58:35 | handler::NEW CYCLE 
+2016-05-28 17:58:36 | =============== 
+2016-05-28 17:58:36 | CONDITIONS CHECK 
+2016-05-28 17:58:36 | findObject.maxb 7300 ||| maxCost 100000 
+2016-05-28 17:58:36 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:36 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:36 | =============== 
+2016-05-28 17:58:36 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 5900,
+  maxb: 7600,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:58:43 | [ { id: 104953912275, rare: 11, rating: 74, buyNowPrice: 6000 },
+  { id: 105213657097, rare: 3, rating: 74, buyNowPrice: 7500 },
+  { id: 105268218900, rare: 3, rating: 70, buyNowPrice: 6200 },
+  { id: 105415679371, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 105334722417, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 104926749376, rare: 3, rating: 64, buyNowPrice: 6600 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105265932240, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105265701536, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 104932153272, rare: 3, rating: 64, buyNowPrice: 6200 },
+  { id: 105407097689, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105413508875, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 104961626783, rare: 3, rating: 64, buyNowPrice: 6300 },
+  { id: 105400338072, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105409055812, rare: 3, rating: 74, buyNowPrice: 6000 },
+  { id: 105181761018, rare: 3, rating: 64, buyNowPrice: 6400 },
+  { id: 104857136121, rare: 3, rating: 64, buyNowPrice: 6000 },
+  { id: 105408325484, rare: 3, rating: 74, buyNowPrice: 6200 },
+  { id: 104988156869, rare: 3, rating: 64, buyNowPrice: 6200 },
+  { id: 105405055748, rare: 3, rating: 74, buyNowPrice: 6000 } ] 
+2016-05-28 17:58:43 | search::completed, found : 20 elements 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | CONDITIONS CHECK 
+2016-05-28 17:58:43 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:43 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:43 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:43 | =============== 
+2016-05-28 17:58:43 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:43 | ------------------ 
+2016-05-28 17:58:43 | EACH COMPLETED 
+2016-05-28 17:58:43 | handler::NEW CYCLE 
+2016-05-28 17:58:44 | =============== 
+2016-05-28 17:58:44 | CONDITIONS CHECK 
+2016-05-28 17:58:44 | findObject.maxb 7600 ||| maxCost 100000 
+2016-05-28 17:58:44 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:44 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:44 | =============== 
+2016-05-28 17:58:44 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 6200,
+  maxb: 7900,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:58:49 | [ { id: 105268218900, rare: 3, rating: 70, buyNowPrice: 6200 },
+  { id: 105415679371, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 104926749376, rare: 3, rating: 64, buyNowPrice: 6600 },
+  { id: 105419312278, rare: 3, rating: 74, buyNowPrice: 6200 },
+  { id: 104846805211, rare: 3, rating: 64, buyNowPrice: 6400 },
+  { id: 104769569024, rare: 3, rating: 64, buyNowPrice: 6900 },
+  { id: 103672314271, rare: 3, rating: 64, buyNowPrice: 6300 },
+  { id: 105338962473, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105276598997, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105265932240, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105259609512, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105265701536, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 104932153272, rare: 3, rating: 64, buyNowPrice: 6200 },
+  { id: 105432980982, rare: 3, rating: 72, buyNowPrice: 6500 },
+  { id: 105414502807, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 105413508875, rare: 3, rating: 74, buyNowPrice: 6300 },
+  { id: 104961626783, rare: 3, rating: 64, buyNowPrice: 6300 },
+  { id: 103450039832, rare: 3, rating: 73, buyNowPrice: 7300 },
+  { id: 105181761018, rare: 3, rating: 64, buyNowPrice: 6400 } ] 
+2016-05-28 17:58:49 | search::completed, found : 20 elements 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | CONDITIONS CHECK 
+2016-05-28 17:58:49 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:49 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:49 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:49 | =============== 
+2016-05-28 17:58:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:49 | ------------------ 
+2016-05-28 17:58:49 | EACH COMPLETED 
+2016-05-28 17:58:49 | handler::NEW CYCLE 
+2016-05-28 17:58:50 | =============== 
+2016-05-28 17:58:50 | CONDITIONS CHECK 
+2016-05-28 17:58:50 | findObject.maxb 7900 ||| maxCost 100000 
+2016-05-28 17:58:50 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:50 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:50 | =============== 
+2016-05-28 17:58:50 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 6500,
+  maxb: 8200,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:58:55 | [ { id: 105341881002, rare: 3, rating: 74, buyNowPrice: 7000 },
+  { id: 104926749376, rare: 3, rating: 64, buyNowPrice: 6600 },
+  { id: 104769569024, rare: 3, rating: 64, buyNowPrice: 6900 },
+  { id: 105432908074, rare: 3, rating: 74, buyNowPrice: 6500 },
+  { id: 105338962473, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105276598997, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105338454447, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105275660391, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105343220734, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105350427884, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105348873699, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105265932240, rare: 3, rating: 70, buyNowPrice: 6500 },
+  { id: 105338444682, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105339504753, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105336133570, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105344144596, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105336643565, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105259609512, rare: 3, rating: 70, buyNowPrice: 6500 } ] 
+2016-05-28 17:58:55 | search::completed, found : 20 elements 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | CONDITIONS CHECK 
+2016-05-28 17:58:55 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:55 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:55 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:55 | =============== 
+2016-05-28 17:58:55 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:58:55 | ------------------ 
+2016-05-28 17:58:55 | EACH COMPLETED 
+2016-05-28 17:58:55 | handler::NEW CYCLE 
+2016-05-28 17:58:56 | =============== 
+2016-05-28 17:58:56 | CONDITIONS CHECK 
+2016-05-28 17:58:56 | findObject.maxb 8200 ||| maxCost 100000 
+2016-05-28 17:58:56 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:58:56 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:58:56 | =============== 
+2016-05-28 17:58:56 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 6800,
+  maxb: 8500,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:59:02 | [ { id: 105341881002, rare: 3, rating: 74, buyNowPrice: 7000 },
+  { id: 105288081683, rare: 3, rating: 70, buyNowPrice: 7000 },
+  { id: 104769569024, rare: 3, rating: 64, buyNowPrice: 6900 },
+  { id: 105338962473, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105276598997, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105338454447, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105275302856, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105275660391, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105343220734, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105350427884, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105348873699, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105275570762, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105338444682, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105339504753, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105336133570, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105352203399, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105344144596, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105336643565, rare: 3, rating: 70, buyNowPrice: 6900 },
+  { id: 105265701536, rare: 3, rating: 70, buyNowPrice: 6900 } ] 
+2016-05-28 17:59:02 | search::completed, found : 20 elements 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | CONDITIONS CHECK 
+2016-05-28 17:59:02 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:02 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:02 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:02 | =============== 
+2016-05-28 17:59:02 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:02 | ------------------ 
+2016-05-28 17:59:02 | EACH COMPLETED 
+2016-05-28 17:59:02 | handler::NEW CYCLE 
+2016-05-28 17:59:03 | =============== 
+2016-05-28 17:59:03 | CONDITIONS CHECK 
+2016-05-28 17:59:03 | findObject.maxb 8500 ||| maxCost 100000 
+2016-05-28 17:59:03 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:03 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:03 | =============== 
+2016-05-28 17:59:03 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 7100,
+  maxb: 8800,
+  start: 0,
+  num: 20 } 
+2016-05-28 17:59:09 | [ { id: 100420160282, rare: 3, rating: 70, buyNowPrice: 7300 },
+  { id: 100929192171, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 104919775752, rare: 3, rating: 64, buyNowPrice: 7200 },
+  { id: 105432727305, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 103404810317, rare: 3, rating: 73, buyNowPrice: 7300 },
+  { id: 105252539864, rare: 3, rating: 72, buyNowPrice: 7100 },
+  { id: 105432843253, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105432702416, rare: 3, rating: 74, buyNowPrice: 7900 },
+  { id: 104833180768, rare: 3, rating: 74, buyNowPrice: 8000 },
+  { id: 105151986655, rare: 3, rating: 72, buyNowPrice: 7400 },
+  { id: 103450039832, rare: 3, rating: 73, buyNowPrice: 7300 },
+  { id: 105207369021, rare: 3, rating: 72, buyNowPrice: 7600 },
+  { id: 104158091789, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 104844585248, rare: 3, rating: 74, buyNowPrice: 8300 },
+  { id: 105151815678, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 104998893081, rare: 3, rating: 64, buyNowPrice: 7100 },
+  { id: 102223173575, rare: 3, rating: 64, buyNowPrice: 7100 },
+  { id: 105433278125, rare: 3, rating: 72, buyNowPrice: 8000 },
+  { id: 105433228045, rare: 3, rating: 72, buyNowPrice: 7500 },
+  { id: 105153949158, rare: 3, rating: 74, buyNowPrice: 7600 } ] 
+2016-05-28 17:59:09 | search::completed, found : 20 elements 
+2016-05-28 17:59:09 | =============== 
+2016-05-28 17:59:09 | CONDITIONS CHECK 
+2016-05-28 17:59:09 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:09 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:09 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:09 | =============== 
+2016-05-28 17:59:09 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:09 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:09 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:09 | ------------------ 
+2016-05-28 17:59:09 | =============== 
+2016-05-28 17:59:09 | CONDITIONS CHECK 
+2016-05-28 17:59:09 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:09 | spendMoney 0 ||| moneyLimit 31622 
+2016-05-28 17:59:09 | boughtItems 0 ||| itemsLimit 8 
+2016-05-28 17:59:09 | =============== 
+2016-05-28 17:59:16 | buyMin::PLAYERS FOUND BY ID 105308 NUMBER 8 
+2016-05-28 17:59:22 | buyMin::prices for current [ 6700, 6800, 7300, 7400 ] 
+2016-05-28 17:59:22 | buyMin::BUY FOR * 6700 
+2016-05-28 17:59:22 | buyMin::AVERAGE COST * 7000 
+2016-05-28 17:59:22 | buyMin::PLAYER 4088731794 WITH RATING * 74 * BOUGHT FOR 6700 
+2016-05-28 17:59:22 | toTradepile::player 100929192171 
+2016-05-28 17:59:29 | toTradepile::PLAYER 4088731794 WITH RATING 74 SEND TO TRADEPILE 
+2016-05-28 17:59:36 | sell:: { id: 4089809856, idStr: '4089809856' } 
+2016-05-28 17:59:36 | sell::PLAYER 4088731794 WITH RATING 74 SEND TO TRANSFER, BID 6900 , BUY NOW 7000 
+2016-05-28 17:59:36 | ------------------ 
+2016-05-28 17:59:36 | =============== 
+2016-05-28 17:59:36 | CONDITIONS CHECK 
+2016-05-28 17:59:36 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:36 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:36 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:36 | =============== 
+2016-05-28 17:59:36 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:36 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:36 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:36 | ------------------ 
+2016-05-28 17:59:36 | =============== 
+2016-05-28 17:59:36 | CONDITIONS CHECK 
+2016-05-28 17:59:36 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:36 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:36 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:36 | =============== 
+2016-05-28 17:59:43 | buyMin::PLAYERS FOUND BY ID 225305 NUMBER 26 
+2016-05-28 17:59:49 | buyMin::prices for current [ 8100, 8100, 8100, 8100, 8100, 8100, 8400, 8700, 8900, 10000, 10000 ] 
+2016-05-28 17:59:49 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | ------------------ 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:49 | CONDITIONS CHECK 
+2016-05-28 17:59:49 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:49 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:49 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | ------------------ 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:49 | CONDITIONS CHECK 
+2016-05-28 17:59:49 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:49 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:49 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:49 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:49 | ------------------ 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:49 | CONDITIONS CHECK 
+2016-05-28 17:59:49 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:49 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:49 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:49 | =============== 
+2016-05-28 17:59:54 | buyMin::PLAYERS FOUND BY ID 225305 NUMBER 26 
+2016-05-28 17:59:59 | buyMin::prices for current [ 8100, 8100, 8100, 8100, 8100, 8100, 8400, 8700, 8900, 10000, 10000 ] 
+2016-05-28 17:59:59 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
+2016-05-28 17:59:59 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:59 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 17:59:59 | ------------------ 
+2016-05-28 17:59:59 | =============== 
+2016-05-28 17:59:59 | CONDITIONS CHECK 
+2016-05-28 17:59:59 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 17:59:59 | spendMoney 6700 ||| moneyLimit 31622 
+2016-05-28 17:59:59 | boughtItems 1 ||| itemsLimit 8 
+2016-05-28 17:59:59 | =============== 
+2016-05-28 18:00:06 | buyMin::PLAYERS FOUND BY ID 204539 NUMBER 27 
+2016-05-28 18:00:13 | buyMin::prices for current [ 7900, 8100, 8200, 8300 ] 
+2016-05-28 18:00:13 | buyMin::BUY FOR * 7900 
+2016-05-28 18:00:13 | buyMin::AVERAGE COST * 8100 
+2016-05-28 18:00:13 | buyMin::PLAYER 4089019184 WITH RATING * 74 * BOUGHT FOR 7900 
+2016-05-28 18:00:13 | toTradepile::player 105432702416 
+2016-05-28 18:00:18 | toTradepile::PLAYER 4089019184 WITH RATING 74 SEND TO TRADEPILE 
+2016-05-28 18:00:23 | sell:: { id: 4089819837, idStr: '4089819837' } 
+2016-05-28 18:00:23 | sell::PLAYER 4089019184 WITH RATING 74 SEND TO TRANSFER, BID 8000 , BUY NOW 8100 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | CONDITIONS CHECK 
+2016-05-28 18:00:23 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:23 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:23 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:23 | =============== 
+2016-05-28 18:00:23 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:23 | ------------------ 
+2016-05-28 18:00:23 | EACH COMPLETED 
+2016-05-28 18:00:23 | handler::NEW CYCLE 
+2016-05-28 18:00:24 | =============== 
+2016-05-28 18:00:24 | CONDITIONS CHECK 
+2016-05-28 18:00:24 | findObject.maxb 8800 ||| maxCost 100000 
+2016-05-28 18:00:24 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:24 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:24 | =============== 
+2016-05-28 18:00:24 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 7400,
+  maxb: 9100,
+  start: 0,
+  num: 20 } 
+2016-05-28 18:00:30 | [ { id: 100929192171, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 105432727305, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105157575152, rare: 3, rating: 72, buyNowPrice: 7600 },
+  { id: 100438016414, rare: 3, rating: 64, buyNowPrice: 7900 },
+  { id: 105432843253, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105275342242, rare: 3, rating: 70, buyNowPrice: 8900 },
+  { id: 104833180768, rare: 3, rating: 74, buyNowPrice: 8000 },
+  { id: 105151986655, rare: 3, rating: 72, buyNowPrice: 7400 },
+  { id: 105397505494, rare: 4, rating: 74, buyNowPrice: 9000 },
+  { id: 104164645052, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 105207369021, rare: 3, rating: 72, buyNowPrice: 7600 },
+  { id: 104158091789, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 104844585248, rare: 3, rating: 74, buyNowPrice: 8300 },
+  { id: 105151815678, rare: 3, rating: 74, buyNowPrice: 7400 },
+  { id: 105146910253, rare: 3, rating: 74, buyNowPrice: 7600 },
+  { id: 105433278125, rare: 3, rating: 72, buyNowPrice: 8000 },
+  { id: 105433228045, rare: 3, rating: 72, buyNowPrice: 7500 },
+  { id: 100173631271, rare: 3, rating: 64, buyNowPrice: 8800 },
+  { id: 105153949158, rare: 3, rating: 74, buyNowPrice: 7600 },
+  { id: 101763079259, rare: 3, rating: 74, buyNowPrice: 8000 } ] 
+2016-05-28 18:00:30 | search::completed, found : 20 elements 
+2016-05-28 18:00:30 | =============== 
+2016-05-28 18:00:30 | CONDITIONS CHECK 
+2016-05-28 18:00:30 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:30 | spendMoney 14600 ||| moneyLimit 31622 
+2016-05-28 18:00:30 | boughtItems 2 ||| itemsLimit 8 
+2016-05-28 18:00:30 | =============== 
+2016-05-28 18:00:35 | buyMin::PLAYERS FOUND BY ID 105308 NUMBER 7 
+2016-05-28 18:00:40 | buyMin::prices for current [ 6800, 7300, 7400 ] 
+2016-05-28 18:00:40 | buyMin::BUY FOR * 6800 
+2016-05-28 18:00:40 | buyMin::AVERAGE COST * 7100 
+2016-05-28 18:00:40 | buyMin::PLAYER 4088731794 WITH RATING * 74 * BOUGHT FOR 6800 
+2016-05-28 18:00:40 | toTradepile::player 100929192171 
+2016-05-28 18:00:46 | toTradepile::PLAYER 4088731794 WITH RATING 74 SEND TO TRADEPILE 
+2016-05-28 18:00:52 | sell:: { id: 4089837198, idStr: '4089837198' } 
+2016-05-28 18:00:52 | sell::PLAYER 4088731794 WITH RATING 74 SEND TO TRANSFER, BID 7000 , BUY NOW 7100 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::PLAYER WITH ID 4088820502 IS ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::PLAYER WITH ID 4088931826 IS ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | buyMin::PLAYER ALREADY BOUGHT 
+2016-05-28 18:00:52 | ------------------ 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:52 | CONDITIONS CHECK 
+2016-05-28 18:00:52 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:00:52 | spendMoney 21400 ||| moneyLimit 31622 
+2016-05-28 18:00:52 | boughtItems 3 ||| itemsLimit 8 
+2016-05-28 18:00:52 | =============== 
+2016-05-28 18:00:56 | buyMin::PLAYERS FOUND BY ID 220971 NUMBER 3 
+2016-05-28 18:01:01 | buyMin::prices for current [ 8000, 9000 ] 
+2016-05-28 18:01:01 | buyMin::BUY FOR * 8000 
+2016-05-28 18:01:01 | buyMin::AVERAGE COST * 8500 
+2016-05-28 18:01:02 | buyMin::PLAYER 4089380563 WITH RATING * 74 * BOUGHT FOR 8000 
+2016-05-28 18:01:02 | toTradepile::player 101763079259 
+2016-05-28 18:01:08 | toTradepile::PLAYER 4089380563 WITH RATING 74 SEND TO TRADEPILE 
+2016-05-28 18:01:14 | sell:: { id: 4089846806, idStr: '4089846806' } 
+2016-05-28 18:01:14 | sell::PLAYER 4089380563 WITH RATING 74 SEND TO TRANSFER, BID 8400 , BUY NOW 8500 
+2016-05-28 18:01:14 | ------------------ 
+2016-05-28 18:01:14 | EACH COMPLETED 
+2016-05-28 18:01:14 | handler::NEW CYCLE 
+2016-05-28 18:01:15 | =============== 
+2016-05-28 18:01:15 | CONDITIONS CHECK 
+2016-05-28 18:01:15 | findObject.maxb 9100 ||| maxCost 100000 
+2016-05-28 18:01:15 | spendMoney 29400 ||| moneyLimit 31622 
+2016-05-28 18:01:15 | boughtItems 4 ||| itemsLimit 8 
+2016-05-28 18:01:15 | =============== 
+2016-05-28 18:01:15 | search:: { type: 'player',
+  rare: 'SP',
+  minb: 7700,
+  maxb: 9400,
+  start: 0,
+  num: 20 } 
+2016-05-28 18:01:20 | [ { id: 105416420011, rare: 3, rating: 74, buyNowPrice: 8200 },
+  { id: 105432727305, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105409406427, rare: 3, rating: 74, buyNowPrice: 8400 },
+  { id: 104968447087, rare: 3, rating: 74, buyNowPrice: 8300 },
+  { id: 100438016414, rare: 3, rating: 64, buyNowPrice: 7900 },
+  { id: 105424400709, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105432843253, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105275342242, rare: 3, rating: 70, buyNowPrice: 8900 },
+  { id: 104833180768, rare: 3, rating: 74, buyNowPrice: 8000 },
+  { id: 105432845704, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 105399184361, rare: 3, rating: 74, buyNowPrice: 8100 },
+  { id: 104956109536, rare: 3, rating: 74, buyNowPrice: 8300 },
+  { id: 102202806586, rare: 3, rating: 64, buyNowPrice: 7700 },
+  { id: 102631537735, rare: 3, rating: 74, buyNowPrice: 8400 },
+  { id: 104844585248, rare: 3, rating: 74, buyNowPrice: 8300 },
+  { id: 104586213867, rare: 3, rating: 74, buyNowPrice: 8500 },
+  { id: 101223981398, rare: 3, rating: 64, buyNowPrice: 9200 },
+  { id: 101437523318, rare: 3, rating: 64, buyNowPrice: 8100 },
+  { id: 105433278125, rare: 3, rating: 72, buyNowPrice: 8000 },
+  { id: 100173631271, rare: 3, rating: 64, buyNowPrice: 8800 } ] 
+2016-05-28 18:01:20 | search::completed, found : 20 elements 
+2016-05-28 18:01:20 | =============== 
+2016-05-28 18:01:20 | CONDITIONS CHECK 
+2016-05-28 18:01:20 | findObject.maxb 9400 ||| maxCost 100000 
+2016-05-28 18:01:20 | spendMoney 29400 ||| moneyLimit 31622 
+2016-05-28 18:01:20 | boughtItems 4 ||| itemsLimit 8 
+2016-05-28 18:01:20 | =============== 
+2016-05-28 18:01:25 | buyMin::PLAYERS FOUND BY ID 204539 NUMBER 26 
+2016-05-28 18:01:29 | buyMin::prices for current [ 8100, 8200, 8300 ] 
+2016-05-28 18:01:29 | buyMin::BUY FOR * 8100 
+2016-05-28 18:01:29 | buyMin::AVERAGE COST * 8200 
+2016-05-28 18:01:29 | buyMin::NO MONEY FOR BUYING 
+2016-05-28 18:01:29 | error::STRATEGY ENDED WITH CONDITIONS [Error: NO MONEY FOR BUYING] 
+2016-05-28 18:01:29 | buyAndSellWithIncreasingCost::STRATEGY FINISHED WITH CONDITION 
