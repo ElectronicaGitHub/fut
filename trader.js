@@ -9,6 +9,7 @@
  *
  * Покупать ТОЛЬКО БЫСТРЫХ ИГРОКОВ
  * Если средняя цена не сильно по модулю отличается от покупной то скипаем
+ * Если мало мелких цен то покупаем и то и другое и потом продаем дороже
  */
 
 var fs = require('fs');
@@ -105,6 +106,12 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 		spendMoney : 0,
 		boughtItems : 0,
 		continueStatus : function () {
+			console.log('===============');
+			console.log('CONDITIONS CHECK');
+			console.log('findObject.maxb', findObject.maxb);
+			console.log('spendMoney', self.currentStrategyData.spendMoney);
+			console.log('boughtItems', self.currentStrategyData.boughtItems);
+			console.log('===============');
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
 				self.currentStrategyData.boughtItems > itemsLimit);
