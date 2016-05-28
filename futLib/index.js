@@ -227,8 +227,11 @@ var futapi = function(options){
       }
       return str.substr(0, str.length - 1);
   }
+
+  var lastSendRequestOptions = {};
   
   function sendRequest(url,options,cb) {
+
       var defaultOptions = {
           xHttpMethod: "GET",
           headers: {}
@@ -253,14 +256,24 @@ var futapi = function(options){
           // если сессия заэкспайрилась то мы ее кароч продляем 
           // и заново последнюю функцию вызываем
           if (body.code == 401) {
+
+            lastSendRequestOptions = {
+              url : url,
+              options : options,
+              cb : cb
+            };
+
             console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
             var json = login.getCookieJarJSON();
             var xsrfValue = json.cookies.filter(function (el) {
               if (el.key == 'XSRF-TOKEN') return el;
             })[0].value;
+
             return login.keepAlive(xsrfValue, function () {
+
               console.log('FUTAPI::INDEX.JS KEEPALIVE SUCCESS');
-              return sendRequest(url, options, cb);
+              return sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
+
             });
           }
 

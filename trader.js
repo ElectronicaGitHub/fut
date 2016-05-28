@@ -78,7 +78,6 @@ Trader.prototype.startNonStopTrading = function (methods, time) {
 	this._tradingIntervalFunction = setInterval(function () {
 		self.tradeCycle(methods);
 	}, time);
-	
 }
 /**
  * Стратегия последовательного поиска начиная с меньшей цены
@@ -108,9 +107,9 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 		continueStatus : function () {
 			console.log('===============');
 			console.log('CONDITIONS CHECK');
-			console.log('findObject.maxb', findObject.maxb);
-			console.log('spendMoney', self.currentStrategyData.spendMoney);
-			console.log('boughtItems', self.currentStrategyData.boughtItems);
+			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost);
+			console.log('spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit);
+			console.log('boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit);
 			console.log('===============');
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
