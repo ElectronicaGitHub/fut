@@ -1,35 +1,23 @@
-2016-05-27 23:28:19 | Node app is running on port 8080 
-2016-05-27 23:28:39 | get session 
-2016-05-27 23:28:41 | get phishing 
-2016-05-27 23:28:42 | get phishing 1789392775271219151 
-2016-05-27 23:28:42 | logged in. 
-2016-05-27 23:28:42 | ******************************************************* 
-2016-05-27 23:28:42 | ******************************************************* 
-2016-05-27 23:28:42 | ******************************************************* 
-2016-05-27 23:28:42 | CREDITS:: 3060 
-2016-05-27 23:28:42 | reList::ALL RELISTED { tradeIdList: [] } 
-2016-05-27 23:28:42 | handler::NEW CYCLE 
-2016-05-27 23:28:43 | search:: { type: 'player',
+2016-05-28 17:02:50 | Node app is running on port 5000 
+2016-05-28 17:03:05 | get session 
+2016-05-28 17:03:07 | get phishing 
+2016-05-28 17:03:08 | body.question 1 
+2016-05-28 17:03:08 | logged in. 
+2016-05-28 17:03:08 | ******************************************************* 
+2016-05-28 17:03:08 | ******************************************************* 
+2016-05-28 17:03:08 | ******************************************************* 
+2016-05-28 17:03:09 | CREDITS:: 33770 
+2016-05-28 17:03:09 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-28 17:03:09 | handler::NEW CYCLE 
+2016-05-28 17:03:10 | =============== 
+2016-05-28 17:03:10 | CONDITIONS CHECK 
+2016-05-28 17:03:10 | findObject.maxb 6700 
+2016-05-28 17:03:10 | spendMoney 0 
+2016-05-28 17:03:10 | boughtItems 0 
+2016-05-28 17:03:10 | =============== 
+2016-05-28 17:03:10 | search:: { type: 'player',
   rare: 'SP',
   minb: 5300,
   maxb: 7000,
   start: 0,
   num: 10 } 
-2016-05-27 23:28:50 | [ { id: 104962475793, rare: 11, rating: 74, buyNowPrice: 6300 },
-  { id: 105275660391, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105338962473, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105343220734, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105357950287, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105350994273, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105338444682, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105348873699, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105275570762, rare: 3, rating: 70, buyNowPrice: 6900 },
-  { id: 105276598997, rare: 3, rating: 70, buyNowPrice: 6900 } ] 
-2016-05-27 23:28:50 | search::completed, found : 10 elements 
-2016-05-27 23:28:57 | buyMin::PLAYERS FOUND BY ID 209839 NUMBER 27 
-2016-05-27 23:29:03 | buyMin::prices for current [ 6500, 6600, 6800, 7000, 7400, 7500, 7600, 7700, 8000, 8100 ] 
-2016-05-27 23:29:03 | buyMin::BUY FOR * 6500 
-2016-05-27 23:29:03 | buyMin::AVERAGE COST * 7300 
-2016-05-27 23:29:03 | buyMin::NO MONEY FOR BUYING 
-2016-05-27 23:29:03 | error::STRATEGY ENDED WITH CONDITIONS [Error: NO MONEY FOR BUYING] 
-2016-05-27 23:29:03 | buyAndSellWithIncreasingCost::STRATEGY FINISHED WITH CONDITION 
