@@ -8,6 +8,7 @@
  * Можно сделать баннед ассейт идс чтоб не покупать чертей которые не продаются
  *
  * Покупать ТОЛЬКО БЫСТРЫХ ИГРОКОВ
+ * Если средняя цена не сильно по модулю отличается от покупной то скипаем
  */
 
 var fs = require('fs');
@@ -402,6 +403,7 @@ Trader.prototype.buyMin = function (player, callback) {
 				if (filteredCosts.length == 1) {
 					buyNowPriceOnMarketAvg *= self.options.buyMinNoiseCoef;
 					buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
+					startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
 				}
 
 				// Указываем параметры для удобной работы потом с ними внутри следующих методов по
