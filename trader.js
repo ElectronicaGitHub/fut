@@ -319,7 +319,7 @@ Trader.prototype.buyMin = function (player, callback) {
 	}
 
 	// проверка на пиздатую скорость
-	if (player.itemData.attributeList[0].value < 80) {
+	if (player.itemData.attributeList[0].value < 75) {
 		console.log('buyMin::TOO LOW SPEED, SKIP THIS PLAYER');
 		self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
 		self.iterateParams.costs[player.tradeId].was = true;
