@@ -1,3 +1,15 @@
+/**
+ * Сделать чтоб тот ИД который продался клался в список с данными
+ * После продажи мы сравниваем кого купили считали разницу и выставляли этому иду флаг ПРОДАН и за сколько
+ * Когда мы выставили на продажу чтото у нас есть новый трейд ид и мы сохраняем по лайтовому
+ * ассет ид, рейтинг, рейр, трейдид, за сколько купили, за сколько продать хотим, состояние(продан ли), какие были цены на момент покупки
+ * когда купили tradeState : 'closed'
+ *
+ * Можно сделать баннед ассейт идс чтоб не покупать чертей которые не продаются
+ *
+ * Покупать ТОЛЬКО БЫСТРЫХ ИГРОКОВ
+ */
+
 var fs = require('fs');
 var util = require('util');
 var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
@@ -306,7 +318,15 @@ Trader.prototype.buyMin = function (player, callback) {
 		return callback(new Error('NO MORE MONEY FOR CONTINUE'));
 	}
 
-	//проверка на повторного игрока
+	// проверка на пиздатую скорость
+	if (player.itemData.attributeList[0].value < 80) {
+		console.log('buyMin::TOO LOW SPEED, SKIP THIS PLAYER');
+		self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
+		self.iterateParams.costs[player.tradeId].was = true;
+		return callback(null);
+	}
+
+	// тупая проверка на повторного игрока тк обновляется не сразу порой
 	if (self.iterateParams.costs[player.tradeId]) {
 		self.iterateParams.costs[player.tradeId].was = true;
 		console.log('buyMin::PLAYER WITH ID', player.tradeId, 'IS ALREADY BOUGHT');
@@ -397,6 +417,7 @@ Trader.prototype.buyMin = function (player, callback) {
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 
 				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
+					// console.log('buyMin::DEBUG INFO', pl);
 					if (pl.code == 470) {
 						console.log('buyMin::NO MONEY FOR BUYING');
 						return cb(new Error('NO MONEY FOR BUYING'));
