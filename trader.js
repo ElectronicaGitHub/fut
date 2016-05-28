@@ -59,11 +59,11 @@ Trader.prototype.tradeCycle = function (methods) {
 	var self = this;
 
 	self.getCredits(function () {
-		// self.keepAlive(function () {
+		self.keepAlive(function () {
 			async.series(methods, function (err, k) {
 				console.log('startTrading:: TRADING CYCLE COMPLETED');
 			});
-		// });
+		});
 	});
 	
 }

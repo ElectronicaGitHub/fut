@@ -256,14 +256,14 @@ var futapi = function(options){
           // если сессия заэкспайрилась то мы ее кароч продляем 
           // и заново последнюю функцию вызываем
           if (body.code == 401) {
-
+            console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
             lastSendRequestOptions = {
               url : url,
               options : options,
               cb : cb
             };
+            console.log('LAST SAVE OPTIONS', url, options);
 
-            console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
             var json = login.getCookieJarJSON();
             var xsrfValue = json.cookies.filter(function (el) {
               if (el.key == 'XSRF-TOKEN') return el;
