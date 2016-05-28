@@ -38,7 +38,7 @@ app.get('/log', function (req, res) {
     res.sendfile('debug.log');
 });
 app.listen(port, function() {
-    fs.writeFile(__dirname + '/debug.log', '', function(){});
+    // fs.writeFile(__dirname + '/debug.log', '', function(){});
     console.log('Node app is running on port', port);
 });
 
