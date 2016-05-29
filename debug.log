@@ -1,1243 +1,704 @@
-2016-05-28 18:31:42 | Node app is running on port 5000 
-2016-05-28 18:31:55 | get session 
-2016-05-28 18:31:57 | get phishing 
-2016-05-28 18:31:57 | get phishing 8318080209014270655 
-2016-05-28 18:31:57 | logged in. 
-2016-05-28 18:31:57 | ******************************************************* 
-2016-05-28 18:31:57 | ******************************************************* 
-2016-05-28 18:31:57 | ******************************************************* 
-2016-05-28 18:31:58 | CREDITS:: 8492 
-2016-05-28 18:31:58 | login::session keeped alive 
-2016-05-28 18:31:59 | reList::ALL RELISTED { tradeIdList: 
-   [ { id: 4090408586, idStr: '4090408586' },
-     { id: 4090422502, idStr: '4090422502' } ] } 
-2016-05-28 18:31:59 | handler::NEW CYCLE 
-2016-05-28 18:32:00 | =============== 
-2016-05-28 18:32:00 | CONDITIONS CHECK 
-2016-05-28 18:32:00 | findObject.maxb 3800 ||| maxCost 100000 
-2016-05-28 18:32:00 | spendMoney 0 ||| moneyLimit 8492 
-2016-05-28 18:32:00 | boughtItems 0 ||| itemsLimit 8 
-2016-05-28 18:32:00 | =============== 
-2016-05-28 18:32:00 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 3200,
-  maxb: 4000,
-  start: 0,
-  num: 20 } 
-2016-05-28 18:32:05 | [ { id: 105427986296, rare: 3, rating: 64, buyNowPrice: 4000 },
-  { id: 104896868962, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104915415759, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104896478158, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104898604444, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104877118818, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105328615319, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104876983113, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921644924, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104977627475, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104975177240, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104882521913, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104977577271, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104875906296, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105373473796, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104930598713, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 104955354487, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104997239408, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105303553290, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104865921324, rare: 11, rating: 64, buyNowPrice: 4000 } ] 
-2016-05-28 18:32:05 | search::completed, found : 20 elements 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:05 | CONDITIONS CHECK 
-2016-05-28 18:32:05 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:05 | spendMoney 0 ||| moneyLimit 8492 
-2016-05-28 18:32:05 | boughtItems 0 ||| itemsLimit 8 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:05 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:05 | ------------------ 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:05 | CONDITIONS CHECK 
-2016-05-28 18:32:05 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:05 | spendMoney 0 ||| moneyLimit 8492 
-2016-05-28 18:32:05 | boughtItems 0 ||| itemsLimit 8 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:05 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:05 | ------------------ 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:05 | CONDITIONS CHECK 
-2016-05-28 18:32:05 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:05 | spendMoney 0 ||| moneyLimit 8492 
-2016-05-28 18:32:05 | boughtItems 0 ||| itemsLimit 8 
-2016-05-28 18:32:05 | =============== 
-2016-05-28 18:32:12 | buyMin::PLAYERS FOUND BY ID 219466 NUMBER 25 
-2016-05-28 18:32:16 | buyMin::prices for current [ 3900, 3900, 3900, 3900, 3900, 3900, 4000, 4400, 4600 ] 
-2016-05-28 18:32:16 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:32:16 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:16 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:16 | ------------------ 
-2016-05-28 18:32:16 | =============== 
-2016-05-28 18:32:16 | CONDITIONS CHECK 
-2016-05-28 18:32:16 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:16 | spendMoney 0 ||| moneyLimit 8492 
-2016-05-28 18:32:16 | boughtItems 0 ||| itemsLimit 8 
-2016-05-28 18:32:16 | =============== 
-2016-05-28 18:32:20 | buyMin::PLAYERS FOUND BY ID 178421 NUMBER 34 
-2016-05-28 18:32:27 | buyMin::prices for current [ 3800, 3900, 3900, 3900, 3900, 4200, 4400, 4400 ] 
-2016-05-28 18:32:27 | buyMin::BUY FOR * 3800 
-2016-05-28 18:32:27 | buyMin::AVERAGE COST * 4000 
-2016-05-28 18:32:27 | buyMin::PLAYER 4089413389 WITH RATING * 64 * BOUGHT FOR 3800 
-2016-05-28 18:32:27 | toTradepile::player 104896478158 
-2016-05-28 18:32:35 | toTradepile::PLAYER 4089413389 WITH RATING 64 SEND TO TRADEPILE 
-2016-05-28 18:32:41 | sell:: { id: 4090424516, idStr: '4090424516' } 
-2016-05-28 18:32:41 | sell::PLAYER 4089413389 WITH RATING 64 SEND TO TRANSFER, BID 3900 , BUY NOW 4000 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:32:41 | ------------------ 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:41 | CONDITIONS CHECK 
-2016-05-28 18:32:41 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:32:41 | spendMoney 3800 ||| moneyLimit 8492 
-2016-05-28 18:32:41 | boughtItems 1 ||| itemsLimit 8 
-2016-05-28 18:32:41 | =============== 
-2016-05-28 18:32:47 | buyMin::PLAYERS FOUND BY ID 178421 NUMBER 34 
-2016-05-28 18:32:51 | buyMin::prices for current [ 3800, 3900, 3900, 3900, 3900, 4200, 4400, 4400 ] 
-2016-05-28 18:32:51 | buyMin::BUY FOR * 3800 
-2016-05-28 18:32:51 | buyMin::AVERAGE COST * 4000 
-2016-05-28 18:32:51 | buyMin::PLAYER 4089529750 WITH RATING * 64 * BOUGHT FOR 3800 
-2016-05-28 18:32:51 | toTradepile::player 104977627475 
-2016-05-28 18:32:56 | toTradepile::answer { itemData: 
-   [ { id: 104945608010,
-       reason: 'Permission Denied',
-       pile: 'trade',
-       success: false,
-       errorCode: 461 } ] } 
-2016-05-28 18:32:56 | toTradepile::ONE MORE TRY 0 
-2016-05-28 18:32:56 | toTradepile::player 104977627475 
-2016-05-28 18:33:03 | toTradepile::answer { itemData: 
-   [ { id: 104945608010,
-       reason: 'Permission Denied',
-       pile: 'trade',
-       success: false,
-       errorCode: 461 } ] } 
-2016-05-28 18:33:03 | toTradepile::ONE MORE TRY 1 
-2016-05-28 18:33:03 | toTradepile::player 104977627475 
-2016-05-28 18:33:08 | toTradepile::answer { itemData: 
-   [ { id: 104945608010,
-       reason: 'Permission Denied',
-       pile: 'trade',
-       success: false,
-       errorCode: 461 } ] } 
-2016-05-28 18:33:08 | toTradepile::ONE MORE TRY 2 
-2016-05-28 18:33:08 | toTradepile::EXIT AFTER SOME TIMES 
-2016-05-28 18:33:08 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:08 | ------------------ 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:08 | CONDITIONS CHECK 
-2016-05-28 18:33:08 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:08 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:08 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:08 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:08 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:08 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:08 | ------------------ 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:08 | CONDITIONS CHECK 
-2016-05-28 18:33:08 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:08 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:08 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:08 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:08 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:08 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:08 | ------------------ 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:08 | CONDITIONS CHECK 
-2016-05-28 18:33:08 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:08 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:08 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:08 | =============== 
-2016-05-28 18:33:13 | buyMin::PLAYERS FOUND BY ID 178421 NUMBER 33 
-2016-05-28 18:33:19 | buyMin::prices for current [ 3900, 3900, 3900, 3900, 4200, 4400, 4400 ] 
-2016-05-28 18:33:19 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:33:19 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:19 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:19 | ------------------ 
-2016-05-28 18:33:19 | =============== 
-2016-05-28 18:33:19 | CONDITIONS CHECK 
-2016-05-28 18:33:19 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:19 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:19 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:19 | =============== 
-2016-05-28 18:33:26 | buyMin::PLAYERS FOUND BY ID 219466 NUMBER 25 
-2016-05-28 18:33:30 | buyMin::prices for current [ 3900, 3900, 3900, 3900, 3900, 3900, 4000, 4400, 4600 ] 
-2016-05-28 18:33:30 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | CONDITIONS CHECK 
-2016-05-28 18:33:30 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:30 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:30 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:30 | =============== 
-2016-05-28 18:33:30 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:30 | ------------------ 
-2016-05-28 18:33:30 | EACH COMPLETED 
-2016-05-28 18:33:30 | handler::NEW CYCLE 
-2016-05-28 18:33:31 | =============== 
-2016-05-28 18:33:31 | CONDITIONS CHECK 
-2016-05-28 18:33:31 | findObject.maxb 4000 ||| maxCost 100000 
-2016-05-28 18:33:31 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:31 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:31 | =============== 
-2016-05-28 18:33:31 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 3400,
-  maxb: 4200,
-  start: 0,
-  num: 20 } 
-2016-05-28 18:33:38 | [ { id: 104896868962, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104915415759, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104896478158, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104898604444, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104877118818, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105328615319, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104876983113, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921644924, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105009321989, rare: 11, rating: 64, buyNowPrice: 4100 },
-  { id: 104977627475, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105396479587, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104975177240, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104893317513, rare: 3, rating: 64, buyNowPrice: 4100 },
-  { id: 104977577271, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104875906296, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105373473796, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104930598713, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 105422205995, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104955354487, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921715206, rare: 11, rating: 64, buyNowPrice: 4000 } ] 
-2016-05-28 18:33:38 | search::completed, found : 20 elements 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:38 | CONDITIONS CHECK 
-2016-05-28 18:33:38 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:38 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:38 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:38 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:38 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:38 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:38 | ------------------ 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:38 | CONDITIONS CHECK 
-2016-05-28 18:33:38 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:38 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:38 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:38 | buyMin::PLAYER WITH ID 4089369467 IS ALREADY BOUGHT 
-2016-05-28 18:33:38 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:38 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:38 | ------------------ 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:38 | CONDITIONS CHECK 
-2016-05-28 18:33:38 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:38 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:38 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:38 | =============== 
-2016-05-28 18:33:42 | buyMin::PLAYERS FOUND BY ID 178421 NUMBER 33 
-2016-05-28 18:33:48 | buyMin::prices for current [ 3900, 3900, 3900, 3900, 4200, 4400, 4400 ] 
-2016-05-28 18:33:48 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::PLAYER WITH ID 4089529750 IS ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::PLAYER WITH ID 4089641751 IS ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::PLAYER WITH ID 4089650485 IS ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:48 | ------------------ 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:48 | CONDITIONS CHECK 
-2016-05-28 18:33:48 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:48 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:48 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:48 | =============== 
-2016-05-28 18:33:53 | buyMin::PLAYERS FOUND BY ID 202663 NUMBER 18 
-2016-05-28 18:33:57 | buyMin::prices for current [ 4000, 4000, 4000, 4000, 4500 ] 
-2016-05-28 18:33:57 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:33:57 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:57 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:33:57 | ------------------ 
-2016-05-28 18:33:57 | EACH COMPLETED 
-2016-05-28 18:33:57 | handler::NEW CYCLE 
-2016-05-28 18:33:58 | =============== 
-2016-05-28 18:33:58 | CONDITIONS CHECK 
-2016-05-28 18:33:58 | findObject.maxb 4200 ||| maxCost 100000 
-2016-05-28 18:33:58 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:33:58 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:33:58 | =============== 
-2016-05-28 18:33:58 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 3600,
-  maxb: 4400,
-  start: 0,
-  num: 20 } 
-2016-05-28 18:34:05 | [ { id: 104896868962, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104915415759, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104919779781, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 104896478158, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104877118818, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105328615319, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104876983113, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921644924, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104977627475, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105396479587, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104975177240, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104893317513, rare: 3, rating: 64, buyNowPrice: 4100 },
-  { id: 104977577271, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104974651034, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 104875906296, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105373473796, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 105422205995, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104861492531, rare: 3, rating: 64, buyNowPrice: 4400 },
-  { id: 104955354487, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921715206, rare: 11, rating: 64, buyNowPrice: 4000 } ] 
-2016-05-28 18:34:05 | search::completed, found : 20 elements 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:05 | CONDITIONS CHECK 
-2016-05-28 18:34:05 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:05 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:05 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:05 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:05 | ------------------ 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:05 | CONDITIONS CHECK 
-2016-05-28 18:34:05 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:05 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:05 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:05 | buyMin::PLAYER WITH ID 4089369467 IS ALREADY BOUGHT 
-2016-05-28 18:34:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:05 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:05 | ------------------ 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:05 | CONDITIONS CHECK 
-2016-05-28 18:34:05 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:05 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:05 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:05 | =============== 
-2016-05-28 18:34:09 | buyMin::PLAYERS FOUND BY ID 190425 NUMBER 24 
-2016-05-28 18:34:13 | buyMin::prices for current [ 4300,
-  4300,
-  4300,
-  4400,
-  4400,
-  4600,
-  4800,
-  4800,
-  4800,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900 ] 
-2016-05-28 18:34:13 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::PLAYER WITH ID 4089413389 IS ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::PLAYER WITH ID 4089529750 IS ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | buyMin::PLAYER WITH ID 4089641751 IS ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:13 | ------------------ 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:13 | CONDITIONS CHECK 
-2016-05-28 18:34:13 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:13 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:13 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:13 | =============== 
-2016-05-28 18:34:19 | buyMin::PLAYERS FOUND BY ID 190425 NUMBER 24 
-2016-05-28 18:34:25 | buyMin::prices for current [ 4300,
-  4300,
-  4300,
-  4400,
-  4400,
-  4600,
-  4800,
-  4800,
-  4800,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900 ] 
-2016-05-28 18:34:25 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | ------------------ 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | CONDITIONS CHECK 
-2016-05-28 18:34:25 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:25 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:25 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | buyMin::PLAYER WITH ID 4089650485 IS ALREADY BOUGHT 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | ------------------ 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | CONDITIONS CHECK 
-2016-05-28 18:34:25 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:25 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:25 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | ------------------ 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | CONDITIONS CHECK 
-2016-05-28 18:34:25 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:25 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:25 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:25 | ------------------ 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:25 | CONDITIONS CHECK 
-2016-05-28 18:34:25 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:25 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:25 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:25 | =============== 
-2016-05-28 18:34:32 | buyMin::PLAYERS FOUND BY ID 190425 NUMBER 24 
-2016-05-28 18:34:36 | buyMin::prices for current [ 4300,
-  4300,
-  4300,
-  4400,
-  4400,
-  4600,
-  4800,
-  4800,
-  4800,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900,
-  4900 ] 
-2016-05-28 18:34:36 | buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | ------------------ 
-2016-05-28 18:34:36 | =============== 
-2016-05-28 18:34:36 | CONDITIONS CHECK 
-2016-05-28 18:34:36 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:36 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:36 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:36 | =============== 
-2016-05-28 18:34:36 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | ------------------ 
-2016-05-28 18:34:36 | =============== 
-2016-05-28 18:34:36 | CONDITIONS CHECK 
-2016-05-28 18:34:36 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:36 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:36 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:36 | =============== 
-2016-05-28 18:34:36 | buyMin::PLAYER WITH ID 4089730935 IS ALREADY BOUGHT 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:36 | ------------------ 
-2016-05-28 18:34:36 | EACH COMPLETED 
-2016-05-28 18:34:36 | handler::NEW CYCLE 
-2016-05-28 18:34:37 | =============== 
-2016-05-28 18:34:37 | CONDITIONS CHECK 
-2016-05-28 18:34:37 | findObject.maxb 4400 ||| maxCost 100000 
-2016-05-28 18:34:37 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:37 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:37 | =============== 
-2016-05-28 18:34:37 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 3800,
-  maxb: 4600,
-  start: 0,
-  num: 20 } 
-2016-05-28 18:34:44 | [ { id: 104915415759, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104919779781, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 104896478158, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104877118818, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105328615319, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 104876983113, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921644924, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104977627475, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105396479587, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104975177240, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104893317513, rare: 3, rating: 64, buyNowPrice: 4100 },
-  { id: 104880143831, rare: 3, rating: 64, buyNowPrice: 4500 },
-  { id: 104977577271, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104974651034, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 104875906296, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 105373473796, rare: 3, rating: 64, buyNowPrice: 3900 },
-  { id: 105422205995, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104861492531, rare: 3, rating: 64, buyNowPrice: 4400 },
-  { id: 104955354487, rare: 11, rating: 64, buyNowPrice: 3900 },
-  { id: 104921715206, rare: 11, rating: 64, buyNowPrice: 4000 } ] 
-2016-05-28 18:34:44 | search::completed, found : 20 elements 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089369467 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089374753 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089413389 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089529750 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089641751 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089648869 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089650485 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089719354 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | CONDITIONS CHECK 
-2016-05-28 18:34:44 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:44 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:44 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:44 | =============== 
-2016-05-28 18:34:44 | buyMin::PLAYER WITH ID 4089730935 IS ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:44 | ------------------ 
-2016-05-28 18:34:44 | EACH COMPLETED 
-2016-05-28 18:34:44 | handler::NEW CYCLE 
-2016-05-28 18:34:45 | =============== 
-2016-05-28 18:34:45 | CONDITIONS CHECK 
-2016-05-28 18:34:45 | findObject.maxb 4600 ||| maxCost 100000 
-2016-05-28 18:34:45 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:45 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:45 | =============== 
-2016-05-28 18:34:45 | search:: { type: 'player',
-  rare: 'SP',
-  minb: 4000,
-  maxb: 4800,
-  start: 0,
-  num: 20 } 
-2016-05-28 18:34:50 | [ { id: 104919779781, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 104950279285, rare: 11, rating: 64, buyNowPrice: 4100 },
-  { id: 104922719184, rare: 11, rating: 64, buyNowPrice: 4300 },
-  { id: 104947413829, rare: 11, rating: 64, buyNowPrice: 4100 },
-  { id: 105396479587, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104893317513, rare: 3, rating: 64, buyNowPrice: 4100 },
-  { id: 104880143831, rare: 3, rating: 64, buyNowPrice: 4500 },
-  { id: 104977562054, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 104974651034, rare: 3, rating: 64, buyNowPrice: 4300 },
-  { id: 105422205995, rare: 3, rating: 64, buyNowPrice: 4200 },
-  { id: 104862963329, rare: 11, rating: 64, buyNowPrice: 4100 },
-  { id: 104861492531, rare: 3, rating: 64, buyNowPrice: 4400 },
-  { id: 104921715206, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 104878776093, rare: 11, rating: 64, buyNowPrice: 4500 },
-  { id: 104876062009, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 104959084764, rare: 11, rating: 64, buyNowPrice: 4200 },
-  { id: 104832690159, rare: 3, rating: 64, buyNowPrice: 4500 },
-  { id: 104865921324, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 105013456809, rare: 11, rating: 64, buyNowPrice: 4000 },
-  { id: 104913853928, rare: 11, rating: 64, buyNowPrice: 4100 } ] 
-2016-05-28 18:34:50 | search::completed, found : 20 elements 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::PLAYER WITH ID 4089374753 IS ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::PLAYER WITH ID 4089648869 IS ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::TOO LOW SPEED, SKIP THIS PLAYER 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::PLAYER WITH ID 4089719354 IS ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | buyMin::PLAYER WITH ID 4089730935 IS ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | buyMin::PLAYER ALREADY BOUGHT 
-2016-05-28 18:34:50 | ------------------ 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:50 | CONDITIONS CHECK 
-2016-05-28 18:34:50 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:34:50 | spendMoney 7600 ||| moneyLimit 8492 
-2016-05-28 18:34:50 | boughtItems 2 ||| itemsLimit 8 
-2016-05-28 18:34:50 | =============== 
-2016-05-28 18:34:57 | buyMin::PLAYERS FOUND BY ID 208306 NUMBER 31 
-2016-05-28 18:35:02 | buyMin::prices for current [ 4000, 4000, 4100, 4200, 4300, 4500, 4500, 4700, 4900, 4900 ] 
-2016-05-28 18:35:02 | buyMin::BUY FOR * 4000 
-2016-05-28 18:35:02 | buyMin::AVERAGE COST * 4400 
-2016-05-28 18:35:02 | buyMin::PLAYER 4089731017 WITH RATING * 64 * BOUGHT FOR 4000 
-2016-05-28 18:35:02 | toTradepile::player 104878776093 
-2016-05-28 18:35:09 | toTradepile::PLAYER 4089731017 WITH RATING 64 SEND TO TRADEPILE 
-2016-05-28 18:35:15 | sell:: { id: 4090460663, idStr: '4090460663' } 
-2016-05-28 18:35:15 | sell::PLAYER 4089731017 WITH RATING 64 SEND TO TRANSFER, BID 4300 , BUY NOW 4400 
-2016-05-28 18:35:15 | ------------------ 
-2016-05-28 18:35:15 | =============== 
-2016-05-28 18:35:15 | CONDITIONS CHECK 
-2016-05-28 18:35:15 | findObject.maxb 4800 ||| maxCost 100000 
-2016-05-28 18:35:15 | spendMoney 11600 ||| moneyLimit 8492 
-2016-05-28 18:35:15 | boughtItems 3 ||| itemsLimit 8 
-2016-05-28 18:35:15 | =============== 
-2016-05-28 18:35:15 | strategy::STRATEGY ENDED WITH CONDITIONS 
-2016-05-28 18:35:15 | error::STRATEGY ENDED WITH CONDITIONS [Error: NO MORE MONEY FOR CONTINUE] 
-2016-05-28 18:35:15 | buyAndSellWithIncreasingCost::STRATEGY FINISHED WITH CONDITION 
+2016-05-28 18:38:42 | Node app is running on port 5000 
+2016-05-28 18:38:53 | get session 
+2016-05-28 18:38:55 | get phishing 
+2016-05-28 18:38:55 | body.question 1 
+2016-05-28 18:38:55 | logged in. 
+2016-05-28 18:38:55 | ******************************************************* 
+2016-05-28 18:38:55 | ******************************************************* 
+2016-05-28 18:38:55 | ******************************************************* 
+2016-05-28 18:38:55 | CREDITS:: 692 
+2016-05-28 18:38:56 | login::session keeped alive 
+2016-05-28 18:38:56 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-28 18:38:56 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 19:12:45 | get session 
+2016-05-28 19:12:47 | get phishing 
+2016-05-28 19:12:47 | get phishing 1197781387664640259 
+2016-05-28 19:12:47 | logged in. 
+2016-05-28 19:12:47 | ******************************************************* 
+2016-05-28 19:12:47 | ******************************************************* 
+2016-05-28 19:12:47 | ******************************************************* 
+2016-05-28 19:12:47 | CREDITS:: 8292 
+2016-05-28 19:12:48 | login::session keeped alive 
+2016-05-28 19:12:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4091080147, idStr: '4091080147' },
+     { id: 4091094835, idStr: '4091094835' },
+     { id: 4091080149, idStr: '4091080149' },
+     { id: 4091085357, idStr: '4091085357' },
+     { id: 4091085360, idStr: '4091085360' },
+     { id: 4091083161, idStr: '4091083161' },
+     { id: 4091088481, idStr: '4091088481' },
+     { id: 4091091639, idStr: '4091091639' },
+     { id: 4091085363, idStr: '4091085363' },
+     { id: 4091083167, idStr: '4091083167' },
+     { id: 4091080157, idStr: '4091080157' },
+     { id: 4091083168, idStr: '4091083168' },
+     { id: 4091080162, idStr: '4091080162' },
+     { id: 4091094848, idStr: '4091094848' },
+     { id: 4091080163, idStr: '4091080163' },
+     { id: 4091080165, idStr: '4091080165' },
+     { id: 4091088491, idStr: '4091088491' },
+     { id: 4091085371, idStr: '4091085371' },
+     { id: 4091083177, idStr: '4091083177' },
+     { id: 4091091649, idStr: '4091091649' },
+     { id: 4091094854, idStr: '4091094854' },
+     { id: 4091085375, idStr: '4091085375' },
+     { id: 4091080174, idStr: '4091080174' },
+     { id: 4091088499, idStr: '4091088499' },
+     { id: 4091083182, idStr: '4091083182' },
+     { id: 4091094859, idStr: '4091094859' },
+     { id: 4091080181, idStr: '4091080181' },
+     { id: 4091094862, idStr: '4091094862' },
+     { id: 4091094864, idStr: '4091094864' },
+     { id: 4091088503, idStr: '4091088503' } ] } 
+2016-05-28 19:12:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 19:46:48 | get session 
+2016-05-28 19:46:50 | get phishing 
+2016-05-28 19:46:50 | get phishing 2832024078534142449 
+2016-05-28 19:46:50 | logged in. 
+2016-05-28 19:46:50 | ******************************************************* 
+2016-05-28 19:46:50 | ******************************************************* 
+2016-05-28 19:46:50 | ******************************************************* 
+2016-05-28 19:46:50 | CREDITS:: 18077 
+2016-05-28 19:46:51 | login::session keeped alive 
+2016-05-28 19:46:51 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4091665470, idStr: '4091665470' },
+     { id: 4091668509, idStr: '4091668509' } ] } 
+2016-05-28 19:46:51 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 20:20:45 | get session 
+2016-05-28 20:20:47 | get phishing 
+2016-05-28 20:20:47 | get phishing 6858445171710339750 
+2016-05-28 20:20:47 | logged in. 
+2016-05-28 20:20:47 | ******************************************************* 
+2016-05-28 20:20:47 | ******************************************************* 
+2016-05-28 20:20:47 | ******************************************************* 
+2016-05-28 20:20:47 | CREDITS:: 18077 
+2016-05-28 20:20:47 | login::session keeped alive 
+2016-05-28 20:20:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4092228419, idStr: '4092228419' },
+     { id: 4092219884, idStr: '4092219884' },
+     { id: 4092228424, idStr: '4092228424' },
+     { id: 4092228426, idStr: '4092228426' },
+     { id: 4092219886, idStr: '4092219886' },
+     { id: 4092219889, idStr: '4092219889' },
+     { id: 4092228430, idStr: '4092228430' },
+     { id: 4092217175, idStr: '4092217175' },
+     { id: 4092217177, idStr: '4092217177' },
+     { id: 4092223004, idStr: '4092223004' },
+     { id: 4092219895, idStr: '4092219895' },
+     { id: 4092223006, idStr: '4092223006' },
+     { id: 4092214254, idStr: '4092214254' },
+     { id: 4092228438, idStr: '4092228438' },
+     { id: 4092217182, idStr: '4092217182' },
+     { id: 4092228440, idStr: '4092228440' },
+     { id: 4092214260, idStr: '4092214260' },
+     { id: 4092228442, idStr: '4092228442' },
+     { id: 4092219907, idStr: '4092219907' },
+     { id: 4092214269, idStr: '4092214269' },
+     { id: 4092219913, idStr: '4092219913' },
+     { id: 4092219914, idStr: '4092219914' },
+     { id: 4092214272, idStr: '4092214272' },
+     { id: 4092225561, idStr: '4092225561' },
+     { id: 4092225562, idStr: '4092225562' },
+     { id: 4092223020, idStr: '4092223020' },
+     { id: 4092214274, idStr: '4092214274' },
+     { id: 4092228448, idStr: '4092228448' },
+     { id: 4092214276, idStr: '4092214276' } ] } 
+2016-05-28 20:20:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 20:54:48 | get session 
+2016-05-28 20:54:50 | get phishing 
+2016-05-28 20:54:51 | get phishing 7279292104506507094 
+2016-05-28 20:54:51 | logged in. 
+2016-05-28 20:54:51 | ******************************************************* 
+2016-05-28 20:54:51 | ******************************************************* 
+2016-05-28 20:54:51 | ******************************************************* 
+2016-05-28 20:54:51 | CREDITS:: 18077 
+2016-05-28 20:54:51 | login::session keeped alive 
+2016-05-28 20:54:51 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4092771485, idStr: '4092771485' },
+     { id: 4092761557, idStr: '4092761557' } ] } 
+2016-05-28 20:54:51 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 21:28:45 | get session 
+2016-05-28 21:28:46 | get phishing 
+2016-05-28 21:28:47 | get phishing 4859650973944756933 
+2016-05-28 21:28:47 | logged in. 
+2016-05-28 21:28:47 | ******************************************************* 
+2016-05-28 21:28:47 | ******************************************************* 
+2016-05-28 21:28:47 | ******************************************************* 
+2016-05-28 21:28:47 | CREDITS:: 29667 
+2016-05-28 21:28:47 | login::session keeped alive 
+2016-05-28 21:28:50 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4093279333, idStr: '4093279333' },
+     { id: 4093279334, idStr: '4093279334' },
+     { id: 4093284673, idStr: '4093284673' },
+     { id: 4093279337, idStr: '4093279337' },
+     { id: 4093282229, idStr: '4093282229' },
+     { id: 4093276168, idStr: '4093276168' },
+     { id: 4093279338, idStr: '4093279338' },
+     { id: 4093276169, idStr: '4093276169' },
+     { id: 4093270062, idStr: '4093270062' },
+     { id: 4093279340, idStr: '4093279340' },
+     { id: 4093276172, idStr: '4093276172' },
+     { id: 4093270063, idStr: '4093270063' },
+     { id: 4093279343, idStr: '4093279343' },
+     { id: 4093279344, idStr: '4093279344' },
+     { id: 4093273228, idStr: '4093273228' },
+     { id: 4093273230, idStr: '4093273230' },
+     { id: 4093282238, idStr: '4093282238' },
+     { id: 4093273233, idStr: '4093273233' },
+     { id: 4093276177, idStr: '4093276177' },
+     { id: 4093273235, idStr: '4093273235' },
+     { id: 4093282239, idStr: '4093282239' },
+     { id: 4093279353, idStr: '4093279353' },
+     { id: 4093282241, idStr: '4093282241' },
+     { id: 4093270069, idStr: '4093270069' },
+     { id: 4093279355, idStr: '4093279355' },
+     { id: 4093284684, idStr: '4093284684' },
+     { id: 4093273238, idStr: '4093273238' } ] } 
+2016-05-28 21:28:50 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 22:02:48 | get session 
+2016-05-28 22:02:50 | get phishing 
+2016-05-28 22:02:50 | get phishing 7934544508719619281 
+2016-05-28 22:02:50 | logged in. 
+2016-05-28 22:02:50 | ******************************************************* 
+2016-05-28 22:02:50 | ******************************************************* 
+2016-05-28 22:02:50 | ******************************************************* 
+2016-05-28 22:02:51 | CREDITS:: 29667 
+2016-05-28 22:02:51 | login::session keeped alive 
+2016-05-28 22:02:51 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4093889486, idStr: '4093889486' },
+     { id: 4093883723, idStr: '4093883723' } ] } 
+2016-05-28 22:02:51 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 22:36:45 | get session 
+2016-05-28 22:36:47 | get phishing 
+2016-05-28 22:36:47 | get phishing 1073933426567437247 
+2016-05-28 22:36:47 | logged in. 
+2016-05-28 22:36:47 | ******************************************************* 
+2016-05-28 22:36:47 | ******************************************************* 
+2016-05-28 22:36:47 | ******************************************************* 
+2016-05-28 22:36:47 | CREDITS:: 43157 
+2016-05-28 22:36:47 | login::session keeped alive 
+2016-05-28 22:36:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4094478459, idStr: '4094478459' },
+     { id: 4094483953, idStr: '4094483953' },
+     { id: 4094478461, idStr: '4094478461' },
+     { id: 4094478462, idStr: '4094478462' },
+     { id: 4094473593, idStr: '4094473593' },
+     { id: 4094483958, idStr: '4094483958' },
+     { id: 4094473598, idStr: '4094473598' },
+     { id: 4094487026, idStr: '4094487026' },
+     { id: 4094478467, idStr: '4094478467' },
+     { id: 4094487029, idStr: '4094487029' },
+     { id: 4094483964, idStr: '4094483964' },
+     { id: 4094478468, idStr: '4094478468' },
+     { id: 4094483966, idStr: '4094483966' },
+     { id: 4094476091, idStr: '4094476091' },
+     { id: 4094481524, idStr: '4094481524' },
+     { id: 4094481525, idStr: '4094481525' },
+     { id: 4094483969, idStr: '4094483969' },
+     { id: 4094489613, idStr: '4094489613' },
+     { id: 4094478474, idStr: '4094478474' },
+     { id: 4094478475, idStr: '4094478475' },
+     { id: 4094483974, idStr: '4094483974' },
+     { id: 4094489618, idStr: '4094489618' },
+     { id: 4094487046, idStr: '4094487046' },
+     { id: 4094483978, idStr: '4094483978' },
+     { id: 4094478479, idStr: '4094478479' } ] } 
+2016-05-28 22:36:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 23:10:48 | get session 
+2016-05-28 23:10:49 | get phishing 
+2016-05-28 23:10:50 | get phishing 5380282325881320605 
+2016-05-28 23:10:50 | logged in. 
+2016-05-28 23:10:50 | ******************************************************* 
+2016-05-28 23:10:50 | ******************************************************* 
+2016-05-28 23:10:50 | ******************************************************* 
+2016-05-28 23:10:50 | CREDITS:: 54652 
+2016-05-28 23:10:50 | login::session keeped alive 
+2016-05-28 23:10:50 | reList::ALL RELISTED { tradeIdList: [ { id: 4095065771, idStr: '4095065771' } ] } 
+2016-05-28 23:10:50 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-28 23:44:45 | get session 
+2016-05-28 23:44:47 | get phishing 
+2016-05-28 23:44:47 | get phishing 7994547681069362224 
+2016-05-28 23:44:47 | logged in. 
+2016-05-28 23:44:47 | ******************************************************* 
+2016-05-28 23:44:47 | ******************************************************* 
+2016-05-28 23:44:47 | ******************************************************* 
+2016-05-28 23:44:47 | CREDITS:: 54652 
+2016-05-28 23:44:47 | login::session keeped alive 
+2016-05-28 23:44:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4095579521, idStr: '4095579521' },
+     { id: 4095587644, idStr: '4095587644' },
+     { id: 4095579524, idStr: '4095579524' },
+     { id: 4095593796, idStr: '4095593796' },
+     { id: 4095579527, idStr: '4095579527' },
+     { id: 4095587647, idStr: '4095587647' },
+     { id: 4095590692, idStr: '4095590692' },
+     { id: 4095585334, idStr: '4095585334' },
+     { id: 4095593801, idStr: '4095593801' },
+     { id: 4095579531, idStr: '4095579531' },
+     { id: 4095593806, idStr: '4095593806' },
+     { id: 4095582344, idStr: '4095582344' },
+     { id: 4095585343, idStr: '4095585343' },
+     { id: 4095587652, idStr: '4095587652' },
+     { id: 4095585345, idStr: '4095585345' },
+     { id: 4095590708, idStr: '4095590708' },
+     { id: 4095593813, idStr: '4095593813' },
+     { id: 4095590716, idStr: '4095590716' },
+     { id: 4095585346, idStr: '4095585346' },
+     { id: 4095587659, idStr: '4095587659' },
+     { id: 4095587661, idStr: '4095587661' },
+     { id: 4095579541, idStr: '4095579541' },
+     { id: 4095587664, idStr: '4095587664' },
+     { id: 4095582353, idStr: '4095582353' } ] } 
+2016-05-28 23:44:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 00:18:48 | get session 
+2016-05-29 00:18:50 | get phishing 
+2016-05-29 00:18:50 | get phishing 5026872711992787800 
+2016-05-29 00:18:50 | logged in. 
+2016-05-29 00:18:50 | ******************************************************* 
+2016-05-29 00:18:50 | ******************************************************* 
+2016-05-29 00:18:50 | ******************************************************* 
+2016-05-29 00:18:51 | CREDITS:: 54652 
+2016-05-29 00:18:51 | login::session keeped alive 
+2016-05-29 00:18:51 | reList::ALL RELISTED { tradeIdList: [ { id: 4096107039, idStr: '4096107039' } ] } 
+2016-05-29 00:18:51 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 00:52:45 | get session 
+2016-05-29 00:52:47 | get phishing 
+2016-05-29 00:52:47 | get phishing 999676460737906585 
+2016-05-29 00:52:47 | logged in. 
+2016-05-29 00:52:47 | ******************************************************* 
+2016-05-29 00:52:47 | ******************************************************* 
+2016-05-29 00:52:47 | ******************************************************* 
+2016-05-29 00:52:47 | CREDITS:: 54652 
+2016-05-29 00:52:47 | login::session keeped alive 
+2016-05-29 00:52:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4096573833, idStr: '4096573833' },
+     { id: 4096579839, idStr: '4096579839' },
+     { id: 4096569216, idStr: '4096569216' },
+     { id: 4096579842, idStr: '4096579842' },
+     { id: 4096573837, idStr: '4096573837' },
+     { id: 4096576685, idStr: '4096576685' },
+     { id: 4096579843, idStr: '4096579843' },
+     { id: 4096572015, idStr: '4096572015' },
+     { id: 4096579846, idStr: '4096579846' },
+     { id: 4096579847, idStr: '4096579847' },
+     { id: 4096573839, idStr: '4096573839' },
+     { id: 4096582736, idStr: '4096582736' },
+     { id: 4096573841, idStr: '4096573841' },
+     { id: 4096573842, idStr: '4096573842' },
+     { id: 4096572023, idStr: '4096572023' },
+     { id: 4096579852, idStr: '4096579852' },
+     { id: 4096573844, idStr: '4096573844' },
+     { id: 4096582742, idStr: '4096582742' },
+     { id: 4096572025, idStr: '4096572025' },
+     { id: 4096579857, idStr: '4096579857' },
+     { id: 4096576698, idStr: '4096576698' },
+     { id: 4096573850, idStr: '4096573850' },
+     { id: 4096572032, idStr: '4096572032' },
+     { id: 4096576701, idStr: '4096576701' } ] } 
+2016-05-29 00:52:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 01:26:54 | get session 
+2016-05-29 01:26:56 | get phishing 
+2016-05-29 01:26:56 | get phishing 3246430963560215127 
+2016-05-29 01:26:56 | logged in. 
+2016-05-29 01:26:56 | ******************************************************* 
+2016-05-29 01:26:56 | ******************************************************* 
+2016-05-29 01:26:56 | ******************************************************* 
+2016-05-29 01:26:56 | CREDITS:: 54652 
+2016-05-29 01:26:56 | login::session keeped alive 
+2016-05-29 01:26:56 | reList::ALL RELISTED { tradeIdList: [ { id: 4097052665, idStr: '4097052665' } ] } 
+2016-05-29 01:26:56 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 02:00:45 | get session 
+2016-05-29 02:00:48 | get phishing 
+2016-05-29 02:00:48 | get phishing 7980744593193301457 
+2016-05-29 02:00:48 | logged in. 
+2016-05-29 02:00:48 | ******************************************************* 
+2016-05-29 02:00:48 | ******************************************************* 
+2016-05-29 02:00:48 | ******************************************************* 
+2016-05-29 02:00:48 | CREDITS:: 54652 
+2016-05-29 02:00:48 | login::session keeped alive 
+2016-05-29 02:00:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4097505519, idStr: '4097505519' },
+     { id: 4097505521, idStr: '4097505521' },
+     { id: 4097496190, idStr: '4097496190' },
+     { id: 4097511167, idStr: '4097511167' },
+     { id: 4097505528, idStr: '4097505528' },
+     { id: 4097508331, idStr: '4097508331' },
+     { id: 4097496195, idStr: '4097496195' },
+     { id: 4097505535, idStr: '4097505535' },
+     { id: 4097505537, idStr: '4097505537' },
+     { id: 4097508335, idStr: '4097508335' },
+     { id: 4097502435, idStr: '4097502435' },
+     { id: 4097508342, idStr: '4097508342' },
+     { id: 4097499221, idStr: '4097499221' },
+     { id: 4097505551, idStr: '4097505551' },
+     { id: 4097505553, idStr: '4097505553' },
+     { id: 4097508349, idStr: '4097508349' },
+     { id: 4097499227, idStr: '4097499227' },
+     { id: 4097496207, idStr: '4097496207' },
+     { id: 4097496209, idStr: '4097496209' },
+     { id: 4097496211, idStr: '4097496211' },
+     { id: 4097511188, idStr: '4097511188' },
+     { id: 4097496216, idStr: '4097496216' },
+     { id: 4097511190, idStr: '4097511190' },
+     { id: 4097502457, idStr: '4097502457' } ] } 
+2016-05-29 02:00:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 02:34:50 | get session 
+2016-05-29 02:34:52 | get phishing 
+2016-05-29 02:34:52 | get phishing 8333205266030019113 
+2016-05-29 02:34:52 | logged in. 
+2016-05-29 02:34:52 | ******************************************************* 
+2016-05-29 02:34:52 | ******************************************************* 
+2016-05-29 02:34:52 | ******************************************************* 
+2016-05-29 02:34:52 | CREDITS:: 54652 
+2016-05-29 02:34:52 | login::session keeped alive 
+2016-05-29 02:34:53 | reList::ALL RELISTED { tradeIdList: [ { id: 4097960882, idStr: '4097960882' } ] } 
+2016-05-29 02:34:53 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 03:08:45 | get session 
+2016-05-29 03:08:47 | get phishing 
+2016-05-29 03:08:48 | get phishing 1999215878732595654 
+2016-05-29 03:08:48 | logged in. 
+2016-05-29 03:08:48 | ******************************************************* 
+2016-05-29 03:08:48 | ******************************************************* 
+2016-05-29 03:08:48 | ******************************************************* 
+2016-05-29 03:08:48 | CREDITS:: 54652 
+2016-05-29 03:08:48 | login::session keeped alive 
+2016-05-29 03:08:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4098383577, idStr: '4098383577' },
+     { id: 4098394394, idStr: '4098394394' },
+     { id: 4098380459, idStr: '4098380459' },
+     { id: 4098383580, idStr: '4098383580' },
+     { id: 4098388952, idStr: '4098388952' },
+     { id: 4098383581, idStr: '4098383581' },
+     { id: 4098386658, idStr: '4098386658' },
+     { id: 4098386659, idStr: '4098386659' },
+     { id: 4098394398, idStr: '4098394398' },
+     { id: 4098386660, idStr: '4098386660' },
+     { id: 4098380463, idStr: '4098380463' },
+     { id: 4098383583, idStr: '4098383583' },
+     { id: 4098388958, idStr: '4098388958' },
+     { id: 4098383585, idStr: '4098383585' },
+     { id: 4098392028, idStr: '4098392028' },
+     { id: 4098383586, idStr: '4098383586' },
+     { id: 4098380469, idStr: '4098380469' },
+     { id: 4098380470, idStr: '4098380470' },
+     { id: 4098380471, idStr: '4098380471' },
+     { id: 4098394406, idStr: '4098394406' },
+     { id: 4098392032, idStr: '4098392032' },
+     { id: 4098394409, idStr: '4098394409' },
+     { id: 4098380475, idStr: '4098380475' },
+     { id: 4098394410, idStr: '4098394410' } ] } 
+2016-05-29 03:08:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 03:42:49 | get session 
+2016-05-29 03:42:51 | get phishing 
+2016-05-29 03:42:51 | get phishing 3086860112234375648 
+2016-05-29 03:42:51 | logged in. 
+2016-05-29 03:42:51 | ******************************************************* 
+2016-05-29 03:42:51 | ******************************************************* 
+2016-05-29 03:42:51 | ******************************************************* 
+2016-05-29 03:42:51 | CREDITS:: 54652 
+2016-05-29 03:42:51 | login::session keeped alive 
+2016-05-29 03:42:52 | reList::ALL RELISTED { tradeIdList: [ { id: 4098832818, idStr: '4098832818' } ] } 
+2016-05-29 03:42:52 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 04:16:45 | get session 
+2016-05-29 04:16:48 | get phishing 
+2016-05-29 04:16:48 | get phishing 6517613700720905075 
+2016-05-29 04:16:48 | logged in. 
+2016-05-29 04:16:48 | ******************************************************* 
+2016-05-29 04:16:48 | ******************************************************* 
+2016-05-29 04:16:48 | ******************************************************* 
+2016-05-29 04:16:48 | CREDITS:: 54652 
+2016-05-29 04:16:48 | login::session keeped alive 
+2016-05-29 04:16:50 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4099248605, idStr: '4099248605' },
+     { id: 4099246034, idStr: '4099246034' },
+     { id: 4099240562, idStr: '4099240562' },
+     { id: 4099242925, idStr: '4099242925' },
+     { id: 4099237421, idStr: '4099237421' },
+     { id: 4099242926, idStr: '4099242926' },
+     { id: 4099248611, idStr: '4099248611' },
+     { id: 4099248613, idStr: '4099248613' },
+     { id: 4099242927, idStr: '4099242927' },
+     { id: 4099242929, idStr: '4099242929' },
+     { id: 4099240565, idStr: '4099240565' },
+     { id: 4099240568, idStr: '4099240568' },
+     { id: 4099240569, idStr: '4099240569' },
+     { id: 4099242936, idStr: '4099242936' },
+     { id: 4099237429, idStr: '4099237429' },
+     { id: 4099248622, idStr: '4099248622' },
+     { id: 4099242938, idStr: '4099242938' },
+     { id: 4099242939, idStr: '4099242939' },
+     { id: 4099246052, idStr: '4099246052' },
+     { id: 4099234765, idStr: '4099234765' },
+     { id: 4099246053, idStr: '4099246053' },
+     { id: 4099242947, idStr: '4099242947' },
+     { id: 4099248629, idStr: '4099248629' },
+     { id: 4099234772, idStr: '4099234772' } ] } 
+2016-05-29 04:16:50 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 04:50:48 | get session 
+2016-05-29 04:50:51 | get phishing 
+2016-05-29 04:50:51 | get phishing 7582655190214808813 
+2016-05-29 04:50:51 | logged in. 
+2016-05-29 04:50:51 | ******************************************************* 
+2016-05-29 04:50:51 | ******************************************************* 
+2016-05-29 04:50:51 | ******************************************************* 
+2016-05-29 04:50:51 | CREDITS:: 54652 
+2016-05-29 04:50:51 | login::session keeped alive 
+2016-05-29 04:50:51 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-29 04:50:51 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 05:24:45 | get session 
+2016-05-29 05:24:47 | get phishing 
+2016-05-29 05:24:47 | get phishing 27299756175173366 
+2016-05-29 05:24:47 | logged in. 
+2016-05-29 05:24:47 | ******************************************************* 
+2016-05-29 05:24:47 | ******************************************************* 
+2016-05-29 05:24:47 | ******************************************************* 
+2016-05-29 05:24:48 | CREDITS:: 54652 
+2016-05-29 05:24:48 | login::session keeped alive 
+2016-05-29 05:24:50 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4100056947, idStr: '4100056947' },
+     { id: 4100067349, idStr: '4100067349' },
+     { id: 4100061872, idStr: '4100061872' },
+     { id: 4100064629, idStr: '4100064629' },
+     { id: 4100056949, idStr: '4100056949' },
+     { id: 4100067350, idStr: '4100067350' },
+     { id: 4100064631, idStr: '4100064631' },
+     { id: 4100056950, idStr: '4100056950' },
+     { id: 4100056951, idStr: '4100056951' },
+     { id: 4100061880, idStr: '4100061880' },
+     { id: 4100060093, idStr: '4100060093' },
+     { id: 4100060094, idStr: '4100060094' },
+     { id: 4100064636, idStr: '4100064636' },
+     { id: 4100060096, idStr: '4100060096' },
+     { id: 4100067358, idStr: '4100067358' },
+     { id: 4100060098, idStr: '4100060098' },
+     { id: 4100070402, idStr: '4100070402' },
+     { id: 4100056961, idStr: '4100056961' },
+     { id: 4100060102, idStr: '4100060102' },
+     { id: 4100070403, idStr: '4100070403' },
+     { id: 4100064646, idStr: '4100064646' },
+     { id: 4100067361, idStr: '4100067361' },
+     { id: 4100064649, idStr: '4100064649' },
+     { id: 4100064650, idStr: '4100064650' } ] } 
+2016-05-29 05:24:50 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 05:58:49 | get session 
+2016-05-29 05:58:51 | get phishing 
+2016-05-29 05:58:51 | get phishing 1150062528865420926 
+2016-05-29 05:58:51 | logged in. 
+2016-05-29 05:58:51 | ******************************************************* 
+2016-05-29 05:58:51 | ******************************************************* 
+2016-05-29 05:58:51 | ******************************************************* 
+2016-05-29 05:58:52 | CREDITS:: 54652 
+2016-05-29 05:58:52 | login::session keeped alive 
+2016-05-29 05:58:52 | reList::ALL RELISTED { tradeIdList: [ { id: 4100481862, idStr: '4100481862' } ] } 
+2016-05-29 05:58:52 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 06:32:46 | get session 
+2016-05-29 06:32:47 | get phishing 
+2016-05-29 06:32:48 | get phishing 4074227961290645323 
+2016-05-29 06:32:48 | logged in. 
+2016-05-29 06:32:48 | ******************************************************* 
+2016-05-29 06:32:48 | ******************************************************* 
+2016-05-29 06:32:48 | ******************************************************* 
+2016-05-29 06:32:48 | CREDITS:: 54652 
+2016-05-29 06:32:48 | login::session keeped alive 
+2016-05-29 06:32:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4100920050, idStr: '4100920050' },
+     { id: 4100914010, idStr: '4100914010' },
+     { id: 4100911038, idStr: '4100911038' },
+     { id: 4100925713, idStr: '4100925713' },
+     { id: 4100922587, idStr: '4100922587' },
+     { id: 4100922589, idStr: '4100922589' },
+     { id: 4100920051, idStr: '4100920051' },
+     { id: 4100911040, idStr: '4100911040' },
+     { id: 4100922591, idStr: '4100922591' },
+     { id: 4100914016, idStr: '4100914016' },
+     { id: 4100920055, idStr: '4100920055' },
+     { id: 4100922593, idStr: '4100922593' },
+     { id: 4100911044, idStr: '4100911044' },
+     { id: 4100920061, idStr: '4100920061' },
+     { id: 4100914021, idStr: '4100914021' },
+     { id: 4100925718, idStr: '4100925718' },
+     { id: 4100922594, idStr: '4100922594' },
+     { id: 4100917226, idStr: '4100917226' },
+     { id: 4100914025, idStr: '4100914025' },
+     { id: 4100922597, idStr: '4100922597' },
+     { id: 4100925721, idStr: '4100925721' },
+     { id: 4100917228, idStr: '4100917228' },
+     { id: 4100911057, idStr: '4100911057' },
+     { id: 4100914031, idStr: '4100914031' } ] } 
+2016-05-29 06:32:50 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 07:06:50 | get session 
+2016-05-29 07:06:52 | get phishing 
+2016-05-29 07:06:52 | get phishing 1677701968632794878 
+2016-05-29 07:06:52 | logged in. 
+2016-05-29 07:06:52 | ******************************************************* 
+2016-05-29 07:06:52 | ******************************************************* 
+2016-05-29 07:06:52 | ******************************************************* 
+2016-05-29 07:06:52 | CREDITS:: 54652 
+2016-05-29 07:06:52 | login::session keeped alive 
+2016-05-29 07:06:53 | reList::ALL RELISTED { tradeIdList: [ { id: 4101352354, idStr: '4101352354' } ] } 
+2016-05-29 07:06:53 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 07:40:45 | get session 
+2016-05-29 07:40:47 | get phishing 
+2016-05-29 07:40:48 | get phishing 176164782105243169 
+2016-05-29 07:40:48 | logged in. 
+2016-05-29 07:40:48 | ******************************************************* 
+2016-05-29 07:40:48 | ******************************************************* 
+2016-05-29 07:40:48 | ******************************************************* 
+2016-05-29 07:40:48 | CREDITS:: 54652 
+2016-05-29 07:40:48 | login::session keeped alive 
+2016-05-29 07:40:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4101810292, idStr: '4101810292' },
+     { id: 4101810293, idStr: '4101810293' },
+     { id: 4101814555, idStr: '4101814555' },
+     { id: 4101807290, idStr: '4101807290' },
+     { id: 4101814558, idStr: '4101814558' },
+     { id: 4101804547, idStr: '4101804547' },
+     { id: 4101810301, idStr: '4101810301' },
+     { id: 4101810304, idStr: '4101810304' },
+     { id: 4101804551, idStr: '4101804551' },
+     { id: 4101811381, idStr: '4101811381' },
+     { id: 4101807293, idStr: '4101807293' },
+     { id: 4101810310, idStr: '4101810310' },
+     { id: 4101811385, idStr: '4101811385' },
+     { id: 4101801485, idStr: '4101801485' },
+     { id: 4101807295, idStr: '4101807295' },
+     { id: 4101810315, idStr: '4101810315' },
+     { id: 4101811393, idStr: '4101811393' },
+     { id: 4101801490, idStr: '4101801490' },
+     { id: 4101807299, idStr: '4101807299' },
+     { id: 4101807303, idStr: '4101807303' },
+     { id: 4101810317, idStr: '4101810317' },
+     { id: 4101807304, idStr: '4101807304' },
+     { id: 4101811400, idStr: '4101811400' },
+     { id: 4101811401, idStr: '4101811401' } ] } 
+2016-05-29 07:40:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 08:14:50 | get session 
+2016-05-29 08:14:51 | get phishing 
+2016-05-29 08:14:51 | get phishing 644665594036349138 
+2016-05-29 08:14:51 | logged in. 
+2016-05-29 08:14:51 | ******************************************************* 
+2016-05-29 08:14:51 | ******************************************************* 
+2016-05-29 08:14:51 | ******************************************************* 
+2016-05-29 08:14:51 | CREDITS:: 60732 
+2016-05-29 08:14:52 | login::session keeped alive 
+2016-05-29 08:14:52 | reList::ALL RELISTED { tradeIdList: [ { id: 4102298238, idStr: '4102298238' } ] } 
+2016-05-29 08:14:52 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 08:48:45 | get session 
+2016-05-29 08:48:47 | get phishing 
+2016-05-29 08:48:47 | get phishing 368173195793223821 
+2016-05-29 08:48:47 | logged in. 
+2016-05-29 08:48:47 | ******************************************************* 
+2016-05-29 08:48:47 | ******************************************************* 
+2016-05-29 08:48:47 | ******************************************************* 
+2016-05-29 08:48:47 | CREDITS:: 61682 
+2016-05-29 08:48:47 | login::session keeped alive 
+2016-05-29 08:48:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4102808189, idStr: '4102808189' },
+     { id: 4102813413, idStr: '4102813413' },
+     { id: 4102808190, idStr: '4102808190' },
+     { id: 4102810219, idStr: '4102810219' },
+     { id: 4102808192, idStr: '4102808192' },
+     { id: 4102802819, idStr: '4102802819' },
+     { id: 4102805787, idStr: '4102805787' },
+     { id: 4102802820, idStr: '4102802820' },
+     { id: 4102810225, idStr: '4102810225' },
+     { id: 4102802821, idStr: '4102802821' },
+     { id: 4102805790, idStr: '4102805790' },
+     { id: 4102810228, idStr: '4102810228' },
+     { id: 4102813424, idStr: '4102813424' },
+     { id: 4102802825, idStr: '4102802825' },
+     { id: 4102808199, idStr: '4102808199' },
+     { id: 4102808200, idStr: '4102808200' },
+     { id: 4102810232, idStr: '4102810232' },
+     { id: 4102808201, idStr: '4102808201' },
+     { id: 4102810235, idStr: '4102810235' },
+     { id: 4102805793, idStr: '4102805793' },
+     { id: 4102813429, idStr: '4102813429' },
+     { id: 4102816455, idStr: '4102816455' } ] } 
+2016-05-29 08:48:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 09:22:49 | get session 
+2016-05-29 09:22:51 | get phishing 
+2016-05-29 09:22:52 | get phishing 4577563252659832007 
+2016-05-29 09:22:52 | logged in. 
+2016-05-29 09:22:52 | ******************************************************* 
+2016-05-29 09:22:52 | ******************************************************* 
+2016-05-29 09:22:52 | ******************************************************* 
+2016-05-29 09:22:52 | CREDITS:: 62442 
+2016-05-29 09:22:52 | login::session keeped alive 
+2016-05-29 09:22:52 | reList::ALL RELISTED { tradeIdList: [ { id: 4103314700, idStr: '4103314700' } ] } 
+2016-05-29 09:22:52 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 09:56:45 | get session 
+2016-05-29 09:56:47 | get phishing 
+2016-05-29 09:56:47 | get phishing 2835580181356420080 
+2016-05-29 09:56:47 | logged in. 
+2016-05-29 09:56:47 | ******************************************************* 
+2016-05-29 09:56:47 | ******************************************************* 
+2016-05-29 09:56:47 | ******************************************************* 
+2016-05-29 09:56:48 | CREDITS:: 67667 
+2016-05-29 09:56:48 | login::session keeped alive 
+2016-05-29 09:56:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4103861657, idStr: '4103861657' },
+     { id: 4103861658, idStr: '4103861658' },
+     { id: 4103869810, idStr: '4103869810' },
+     { id: 4103875265, idStr: '4103875265' },
+     { id: 4103869813, idStr: '4103869813' },
+     { id: 4103867024, idStr: '4103867024' },
+     { id: 4103872868, idStr: '4103872868' },
+     { id: 4103867025, idStr: '4103867025' },
+     { id: 4103872871, idStr: '4103872871' },
+     { id: 4103863897, idStr: '4103863897' },
+     { id: 4103861664, idStr: '4103861664' },
+     { id: 4103861665, idStr: '4103861665' },
+     { id: 4103872874, idStr: '4103872874' },
+     { id: 4103872876, idStr: '4103872876' },
+     { id: 4103869819, idStr: '4103869819' },
+     { id: 4103863901, idStr: '4103863901' },
+     { id: 4103869820, idStr: '4103869820' },
+     { id: 4103875273, idStr: '4103875273' },
+     { id: 4103867032, idStr: '4103867032' },
+     { id: 4103863907, idStr: '4103863907' },
+     { id: 4103863908, idStr: '4103863908' } ] } 
+2016-05-29 09:56:49 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 10:30:49 | get session 
+2016-05-29 10:30:51 | get phishing 
+2016-05-29 10:30:51 | get phishing 5833681287145836442 
+2016-05-29 10:30:51 | logged in. 
+2016-05-29 10:30:51 | ******************************************************* 
+2016-05-29 10:30:51 | ******************************************************* 
+2016-05-29 10:30:51 | ******************************************************* 
+2016-05-29 10:30:51 | CREDITS:: 67667 
+2016-05-29 10:30:51 | login::session keeped alive 
+2016-05-29 10:30:52 | reList::ALL RELISTED { tradeIdList: [] } 
+2016-05-29 10:30:52 | startTrading:: TRADING CYCLE COMPLETED 
+2016-05-29 11:04:46 | get session 
+2016-05-29 11:04:47 | get phishing 
+2016-05-29 11:04:47 | get phishing 1365728710245743714 
+2016-05-29 11:04:47 | logged in. 
+2016-05-29 11:04:47 | ******************************************************* 
+2016-05-29 11:04:47 | ******************************************************* 
+2016-05-29 11:04:47 | ******************************************************* 
+2016-05-29 11:04:47 | CREDITS:: 67667 
+2016-05-29 11:04:48 | login::session keeped alive 
+2016-05-29 11:04:49 | reList::ALL RELISTED { tradeIdList: 
+   [ { id: 4104988615, idStr: '4104988615' },
+     { id: 4104993252, idStr: '4104993252' },
+     { id: 4104988621, idStr: '4104988621' },
+     { id: 4104991232, idStr: '4104991232' },
+     { id: 4104999298, idStr: '4104999298' },
+     { id: 4104993259, idStr: '4104993259' },
+     { id: 4104991236, idStr: '4104991236' },
+     { id: 4104985594, idStr: '4104985594' },
+     { id: 4104988634, idStr: '4104988634' },
+     { id: 4104991240, idStr: '4104991240' },
+     { id: 4104991242, idStr: '4104991242' },
+     { id: 4104988638, idStr: '4104988638' },
+     { id: 4105001601, idStr: '4105001601' },
+     { id: 4104988645, idStr: '4104988645' },
+     { id: 4104999308, idStr: '4104999308' },
+     { id: 4104999317, idStr: '4104999317' },
+     { id: 4104999319, idStr: '4104999319' },
+     { id: 4104996484, idStr: '4104996484' },
+     { id: 4104993289, idStr: '4104993289' },
+     { id: 4104993290, idStr: '4104993290' },
+     { id: 4104996487, idStr: '4104996487' } ] } 
+2016-05-29 11:04:49 | startTrading:: TRADING CYCLE COMPLETED 
