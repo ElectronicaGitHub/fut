@@ -1,0 +1,29 @@
+{
+	"port" : 8080,
+	"db": {
+		"name" : "fifa"
+	},
+	"mongoose" :  {
+		"uri" : "mongodb://localhost/fifa",
+		"options" : {
+			"server" : {
+				"socketOptions" : {
+					"keepAive" : 1
+				}
+			}
+		}
+	},
+	"session" : {
+		"secret" : "fifa",
+		"key" : "sid",
+		"cookie" : {
+			"path" : "/",
+			"httpOnly" : true,
+			"maxAge" : null
+		}
+	}, 
+	"autentification": {
+		"username" : "adm",
+		"password" : "adm"
+	}
+}

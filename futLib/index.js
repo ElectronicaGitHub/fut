@@ -5,6 +5,7 @@ var utils = require("./lib/utils");
 var futapi = function(options){
   var __ = require("underscore");
   var urls = require("./lib/urls");
+  var async = require('async');
   var fs = require("fs");
   var defaultOptions = {
       saveCookie: false,
@@ -219,68 +220,100 @@ var futapi = function(options){
       sendRequest(urls.api.item  + '?itemIds=' + ids.join(','), {  xHttpMethod: "DELETE" }, cb);
   };
   
-  function toUrlParameters(obj){
-      var str = "";
-      var keys = Object.keys(obj);
-      for(var i = 0; i < keys.length;i++){
-          str += keys[i] + "=" + encodeURI(obj[keys[i]]).replace(/%5B/g, '[').replace(/%5D/g, ']') + "&";
-      }
-      return str.substr(0, str.length - 1);
-  }
+    function toUrlParameters(obj){
+        var str = "";
+        var keys = Object.keys(obj);
+        for(var i = 0; i < keys.length;i++){
+            str += keys[i] + "=" + encodeURI(obj[keys[i]]).replace(/%5B/g, '[').replace(/%5D/g, ']') + "&";
+        }
+        return str.substr(0, str.length - 1);
+    }
 
-  var lastSendRequestOptions = {};
+    var lastSendRequestOptions = {};
+    // var n = 0;
   
-  function sendRequest(url,options,cb) {
+    function sendRequest(url,options,cb) {
+        // n++;
 
-      var defaultOptions = {
-          xHttpMethod: "GET",
-          headers: {}
-      }
+        var defaultOptions = {
+            xHttpMethod: "GET",
+            headers: {}
+        }
 
-      if(__.isFunction(options)){
-        cb = options;        
-      }
-      else if(__.isObject(options)) {
-          defaultOptions = __.extend(defaultOptions,options);
-      }
-      
-      defaultOptions.headers["X-HTTP-Method-Override"] = defaultOptions.xHttpMethod;
-      delete defaultOptions.xHttpMethod;
-      
-      loginResponse.apiRequest.post(url,
-      defaultOptions,
-      function (error, response, body){
-          if(error) return cb(error,null);
-          if(response.statusCode == 404) return cb(new Error(response.statusMessage),null);
+        if(__.isFunction(options)){
+            cb = options;        
+        }
+        else if(__.isObject(options)) {
+            defaultOptions = __.extend(defaultOptions,options);
+        }
 
-          // если сессия заэкспайрилась то мы ее кароч продляем 
-          // и заново последнюю функцию вызываем
-          if (body.code == 401) {
-            console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
-            lastSendRequestOptions = {
-              url : url,
-              options : options,
-              cb : cb
-            };
-            console.log('LAST SAVE OPTIONS', url, options);
+        defaultOptions.headers["X-HTTP-Method-Override"] = defaultOptions.xHttpMethod;
+        delete defaultOptions.xHttpMethod;
 
-            var json = login.getCookieJarJSON();
-            var xsrfValue = json.cookies.filter(function (el) {
-              if (el.key == 'XSRF-TOKEN') return el;
-            })[0].value;
+        loginResponse.apiRequest.post(url,
+        defaultOptions,
+        function (error, response, body) {
 
-            return login.keepAlive(xsrfValue, function () {
+            // if (n==3) {
+            //     console.log('expired here naprimer', url, body);
+            //     body = { reason: 'expired session', code: 401, message: null };
+            // }
+            if(error) {
+                return cb(error,null)
+            }
+            else if(response.statusCode == 404) return cb(new Error(response.statusMessage),null);
 
-              console.log('FUTAPI::INDEX.JS KEEPALIVE SUCCESS');
-              return sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
+              // если сессия заэкспайрилась то мы ее кароч продляем 
+              // и заново последнюю функцию вызываем
+            else if (body.code == 401) {
+                lastSendRequestOptions = {
+                    url : url,
+                    options : options,
+                    cb : cb
+                };
 
-            });
-          }
+                // if (n == 0) {
+                //     n++;
+                //     console.log(url, body);
+                //     console.log('FUTAPI::INDEX.JS SESSION EXPIRED, KEEPALIVE START');
 
-          if(utils.isApiMessage(body)) return cb(new Error(JSON.stringify(body)), null);
-          return cb(null,body);
-      });
-  }
+                //   console.log('LAST SAVE OPTIONS', url, options);
+
+                //   var json = login.getCookieJarJSON();
+                //   var xsrfValue = json.cookies.filter(function (el) {
+                //     if (el.key == 'XSRF-TOKEN') return el;
+                //   })[0].value;
+
+                //   login.keepAlive(xsrfValue, function () {
+                //     console.log('FUTAPI::INDEX.JS KEEPALIVE SUCCESS');
+                //     return sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
+                //   });
+                      
+                // } else if (n > 0) {
+                console.log('FUTAPI::INDEX.JS SESSION EXPIRED, SESSION GET()');
+                async.series([
+                    function (cb) {
+                        login.getSession(true, cb);
+                    }
+                ], function (err, ok) {
+
+                    console.log('after expired CallBACK');
+                    sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
+                });
+                return;
+                // }
+            }
+
+            else if(utils.isApiMessage(body)) return cb(new Error(JSON.stringify(body)), null);
+
+            var _cb = cb;
+            if (lastSendRequestOptions.cb) {
+                _cb = lastSendRequestOptions.cb;
+            }
+            lastSendRequestOptions = {};
+            return _cb(null, body);
+        });
+    }
 
   return new futApi();
 };

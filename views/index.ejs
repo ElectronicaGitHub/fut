@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FIFA TRADER</title>
+</head>
+<body>
+	<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
+	<p><a href="/start">СТАРТ</a></p>
+	<p><a href="/stop">СТОП</a></p>
+	<p><a href="/log">ЛОГ</a></p>
+
+	<table>
+		<tr>
+			<th>Image</th>
+		    <th>Sold</th>
+		    <th>Rare</th> 
+		    <th>Rating</th>
+		    <th>Trade Id</th>
+		    <th>Asset Id</th>
+		</tr>
+		<tr>
+		<% for (var i in players) { %>
+		    <td><img width="45" height="45" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
+		    <td><%= players[i].sold %></td>
+		    <td><%= players[i].rare %></td> 
+		    <td><%= players[i].rating %></td>
+		    <td><%= players[i].tradeId %></td>
+		    <td><%= players[i].assetId %></td>
+		</tr>
+		<% } %>
+	</table>
+	
+</body>
+</html>

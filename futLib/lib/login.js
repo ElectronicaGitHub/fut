@@ -276,7 +276,7 @@ module.exports = function(options){
     });
   }
 
-  function getSession() {
+  function getSession(noCb, customCb) {
 
     console.log('get session');
 
@@ -294,19 +294,21 @@ module.exports = function(options){
         "identification": {"authCode": ""}
     };
 
-    defaultRequest.post(urls.login.session,{ body: data }, function (error, response, body){
+    defaultRequest.post(urls.login.session,{ body: data }, function (error, response, body) {
       if(error) return loginDetails.loginCb(error);
 
       loginResponse.sessionData = body;
       // console.log(' get session :: loginResponse.sessionData', loginResponse);
 
-      if(loginResponse.sessionData.sid) return phishing();
+      if(loginResponse.sessionData.sid) return phishing(noCb, customCb);
 
       loginDetails.loginCb(new Error("Unknow response. Unable to login."));
     });
   }
 
-  function phishing() {
+  login.prototype.getSession = getSession;
+
+  function phishing(noCb, customCb) {
 
     console.log('get phishing');
 
@@ -333,8 +335,10 @@ module.exports = function(options){
                     "x-flash-version": "20,0,0,272"
                 }
             });
-
-            return loginDetails.loginCb(null, loginResponse);
+            if (!noCb) {
+              return loginDetails.loginCb(null, loginResponse);
+            }
+            if (customCb) customCb(null);
             
         }
         

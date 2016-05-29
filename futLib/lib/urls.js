@@ -29,7 +29,6 @@ var urls = {
         unassigned: '/ut/game/fifa16/purchased/items',
         openPack: '/ut/game/fifa16/purchased/items',
         sold: '/ut/game/fifa16/trade/sold'
-
     },
     resource: {
         player: "",
