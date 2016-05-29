@@ -7,7 +7,6 @@
  *
  * Можно сделать баннед ассейт идс чтоб не покупать чертей которые не продаются
  *
- * Покупать ТОЛЬКО БЫСТРЫХ ИГРОКОВ
  * Если средняя цена не сильно по модулю отличается от покупной то скипаем
  * Если мало мелких цен то покупаем и то и другое и потом продаем дороже
  * В начале цикла проверять сколько денег осталось и если меньше чем максимальная цена то нахуй сразу 
@@ -36,7 +35,8 @@ function Trader(apiClient) {
 		bidIncr : 150,
 		buyNowIncr : 150,
 		buyMinPercent : 90,
-		minPlayerSpeed : 75 
+		minPlayerSpeed : 75,
+		buyAndSellDiffNotToSkip : 200 // разница цены чтоб купить а не скипнуть
 	};
 	this.apiClient = apiClient;
 	this.timeoutTime = { max : 7000, min : 4000 };
@@ -111,10 +111,12 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost);
 			console.log('spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit);
 			console.log('boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit);
+			console.log('credits', self.credits);
 			console.log('===============');
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
-				self.currentStrategyData.boughtItems > itemsLimit);
+				self.currentStrategyData.boughtItems > itemsLimit || 
+				findObject.maxb > self.credits);
 			if (!res) {
 				console.log('strategy::STRATEGY ENDED WITH CONDITIONS');
 			}
@@ -415,6 +417,14 @@ Trader.prototype.buyMin = function (player, callback) {
 					startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
 				}
 
+				if ((Math.abs(buyPlayerFor - buyNowPriceOnMarketAvg) <  self.options.buyAndSellDiffNotToSkip) &&
+					filteredCosts.length < 5) {
+					// тут можно переставлять подороже например а можно скипать
+					buyNowPriceOnMarketAvg *= self.options.buyMinNoiseCoef;
+					buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
+					startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
+				}
+
 				// Указываем параметры для удобной работы потом с ними внутри следующих методов по
 				// тому же плеер трейд id который был в списке, тк они меняются
 				self.iterateParams.costs[player.tradeId] = { 
@@ -427,24 +437,28 @@ Trader.prototype.buyMin = function (player, callback) {
 				console.log('buyMin::BUY FOR *', buyPlayerFor);
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 
-				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
-					// console.log('buyMin::DEBUG INFO', pl);
-					if (pl.code == 470) {
-						console.log('buyMin::NO MONEY FOR BUYING');
-						return cb(new Error('NO MONEY FOR BUYING'));
-					}
-					if (pl.success == false) {
-						// ошибка при покупке
-						console.log('buyMin::ERROR', pl);
-						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
-					} else {
-						// все нормально покупка прошла успешно
-						self.currentStrategyData.spendMoney += buyPlayerFor;
-						self.currentStrategyData.boughtItems++;
+				self.keepAlive(function () {
+					
+					self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
+						// console.log('buyMin::DEBUG INFO', pl);
+						if (pl.code == 470) {
+							console.log('buyMin::NO MONEY FOR BUYING');
+							return cb(new Error('NO MONEY FOR BUYING'));
+						}
+						if (pl.success == false) {
+							// ошибка при покупке
+							console.log('buyMin::ERROR', pl);
+							return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
+						} else {
+							// все нормально покупка прошла успешно
+							self.currentStrategyData.spendMoney += buyPlayerFor;
+							self.currentStrategyData.boughtItems++;
+							self.credits -= buyPlayerFor;
 
-						console.log('buyMin::PLAYER', player.tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
-						return cb(null);
-					}
+							console.log('buyMin::PLAYER', player.tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
+							return cb(null);
+						}
+					});
 				});
 
 			}, time);

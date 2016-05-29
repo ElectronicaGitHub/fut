@@ -82,7 +82,10 @@ function command() {
         // торговая страта
         // trader.startNonStopTrading([
         // ], 1000 * 60 * 60);
-        trader.set({minPlayerSpeed : 73})
+        trader.set({
+            minPlayerSpeed : 73,
+            buyAndSellDiffNotToSkip : 300,
+        })
             .tradeCycle([
             trader.reList.bind(trader),
             // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
