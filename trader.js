@@ -600,7 +600,8 @@ Trader.prototype.sell = function (player, callback) {
 				if (ok.idStr) {
 					console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
 					// обновление трейдИд игроку который был выставлен на продажу
-					Player.findOneAndUpdate({ tradeId : player.tradeId }, { tradeId : ok.id }, function (er, ok) {
+					Player.findOneAndUpdate({ tradeId : player.tradeId }, { tradeId : ok.id }, function (err, ok) {
+						console.log('sell:PLAYER UPDATED IN BASE', ok, 'FROM', player.tradeId, 'TO', ok.id);
 						if (err) return callback(err);
 						return callback(null);
 					});
