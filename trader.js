@@ -347,7 +347,7 @@ Trader.prototype.syncPlayersWithBase = function (cb) {
 			// 	console.log('syncPlayersWithBase::', error, ok);
 			// 	console.log('syncPlayersWithBase::SOLD PLAYERS REMOVED');
 			// 	if (err) return cb(err);
-			// 	return cb(null);
+				return cb(null);
 			// })
 		});
 	});
