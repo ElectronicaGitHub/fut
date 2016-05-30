@@ -154,8 +154,8 @@ function command() {
             .tradeCycle([
             trader.reList.bind(trader),
             // trader.buyAndSellWithIncreasingCost.bind(trader, {type: "player", lev: 'bronze', maxb : 200, start:0, num:20 }, 100000, 50, 1.25, null, 5)
-            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
-            // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:20 }, 100000, 300, 1.25, null, 8)
+            // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
+            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:20 }, 100000, 300, 1.25, null, 8)
         ]);
 
         // var a = trader
