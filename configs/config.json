@@ -8,8 +8,15 @@
 		"options" : {
 			"server" : {
 				"socketOptions" : {
-					"keepAive" : 1
+					"keepAive" : 1,
+					"connectTimeoutMS": 30000
 				}
+			},
+			"replset": { 
+				"socketOptions": { 
+					"keepAlive": 1, 
+					"connectTimeoutMS": 30000 
+				} 
 			}
 		}
 	},
