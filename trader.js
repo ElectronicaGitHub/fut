@@ -337,7 +337,7 @@ Trader.prototype.syncPlayersWithBase = function (cb) {
 		});
 		console.log('syncPlayersWithBase::PLAYERS CLOSED COUNT', sold_players.length);
 		async.eachSeries(sold_players, function (player, callback) {
-			Player.findOneAndUpdate({ tradeId : player.tradeId }, { sold : true }, function (err, ok) {
+			Player.findOneAndUpdate({ tradeId : player.tradeId }, { sold : true }, { new : true }, function (err, ok) {
 				if (err) return callback(err);
 				console.log('syncPlayersWithBase::SUCCESS UPDATED', ok);
 				return callback(null);
@@ -600,9 +600,10 @@ Trader.prototype.sell = function (player, callback) {
 				if (ok.idStr) {
 					console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
 					// обновление трейдИд игроку который был выставлен на продажу
-					Player.findOneAndUpdate({ tradeId : player.tradeId }, { tradeId : ok.id }, function (err, ok) {
-						console.log('sell:PLAYER UPDATED IN BASE', ok, 'FROM', player.tradeId, 'TO', ok.id);
-						if (err) return callback(err);
+					Player.findOneAndUpdate({ tradeId : player.tradeId }, { tradeId : ok.idStr }, { new : true }, function (baseError, baseAnswer) {
+						console.log(baseError);
+						console.log('sell:PLAYER UPDATED IN BASE', 'FROM', player.tradeId, 'TO', baseAnswer.tradeId);
+						if (baseError) return callback(baseError);
 						return callback(null);
 					});
 				} else {
