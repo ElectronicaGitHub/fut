@@ -170,7 +170,7 @@ var futapi = function(options){
   };
 
   futApi.prototype.removeSold = function (cb) {
-    sendRequest(urls.api.sold, { xHttpMethod : 'POST'}, cb);
+    sendRequest(urls.api.sold, { xHttpMethod : 'DELETE'}, cb);
   }
 
   futApi.prototype.getUnassigned = function (cb) {

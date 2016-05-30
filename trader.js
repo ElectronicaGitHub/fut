@@ -319,12 +319,13 @@ Trader.prototype.openPack = function () {
 		
 	});
 }
-Trader.prototype.removeSold = function () {
+Trader.prototype.removeSold = function (cb) {
 	var self = this;
 	self.apiClient.removeSold(function (error, ok) {
 		console.log('syncPlayersWithBase::', error, ok);
 		console.log('syncPlayersWithBase::SOLD PLAYERS REMOVED');
-		if (error) throw error;
+		if (error) return cb(error);
+		return cb(null);
 	})
 }
 Trader.prototype.syncPlayersWithBase = function (cb) {
@@ -338,17 +339,12 @@ Trader.prototype.syncPlayersWithBase = function (cb) {
 		async.eachSeries(sold_players, function (player, callback) {
 			Player.findOneAndUpdate({ tradeId : player.tradeId }, { sold : true }, function (err, ok) {
 				if (err) return callback(err);
-				console.log('syncPlayersWithBase::SUCCESS UPDATED');
+				console.log('syncPlayersWithBase::SUCCESS UPDATED', ok);
 				return callback(null);
 			});
 		}, function (err, ok) {
 			if (err) return cb(err);
-			// self.apiClient.removeSold(function (error, ok) {
-			// 	console.log('syncPlayersWithBase::', error, ok);
-			// 	console.log('syncPlayersWithBase::SOLD PLAYERS REMOVED');
-			// 	if (err) return cb(err);
-				return cb(null);
-			// })
+			self.removeSold(cb);
 		});
 	});
 }
