@@ -25,7 +25,9 @@ var apiClient = new futapi(options);
 var async = require('async');
 var trader = new (require('./trader.js'))(apiClient);
 
-var botStatus = false, inter;
+var botStatus = false, inter, time = 60 * 1000 * 34, timeInter;
+
+var actualTime = time;
 
 
 var app = express();
@@ -52,7 +54,8 @@ app.get('/', function (req, res, next) {
     Player.find(function (err, players) {
         res.render('index', {
             status : botStatus,
-            players : players
+            players : players,
+            time : time
         });
     })
 })
@@ -63,12 +66,18 @@ app.get('/start', function (req, res, next) {
     command();
     inter = setInterval(function () {
         command();
-    }, 1000 * 60 * 34);
+    }, time);
+
+    timeInter = setInterval(function () {
+        actualTime -= 1000;
+    }, 1000);
     botStatus = true;
     res.redirect('/log');
 });
 app.get('/stop', function (req, res, next) {
     clearInterval(inter);
+    clearInterval(timeInter);
+    actualTime = time;
     botStatus = false;
 })
 app.get('/log', function (req, res) {
@@ -106,6 +115,8 @@ app.listen(port, function() {
 });
 
 function command() {
+
+    actualTime = time;
 
     // apiClient.login("antonovphilipdev@gmail.com","F16FifaFut", "tatiana", "xone",
     apiClient.login("molo4nik11@gmail.com","Clorew321SSaa", "kopitin", "xone",
