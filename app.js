@@ -55,7 +55,7 @@ app.get('/', function (req, res, next) {
         res.render('index', {
             status : botStatus,
             players : players,
-            time : time
+            time : actualTime
         });
     })
 })
