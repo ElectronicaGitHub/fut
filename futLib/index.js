@@ -265,7 +265,7 @@ var futapi = function(options){
 
               // если сессия заэкспайрилась то мы ее кароч продляем 
               // и заново последнюю функцию вызываем
-            else if (body.code == 401) {
+            else if (body && body.code == 401) {
                 lastSendRequestOptions = {
                     url : url,
                     options : options,

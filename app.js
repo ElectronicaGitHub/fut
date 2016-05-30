@@ -1,3 +1,7 @@
+function twoFactorCodeCb(next) {
+    next("077520");
+}
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -100,10 +104,6 @@ app.listen(port, function() {
     fs.writeFile(__dirname + '/debug.log', '', function(){});
     console.log('Node app is running on port', port);
 });
-
-function twoFactorCodeCb(next) {
-	next("077520");
-}
 
 function command() {
 
