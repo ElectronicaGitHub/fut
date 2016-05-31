@@ -369,7 +369,11 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
 				Player.findOneAndUpdate({cardId : player.cardId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
-					console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
+					if (dbResult) {
+						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
+					} else {
+						console.log('reListWithDBSync::DB::PLAYER NOT FOUND');
+					}
 					if (dbErorr) return cb(dbErorr);
 					return cb(null);
 				});
