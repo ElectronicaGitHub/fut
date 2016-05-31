@@ -342,7 +342,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 						return el.tradeState == 'closed';
 					});
 					console.log('reListWithDBSync::PLAYERS CLOSED COUNT **', sold_players.length, '**');
-					
+
 					oldTradepile = players.map(function (player) {
 						oldTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, sold : player.tradeState == 'closed'};
@@ -379,9 +379,10 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 				Player.findOneAndUpdate({tradeId : player.tradeId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
 					if (dbResult) {
 						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
-					} else {
-						console.log('reListWithDBSync::DB::PLAYER NOT FOUND');
-					}
+					} 
+					// else {
+						// console.log('reListWithDBSync::DB::PLAYER NOT FOUND');
+					// }
 					if (dbErorr) return cb(dbErorr);
 					return cb(null);
 				});
