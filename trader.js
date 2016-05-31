@@ -329,7 +329,7 @@ Trader.prototype.removeSold = function (cb) {
 	})
 }
 Trader.prototype.reListWithDBSync = function (CALLBACK) {
-	var self = this, oldTradepile, newTradepileObject = {};
+	var self = this, oldTradepile, oldTradePileObject = {}, newTradepileObject = {};
 
 	async.series([
 		function (cb) {
@@ -338,8 +338,10 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					if (err) return cb(err);
 					console.log('reListWithDBSync::OLD TRADEPILE GET');
 					oldTradepile = data.auctionInfo.map(function (player) {
+						oldTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, sold : player.tradeState == 'closed'};
 					});
+					// console.log('reListWithDBSync::OLD TRADEPILE GET AND MAP FORMED', oldTradepileObject);
 					return cb(null);
 				});
 			}, 5378);
@@ -348,7 +350,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 			setTimeout(function () {
 				self.apiClient.relist(function (err, data) {
 					if (err) return cb(err);
-					console.log('reListWithDBSync::PLAYERS RELISTED');
+					console.log('reListWithDBSync::PLAYERS RELISTED', data);
 					cb(null);
 				});
 			}, 3853);
@@ -359,7 +361,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					if (err) return cb(err);
 					data.auctionInfo.map(function (player) {
 						newTradepileObject[player.itemData.id] = player.tradeId;
-						return { cardId : player.itemData.id, tradeId : player.tradeId };
+						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
 					console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
 					return cb(null);
@@ -368,7 +370,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 		},
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
-				Player.findOneAndUpdate({cardId : player.cardId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
+				Player.findOneAndUpdate({tradeId : player.tradeId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
 					if (dbResult) {
 						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
 					} else {
@@ -538,11 +540,12 @@ Trader.prototype.buyMin = function (player, callback) {
 					marketPrices : filteredCosts
 				};
 
+				console.log('buyMin::PLAYER CARD ID', minMaxPlayersSorted[0].itemData.id);
 				console.log('buyMin::BUY FOR *', buyPlayerFor);
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
-					
+				
 				self.apiClient.placeBid(minMaxPlayersSorted[0].tradeId, buyPlayerFor, function (err, pl) {
-					// console.log('buyMin::DEBUG INFO', pl);
+					console.log('buyMin::DEBUG INFO', pl);
 
 					if (pl.code == 461) {
 						self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
