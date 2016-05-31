@@ -329,7 +329,7 @@ Trader.prototype.removeSold = function (cb) {
 	})
 }
 Trader.prototype.reListWithDBSync = function (CALLBACK) {
-	var self = this, oldTradepile, oldTradePileObject = {}, newTradepileObject = {};
+	var self = this, oldTradepile, oldTradepileObject = {}, newTradepileObject = {};
 
 	async.series([
 		function (cb) {
