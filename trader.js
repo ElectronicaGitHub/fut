@@ -336,12 +336,18 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 			setTimeout(function () {
 				self.apiClient.getTradepile(function (err, data) {
 					if (err) return cb(err);
-					console.log('reListWithDBSync::OLD TRADEPILE GET');
-					oldTradepile = data.auctionInfo.map(function (player) {
+					var players = data.auctionInfo;
+
+					sold_players = players.filter(function (el) {
+						return el.tradeState == 'closed';
+					});
+					console.log('reListWithDBSync::PLAYERS CLOSED COUNT **', sold_players.length, '**');
+					
+					oldTradepile = players.map(function (player) {
 						oldTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, sold : player.tradeState == 'closed'};
 					});
-					console.log('reListWithDBSync::OLD TRADEPILE GET AND MAP FORMED', oldTradepileObject);
+					// console.log('reListWithDBSync::OLD TRADEPILE GET AND MAP FORMED', oldTradepileObject);
 					return cb(null);
 				});
 			}, 5378);
@@ -363,7 +369,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
-					console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
+					// console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
 					return cb(null);
 				});
 			}, 10043);
