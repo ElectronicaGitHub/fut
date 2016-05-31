@@ -388,7 +388,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 	], function (err, ok) {
 		if (err) return CALLBACK(err);
 		console.log('reListWithDBSync::SUCCESFULLY COMPLETED !!!');
-		return CALLBACK(null);
+		self.removeSold(CALLBACK);
 	});
 }
 // Trader.prototype.syncSoldPlayersWithDB = function (cb) {
