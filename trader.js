@@ -341,7 +341,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 						oldTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, sold : player.tradeState == 'closed'};
 					});
-					// console.log('reListWithDBSync::OLD TRADEPILE GET AND MAP FORMED', oldTradepileObject);
+					console.log('reListWithDBSync::OLD TRADEPILE GET AND MAP FORMED', oldTradepileObject);
 					return cb(null);
 				});
 			}, 5378);
@@ -366,7 +366,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
 					return cb(null);
 				});
-			}, 5443);
+			}, 10043);
 		},
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
