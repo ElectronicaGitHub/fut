@@ -138,7 +138,8 @@ function command() {
         console.log("*******************************************************");
 
         var tradeList = [
-            trader.reList.bind(trader)
+            // trader.reList.bind(trader)
+            trader.reListWithDBSync.bind(trader)
         ];
         if (buyStatus) {
             tradeList.push(trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:20 }, 100000, 300, 1.25, null, 8));

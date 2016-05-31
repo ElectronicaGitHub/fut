@@ -61,11 +61,11 @@ Trader.prototype.tradeCycle = function (methods) {
 
 	self.getCredits(function () {
 		self.keepAlive(function () {
-			self.syncPlayersWithBase(function () {
+			// self.syncSoldPlayersWithDB(function () {
 				async.series(methods, function (err, k) {
 					console.log('startTrading:: TRADING CYCLE COMPLETED');
 				});
-			});
+			// });
 		});
 	});
 }
@@ -322,32 +322,89 @@ Trader.prototype.openPack = function () {
 Trader.prototype.removeSold = function (cb) {
 	var self = this;
 	self.apiClient.removeSold(function (error, ok) {
-		console.log('syncPlayersWithBase::', error, ok);
-		console.log('syncPlayersWithBase::SOLD PLAYERS REMOVED');
+		console.log('removeSold::', error, ok);
+		console.log('removeSold::SOLD PLAYERS REMOVED');
 		if (error) return cb(error);
 		return cb(null);
 	})
 }
-Trader.prototype.syncPlayersWithBase = function (cb) {
-	var self = this;
-	self.apiClient.getTradepile(function (err, data) {
-		var players = data.auctionInfo;
-		sold_players = players.filter(function (el) {
-			return el.tradeState == 'closed';
-		});
-		console.log('syncPlayersWithBase::PLAYERS CLOSED COUNT', sold_players.length);
-		async.eachSeries(sold_players, function (player, callback) {
-			Player.findOneAndUpdate({ tradeId : player.tradeId }, { sold : true }, { new : true }, function (err, ok) {
-				if (err) return callback(err);
-				console.log('syncPlayersWithBase::SUCCESS UPDATED', ok);
-				return callback(null);
+Trader.prototype.reListWithDBSync = function (CALLBACK) {
+	var self = this, oldTradepile, newTradepileObject = {};
+
+	async.series([
+		function (cb) {
+			setTimeout(function () {
+				self.apiClient.getTradepile(function (err, data) {
+					if (err) return cb(err);
+					console.log('reListWithDBSync::OLD TRADEPILE GET');
+					oldTradepile = data.auctionInfo.map(function (player) {
+						return { cardId : player.itemData.id, tradeId : player.tradeId, sold : player.tradeState == 'closed'};
+					});
+					return cb(null);
+				});
+			}, 5378);
+		},
+		function (cb) {
+			setTimeout(function () {
+				self.apiClient.relist(function (err, data) {
+					if (err) return cb(err);
+					console.log('reListWithDBSync::PLAYERS RELISTED');
+					cb(null);
+				});
+			}, 3853);
+		},
+		function (cb) {
+			setTimeout(function () {
+				self.apiClient.getTradepile(function (err, data) {
+					if (err) return cb(err);
+					data.auctionInfo.map(function (player) {
+						newTradepileObject[player.itemData.id] = player.tradeId;
+						return { cardId : player.itemData.id, tradeId : player.tradeId };
+					});
+					console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
+					return cb(null);
+				});
+			}, 5443);
+		},
+		function (cb) {
+			async.eachSeries(oldTradepile, function (player, cb) {
+				Player.findOneAndUpdate({cardId : player.cardId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
+					console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
+					if (dbErorr) return cb(dbErorr);
+					return cb(null);
+				});
+			}, function (eachErr, eachOk) {
+				if (eachErr) return cb(eachErr);
+				console.log('reListWithDBSync::DB::ALL PLAYERS UPDATED');
+				return cb(null);
 			});
-		}, function (err, ok) {
-			if (err) return cb(err);
-			self.removeSold(cb);
-		});
+		}
+	], function (err, ok) {
+		if (err) return CALLBACK(err);
+		console.log('reListWithDBSync::SUCCESFULLY COMPLETED !!!');
+		return CALLBACK(null);
 	});
 }
+// Trader.prototype.syncSoldPlayersWithDB = function (cb) {
+// 	var self = this;
+// 	self.apiClient.getTradepile(function (err, data) {
+// 		var players = data.auctionInfo;
+// 		sold_players = players.filter(function (el) {
+// 			return el.tradeState == 'closed';
+// 		});
+// 		console.log('syncSoldPlayersWithDB::PLAYERS CLOSED COUNT', sold_players.length);
+// 		async.eachSeries(sold_players, function (player, callback) {
+// 			Player.findOneAndUpdate({ tradeId : player.tradeId }, { sold : true }, { new : true }, function (err, ok) {
+// 				if (err) return callback(err);
+// 				console.log('syncSoldPlayersWithDB::SUCCESS UPDATED', ok);
+// 				return callback(null);
+// 			});
+// 		}, function (err, ok) {
+// 			if (err) return cb(err);
+// 			self.removeSold(cb);
+// 		});
+// 	});
+// }
 Trader.prototype.keepAlive = function (cb) {
 	this.apiClient.keepAlive(cb);
 }
