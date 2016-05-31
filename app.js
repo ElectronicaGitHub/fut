@@ -27,7 +27,7 @@ var trader = new (require('./trader.js'))(apiClient);
 
 var botStatus = false, inter, time = 60 * 1000 * 34, timeInter;
 
-var actualTime = time;
+var actualTime = time, buyStatus = true;
 
 
 var app = express();
@@ -55,7 +55,8 @@ app.get('/', function (req, res, next) {
         res.render('index', {
             status : botStatus,
             players : players,
-            time : actualTime
+            time : actualTime,
+            buyStatus : buyStatus
         });
     })
 })
@@ -83,6 +84,11 @@ app.get('/stop', function (req, res, next) {
 app.get('/log', function (req, res) {
     res.sendfile('debug.log');
 });
+
+app.get('/toggleBuying', function (req, res, next) {
+    buyStatus = !buyStatus;
+    res.redirect('/');
+})
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -131,6 +137,24 @@ function command() {
         console.log("*******************************************************");
         console.log("*******************************************************");
 
+        var tradeList = [
+            trader.reList.bind(trader)
+        ];
+        if (buyStatus) {
+            tradeList.push(trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:20 }, 100000, 300, 1.25, null, 8));
+            // trader.buyAndSellWithIncreasingCost.bind(trader, {type: "player", lev: 'bronze', maxb : 200, start:0, num:20 }, 100000, 50, 1.25, null, 1)
+            // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
+        }
+
+        trader.set({
+            minPlayerSpeed : 78,
+            buyAndSellDiffNotToSkip : 200,
+            lowerCostCountForSkip : 3
+            // minPlayerSpeed : 60,
+            // buyAndSellDiffNotToSkip : 300,
+            // lowerCostCountForSkip : 99
+        })
+        .tradeCycle(tradeList);
         // Возможные ключи
         // leag : 13 // Barclays
         // micr min bid
@@ -155,21 +179,6 @@ function command() {
         
         // trader.removeSold();
         
-        trader.set({
-            minPlayerSpeed : 78,
-            // minPlayerSpeed : 60,
-            // buyAndSellDiffNotToSkip : 300,
-            buyAndSellDiffNotToSkip : 200,
-            // buyAndSellDiffNotToSkip : 0,
-            lowerCostCountForSkip : 3
-            // lowerCostCountForSkip : 99
-        })
-            .tradeCycle([
-            trader.reList.bind(trader),
-            // trader.buyAndSellWithIncreasingCost.bind(trader, {type: "player", lev: 'bronze', maxb : 200, start:0, num:20 }, 100000, 50, 1.25, null, 1)
-            // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
-            trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 5000, maxb: 7000, start:0, num:20 }, 100000, 300, 1.25, null, 8)
-        ]);
 
         // var a = trader
             // .set({ bidIncr : 150, buyNowIncr : 150, buyMinPercent : 90 })
