@@ -3,38 +3,116 @@
 <head>
 	<meta charset="UTF-8">
 	<title>FIFA TRADER</title>
+	<script>
+		window.currentStrategy = <%- JSON.stringify(currentStrategy) %>;
+		window.playersListForStrategy = <%- JSON.stringify(playersListForStrategy) %>;
+		window.searchOptions = <%- JSON.stringify(searchOptions) %>;
+		window.strategyOptions = <%- JSON.stringify(strategyOptions) %>;
+	</script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="scripts/main.js"></script>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-	<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
-	<p>ДО СЛЕДУЮЩЕГО ЗАПУСКА: <%= time/1000 %> секунд</p>
-	<p>СТАТУС ПОКУПОК : <%= buyStatus ? 'ПОКУПАЕМ' : 'НЕ ПОКУПАЕМ, ТОЛЬКО ПРОДАЕМ' %></p>
-	<a href="/toggleBuying"><%= buyStatus ? 'ПЕРЕСТАТЬ ПОКУПАТЬ' : 'НАЧАТЬ ПОКУПАТЬ' %></a>
-	<p><a href="/start">СТАРТ</a></p>
-	<p><a href="/stop">СТОП</a></p>
-	<p><a href="/log">ЛОГ</a></p>
+<body ng-app="fifatrader" ng-controller="fifatrader">
 
-	<table>
-		<tr>
-			<th>Image</th>
-		    <th>Sold</th>
-		    <th>Rare</th> 
-		    <th>Rating</th>
-		    <th>Card Id</th>
-		    <th>Trade Id</th>
-		    <th>Asset Id</th>
-		</tr>
-		<tr>
-		<% for (var i in players) { %>
-		    <td><img width="45" height="45" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
-		    <td><%= players[i].sold %></td>
-		    <td><%= players[i].rare %></td> 
-		    <td><%= players[i].rating %></td>
-		    <td><%= players[i].cardId %></td>
-		    <td><%= players[i].tradeId %></td>
-		    <td><%= players[i].assetId %></td>
-		</tr>
+	<div class="col-xs-4">
+		<form action="/changeTwoFactorCode" method="POST">
+			<input type="text" name="twoFactorCode" value="<%= twoFactorCode %>">
+			<button type="submit">Поменять код</button>
+		</form>
+		<br>
+		<p>ТЕКУЩАЯ СТРАТЕГИЯ : {{ currentStrategy }} </p>
+			<button class="btn btn-info" ng-click="changeStrategy('players')">Стратегия поиска игроков</button>
+			<button class="btn btn-info" ng-click="changeStrategy('default')">Обычная повышающая стратегия</button>
+		<br>
+		<br>
+		<br>
+		<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
+		<% if (status) { %>
+			<p><a href="/stop">СТОП</a></p>
+		<% } else { %>
+			<p><a href="/start">СТАРТ</a></p>
 		<% } %>
-	</table>
+		<br>
+		<p>ДО СЛЕДУЮЩЕГО ЗАПУСКА: <b id="timeout" data-go="<%= status %>"><%= time/1000 %></b> секунд</p>
+		<br>
+		<p>СТАТУС ПОКУПОК : <%= buyStatus ? 'ПОКУПАЕМ' : 'НЕ ПОКУПАЕМ, ТОЛЬКО ПРОДАЕМ' %></p>
+		<p><a href="/toggleBuying"><%= buyStatus ? 'ПЕРЕСТАТЬ ПОКУПАТЬ' : 'НАЧАТЬ ПОКУПАТЬ' %></a></p>
+		<br>
+		<p><a href="/log">ЛОГ</a></p>
+
+		<table>
+			<tr>
+				<th>Image</th>
+			    <th>Sold</th>
+			    <th>Rare</th> 
+			    <th>Rating</th>
+			    <th>Asset Id</th>
+			</tr>
+			<tr>
+			<% for (var i in players) { %>
+			    <td><img width="45" height="45" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
+			    <td><%= players[i].sold %></td>
+			    <td><%= players[i].rare %></td> 
+			    <td><%= players[i].rating %></td>
+			    <td><%= players[i].assetId %></td>
+			</tr>
+			<% } %>
+		</table>
+	</div>
+	<div class="col-xs-4">
+
+		<div class="filter">
+			<p>Фильтр поиска</p>
+			<p><label>rare</label><select ng-options="rv as rv for rv in rareVariants" ng-model="searchOptions.rare"></select></p>
+			<p><label>minb</label><input type="text" ng-model="searchOptions.minb"></p>
+			<p><label>maxb</label><input type="text" ng-model="searchOptions.maxb"></p>
+		</div>
+
+		<div class="filter" ng-show="currentStrategy == 'default'">
+			<p>Фильтр повышающей стратегии</p>
+			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="text" ng-model="strategyOptions[currentStrategy][key]"></p>
+		</div>
+		
+		<div class="filter" ng-show="currentStrategy == 'players'">
+			<p>Фильтр стратегии игроков</p>
+			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="text" ng-model="strategyOptions[currentStrategy][key]"></p>
+		</div>
+
+	</div>
+	
+	<div class="col-xs-4">
+		<div ng-show="currentStrategy == 'players'">
+			<p>Поиск игроков</p>
+			<input type="text" ng-model="name">
+			<button class="btn btn-info" ng-click="search()">Показать</button>
+
+			<div class="players-list">
+				<div class="player" ng-repeat="player in playersList" ng-click="select(player)">
+					<p>
+						<b>{{ player.itemData.rating }}</b>
+				    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+						({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+					</p>
+				</div>
+			</div>
+		
+			<p>Выбранные игроки</p>
+			<div class="players-list">
+				<div class="player" ng-repeat="player in searchPlayersList" ng-click="deselect($index)">
+					<p>
+						<b>{{ player.itemData.rating }}</b>
+				    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+						({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
 </body>
+
 </html>
