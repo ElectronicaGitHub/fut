@@ -749,9 +749,9 @@ Trader.prototype.toTradepile = function (player, callback) {
 			console.log('buyMin::PLAYER ALREADY BOUGHT');
 			return callback(null);
 		}
-		id = this.iterateParams.costs[player.tradeId].id;
+		id = this.iterateParams.costs[player.tradeId].cardId;
 	}
-	console.log('toTradepile::player', player.itemData.id);
+	console.log('toTradepile::player', id);
 
 	setTimeout(function () {
 		self.apiClient.sendToTradepile(id, function (err, ok) {
@@ -793,7 +793,7 @@ Trader.prototype.sell = function (player, callback) {
 			return callback(null);
 		}
 
-		id = this.iterateParams.costs[player.tradeId].id;
+		id = this.iterateParams.costs[player.tradeId].cardId;
 		costs = {
 			bid : this.iterateParams.costs[player.tradeId].bid,
 			buyNow : this.iterateParams.costs[player.tradeId].buyNow
