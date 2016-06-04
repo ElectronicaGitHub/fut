@@ -500,6 +500,8 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					if (err) return cb(err);
 					var players = data.auctionInfo;
 
+					if (!players) return CALLBACK(null);
+
 					sold_players = players.filter(function (el) {
 						return el.tradeState == 'closed';
 					});
@@ -673,8 +675,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 				
 				self.apiClient.placeBid(buyId, buyPlayerFor, function (err, pl) {
-					var boughtPlayer = pl.auctionInfo[0];
-					console.log('buyMin::DEBUG INFO', pl);
+					// console.log('buyMin::DEBUG INFO', pl);
 
 					if (pl.code == 461) {
 						self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
@@ -693,6 +694,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						console.log('buyMin::ERROR', pl);
 						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
 					} else {
+						var boughtPlayer = pl.auctionInfo[0];
 						// все нормально покупка прошла успешно
 						self.currentStrategyData.spendMoney += buyPlayerFor;
 						self.currentStrategyData.boughtItems++;
@@ -810,7 +812,7 @@ Trader.prototype.sell = function (player, callback) {
 				if (ok.idStr) {
 					console.log('sell::PLAYER', player.tradeId, 'WITH RATING', player.itemData.rating, 'SEND TO TRANSFER, BID', costs.bid, ', BUY NOW', costs.buyNow);
 					// обновление трейдИд игроку который был выставлен на продажу
-					Player.findOneAndUpdate({ tradeId : player.tradeId }, { tradeId : ok.idStr }, { new : true }, function (baseError, baseAnswer) {
+					Player.findOneAndUpdate({ cardId : id }, { tradeId : ok.idStr }, { new : true }, function (baseError, baseAnswer) {
 						console.log(baseError);
 						console.log('sell:PLAYER UPDATED IN BASE', 'FROM', player.tradeId, 'TO', baseAnswer.tradeId);
 						if (baseError) return callback(baseError);
