@@ -117,7 +117,7 @@ Trader.prototype.buyAndSellSelectedPlayers = function (findObject, playersArray,
 			}, findObject);
 		},
 		buyMinMakePrice : function (players, _this, player) {
-			var self = _this, buyPlayerFor, preferredRating, filteredCosts, minCostCount, ratings = {};
+			var self = _this, buyPlayerFor, buyId, cardId, preferredRating, filteredCosts, minCostCount, ratings = {};
 
 			// наполняем мапу
 			for (var i in players) {
@@ -152,12 +152,14 @@ Trader.prototype.buyAndSellSelectedPlayers = function (findObject, playersArray,
 
 			minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
 
-			buyId = ratings[preferredRating][0].itemData.id;
+			buyId = ratings[preferredRating][0].tradeId;
+			cardId = ratings[preferredRating][0].itemData.id;
 
 			return {
 				buyPlayerFor : buyPlayerFor,
 				filteredCosts : filteredCosts,
 				buyId : buyId,
+				cardId : cardId,
 				minCostCount : minCostCount
 			}
 		},
@@ -243,7 +245,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			}
 		},
 		buyMinMakePrice : function (players, _this) {
-			var self = _this;
+			var self = _this, buyPlayerFor, filteredCosts, buyId, minCostCount, cardId;
 			// сортируем по порядку
 			var minMaxPlayersSorted = self.minMaxSortWith(players, false, ['buyNowPrice', 'tradeId', 'startingBid']);
 			buyPlayerFor = minMaxPlayersSorted[0].buyNowPrice;
@@ -255,11 +257,13 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 
 			minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
 			buyId = minMaxPlayersSorted[0].tradeId;
+			cardId = minMaxPlayersSorted[0].itemData.id;
 
 			return {
 				buyPlayerFor : buyPlayerFor,
 				filteredCosts : filteredCosts,
 				buyId : buyId,
+				cardId : cardId, 
 				minCostCount : minCostCount
 			}
 		},
@@ -617,7 +621,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 			time = self.randomTime();
 			setTimeout(function () {
 
-				var buyPlayerFor, buyNowPriceOnMarketAvg, filteredCosts, buyId, minCostCount;
+				var buyPlayerFor, buyNowPriceOnMarketAvg, filteredCosts, cardId, buyId, minCostCount;
 
 				var _d = self.currentStrategyData.buyMinMakePrice(players, self, player);
 
@@ -627,6 +631,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 					buyPlayerFor = _d.buyPlayerFor;
 					filteredCosts = _d.filteredCosts;
 					buyId = _d.buyId;
+					cardId = _d.cardId;
 					minCostCount = _d.minCostCount;
 				}
 
@@ -699,7 +704,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 							bid : futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg), 
 							buyNow : buyNowPriceOnMarketAvg,
 							tradeId : boughtPlayer.tradeId,
-							cardId : buyId,
+							cardId : cardId,
 							id : buyId,
 							rare : player.itemData.rareflag,
 							rating : player.itemData.rating,
