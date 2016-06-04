@@ -588,9 +588,9 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 	async.waterfall([
 		function (cb) {
 			time = self.randomTime();
-			console.log('buyMin::SEARCH QUERY', currentStrategyData.getBuyMinObject(player));
+			console.log('buyMin::SEARCH QUERY', self.currentStrategyData.getBuyMinObject(player));
 			setTimeout(function () {
-				self.apiClient.search(currentStrategyData.getBuyMinObject(player), function (error, response) {
+				self.apiClient.search(self.currentStrategyData.getBuyMinObject(player), function (error, response) {
 					if (!response.auctionInfo) {
 						console.log('buyMin::ERROR, RESPONSE', response);
 						cb(null, []);
@@ -647,7 +647,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 				// если в фильтранутом списке вдруг окажется лишь наша цена то мы выкупаем и
 				// переставляем на значение нашего коэффициента и да будет кайф
 				if (filteredCosts.length == 1) {
-					buyNowPriceOnMarketAvg *= (self.currentStrategyData.buyMinNoiseCoef * 0.8);
+					// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
+					buyNowPriceOnMarketAvg += 400;
 					buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
 				}
 
@@ -657,11 +658,10 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 				}
 
 				// if ((Math.abs(buyPlayerFor - buyNowPriceOnMarketAvg) <  self.options.buyAndSellDiffNotToSkip) &&
-					// filteredCosts.length < 5) {
-					// тут можно переставлять подороже например а можно скипать
-					// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
-					// buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
-					// startingBidOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
+				// 	filteredCosts.length < 5) {
+				// 	// тут можно переставлять подороже например а можно скипать
+				// 	buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
+				// 	buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
 				// }
 
 				console.log('buyMin::BUY FOR *', buyPlayerFor);
@@ -700,6 +700,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 							buyNow : buyNowPriceOnMarketAvg,
 							tradeId : boughtPlayer.tradeId,
 							cardId : buyId,
+							id : buyId,
 							rare : player.itemData.rareflag,
 							rating : player.itemData.rating,
 							marketPrices : filteredCosts,
@@ -749,6 +750,7 @@ Trader.prototype.toTradepile = function (player, callback) {
 
 	setTimeout(function () {
 		self.apiClient.sendToTradepile(id, function (err, ok) {
+			console.log('toTradepile::DEBUG', ok);
 			if (ok.itemData[0].success == false) {
 				console.log('toTradepile::answer', ok);
 				if (self.toTradePileTries <= 2) {
