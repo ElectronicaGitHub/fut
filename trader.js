@@ -675,7 +675,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
 				
 				self.apiClient.placeBid(buyId, buyPlayerFor, function (err, pl) {
-					// console.log('buyMin::DEBUG INFO', pl);
+					console.log('buyMin::DEBUG INFO', pl);
 
 					if (pl.code == 461) {
 						self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
@@ -694,9 +694,9 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						console.log('buyMin::ERROR', pl);
 						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
 					} else {
-						if (!boughtPlayer.auctionInfo) {
-							return cb(new Error('buyMin::SOME ERROR'));
-						}
+						// if (!boughtPlayer.auctionInfo) {
+						// 	return cb(new Error('buyMin::SOME ERROR'));
+						// }
 						var boughtPlayer = pl.auctionInfo[0];
 						// все нормально покупка прошла успешно
 						self.currentStrategyData.spendMoney += buyPlayerFor;
