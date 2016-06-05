@@ -231,6 +231,6 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port, function() {
-    fs.writeFile(__dirname + '/debug.log', '', function(){});
+    // fs.writeFile(__dirname + '/debug.log', '', function(){});
     console.log('Node app is running on port', port);
 });
