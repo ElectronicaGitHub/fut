@@ -21,6 +21,6 @@ var Player = new Schema({
 	}
 });
 
-Player.virtual('revenue').get(function() { console.log(this);return this.sellPrice - this.buyPrice; });
+Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice; });
 
 module.exports = mongoose.model('Player', Player);
