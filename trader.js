@@ -694,10 +694,14 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						console.log('buyMin::ERROR', pl);
 						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
 					} else {
-						// if (!boughtPlayer.auctionInfo) {
-						// 	return cb(new Error('buyMin::SOME ERROR'));
+						var tradeId = player.tradeId;
+
+						// if (!boughtPlayer) {
+						// 	return cb(null);
 						// }
-						var boughtPlayer = pl.auctionInfo[0];
+						// var boughtPlayer = pl.auctionInfo[0];
+						// tradeId = boughtPlayer.tradeId;
+						// 
 						// все нормально покупка прошла успешно
 						self.currentStrategyData.spendMoney += buyPlayerFor;
 						self.currentStrategyData.boughtItems++;
@@ -708,7 +712,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						self.iterateParams.costs[player.tradeId] = { 
 							bid : futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg), 
 							buyNow : buyNowPriceOnMarketAvg,
-							tradeId : boughtPlayer.tradeId,
+							// tradeId : boughtPlayer.tradeId,
+							tradeId : tradeId,
 							cardId : cardId,
 							id : buyId,
 							rare : player.itemData.rareflag,
