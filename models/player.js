@@ -12,7 +12,7 @@ var Player = new Schema({
 		type : Boolean,
 		default : false
 	},
-	buyPrice : Boolean,
+	buyPrice : Number,
 	sellPrice : String,
 	marketPrices : [Number],
 	created: {
@@ -20,5 +20,7 @@ var Player = new Schema({
 	    default: Date.now
 	}
 });
+
+Player.virtual('revenue').get(function() { console.log(this);return this.sellPrice - this.buyPrice; });
 
 module.exports = mongoose.model('Player', Player);

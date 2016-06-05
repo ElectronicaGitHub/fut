@@ -200,7 +200,7 @@ Trader.prototype.buyAndSellSelectedPlayers = function (findObject, playersArray,
 	async.waterfall(stack, function (err, finish) {
 		if (err) {
 			console.log('buyAndSellSelectedPlayers::STRATEGY FINISHED WITH CONDITION');
-			return;
+			return callback(err);
 		}
 		console.log('buyAndSellSelectedPlayers::STRATEGY ENDED');
 		callback(null);
@@ -536,7 +536,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					// console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
 					return cb(null);
 				});
-			}, 10043);
+			}, 34078);
 		},
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
@@ -694,6 +694,9 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						console.log('buyMin::ERROR', pl);
 						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
 					} else {
+						if (!boughtPlayer.auctionInfo) {
+							return cb(new Error('buyMin::SOME ERROR'));
+						}
 						var boughtPlayer = pl.auctionInfo[0];
 						// все нормально покупка прошла успешно
 						self.currentStrategyData.spendMoney += buyPlayerFor;
