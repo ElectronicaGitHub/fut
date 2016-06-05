@@ -3,6 +3,9 @@
 	padding: 10px;
 	margin-bottom: 10px;
 }
+tr {
+	font-size: 10px;
+}
 .sold {
 	background: green;
 	color: white;
