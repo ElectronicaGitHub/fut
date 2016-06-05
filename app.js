@@ -105,6 +105,7 @@ app.get('/stop', function (req, res, next) {
     clearInterval(timeInter);
     actualTime = time;
     botStatus = false;
+    res.send('ok');
 });
 app.get('/log', function (req, res) {
     res.sendfile('debug.log');
