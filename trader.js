@@ -724,7 +724,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 							sellPrice : buyNowPriceOnMarketAvg,
 						};
 
-						console.log('buyMin::PLAYER', boughtPlayer.tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
+						console.log('buyMin::PLAYER', tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
 						return cb(null);
 					}
 				});
