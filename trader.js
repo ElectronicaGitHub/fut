@@ -18,6 +18,7 @@ var async = require('async');
 var futapi = require("./futLib/index.js");
 var _ = require('lodash');
 var Player = require('./models/player.js');
+var moment = require('moment');
 
 console.log = function(d) {
 	var array = Array.prototype.slice.call(arguments, 0);
@@ -540,14 +541,18 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 		},
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
-				Player.findOneAndUpdate({tradeId : player.tradeId}, {tradeId : newTradepileObject[player.cardId], sold : player.sold}, {new : true}, function (dbErorr, dbResult) {
+				Player.findOneAndUpdate({tradeId : player.tradeId}, {
+					tradeId : newTradepileObject[player.cardId], 
+					sold : player.sold, 
+					soldTime : +new Date(),
+				}, {new : true}, function (dbError, dbResult) {
 					if (dbResult) {
 						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
 					} 
 					// else {
 						// console.log('reListWithDBSync::DB::PLAYER NOT FOUND');
 					// }
-					if (dbErorr) return cb(dbErorr);
+					if (dbError) return cb(dbError);
 					return cb(null);
 				});
 			}, function (eachErr, eachOk) {
