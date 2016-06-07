@@ -165,12 +165,8 @@ Trader.prototype.buyAndSellSelectedPlayers = function (findObject, playersArray,
 			}
 		},
 		continueStatus : function () {
-			console.log('===============');
-			console.log('CONDITIONS CHECK');
-			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost);
-			console.log('spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit);
-			console.log('boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit);
-			console.log('credits', self.credits);
+			console.log('CONDITIONS CHECK CREDITS', self.credits, '|| findObject.maxb (', findObject.maxb, '/', maxCost, ')');
+			console.log('money (', self.currentStrategyData.spendMoney, '/', moneyLimit, '), items (', self.currentStrategyData.boughtItems, '/', itemsLimit, ')');
 			console.log('===============');
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
