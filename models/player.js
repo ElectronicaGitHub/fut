@@ -27,12 +27,14 @@ var Player = new Schema({
 
 Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice; });
 Player.virtual('timeDiff').get(function() { 
-	var a = moment(this.soldTime);
-	var b = moment(this.created);
+	if (this.soldTime && this.created) {
+		var a = moment(this.soldTime);
+		var b = moment(this.created);
 
-	var d = a.diff(b, 'hours');
+		var d = a.diff(b, 'hours');
 
-	return d;
+		return d;
+	} else return null;
 });
 
 module.exports = mongoose.model('Player', Player);

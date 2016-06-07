@@ -50,6 +50,7 @@
 			    <th>Rating</th>
 			    <th>Asset Id</th>
 			    <th>Revenue</th>
+			    <th>TimeDiff( hours)</th>
 			</tr>
 			<% for (var i in players) { %>
 				<tr class="<%= players[i].sold ? 'sold' : ''%>">
@@ -58,6 +59,7 @@
 				    <td><%= players[i].rating %></td>
 				    <td><%= players[i].assetId %></td>
 				    <td><%= players[i].revenue %></td>
+				    <td><%= players[i].timeDiff %></td>
 				</tr>
 			<% } %>
 		</table>
