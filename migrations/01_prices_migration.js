@@ -7,9 +7,7 @@ Player.find({}, function (err, results) {
 		return el.buyPrice == true;
 	});
 	results.forEach(function (el) {
-		el.buyPrice = futapi.calculateValidPrice(el.marketPrices.reduce(function (a, b, c) { return a + b }) / el.marketPrices.length);
-
-		console.log(el.marketPrices, '->', el.buyPrice);
+		el.buyPrice = el.sellPrice - 300;
 		el.save();
 	});
 	console.log(results.length);
