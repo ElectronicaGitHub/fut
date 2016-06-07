@@ -761,7 +761,7 @@ Trader.prototype.toTradepile = function (player, callback) {
 	if (this.iterateParams.costs[player.tradeId]) {
 		//проверка на повторного игрока
 		if (self.iterateParams.costs[player.tradeId].was) {
-			console.log('buyMin::PLAYER ALREADY BOUGHT');
+			// console.log('buyMin::PLAYER ALREADY BOUGHT');
 			return callback(null);
 		}
 		id = this.iterateParams.costs[player.tradeId].cardId;
@@ -804,7 +804,7 @@ Trader.prototype.sell = function (player, callback) {
 	if (this.iterateParams.costs[player.tradeId]) {
 		//проверка на повторного игрока
 		if (self.iterateParams.costs[player.tradeId].was) {
-			console.log('buyMin::PLAYER ALREADY BOUGHT');
+			// console.log('buyMin::PLAYER ALREADY BOUGHT');
 			return callback(null);
 		}
 
