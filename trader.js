@@ -540,7 +540,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 				Player.findOneAndUpdate({tradeId : player.tradeId}, {
 					tradeId : newTradepileObject[player.cardId], 
 					sold : player.sold, 
-					soldTime : +new Date(),
+					soldTime : new Date(),
 				}, {new : true}, function (dbError, dbResult) {
 					if (dbResult) {
 						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
