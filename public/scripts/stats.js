@@ -37,7 +37,7 @@ var svg = d3.select("#graph").append("svg")
     		date : new Date(el.created),
     		value: 1
     	}
-    }).sort(function(a, b ) { return +a.date > +b.date });
+    });
     d = {};
     for (var i in data) {
     	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
@@ -47,7 +47,7 @@ var svg = d3.select("#graph").append("svg")
     for (var i in d) {
     	data.push({value : d[i], date : new Date(i)})
     }
-    console.log(data);
+    data.sort(function(a, b ) { return +a.date > +b.date });
 	
   x.domain(data.map(function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.value; })]);
