@@ -34,7 +34,7 @@ var svg = d3.select("#graph").append("svg")
 
     data = players.map(function (el) {
     	return {
-    		date : new Date(el.created),
+    		date : new Date(el.soldTime),
     		value: 1
     	}
     });
