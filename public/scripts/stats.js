@@ -32,7 +32,9 @@ var svg = d3.select("#graph").append("svg")
           "translate(" + margin.left + "," + margin.top + ")");
 
 
-    data = players.map(function (el) {
+    data = players.filter(function (el) {
+    	return el.soldTime;
+    }).map(function (el) {
     	return {
     		date : new Date(el.soldTime),
     		value: 1
@@ -43,7 +45,6 @@ var svg = d3.select("#graph").append("svg")
     	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
     	d[moment(data[i].date).startOf('days').format()]++;
     }
-    debugger;
 	data = [];
     for (var i in d) {
     	data.push({value : d[i], date : new Date(i)})
