@@ -43,6 +43,7 @@ var svg = d3.select("#graph").append("svg")
     	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
     	d[moment(data[i].date).startOf('days').format()]++;
     }
+    debugger;
 	data = [];
     for (var i in d) {
     	data.push({value : d[i], date : new Date(i)})
