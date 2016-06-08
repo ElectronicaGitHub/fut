@@ -40,8 +40,8 @@ var svg = d3.select("#graph").append("svg")
     });
     d = {};
     for (var i in data) {
-    	d[moment(data[i].date).startOf('hours').format()] = d[moment(data[i].date).startOf('hours').format()] || 0;
-    	d[moment(data[i].date).startOf('hours').format()]++;
+    	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
+    	d[moment(data[i].date).startOf('days').format()]++;
     }
     console.log(d);
 	data = [];
