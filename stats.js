@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', require('./routes/index.js')(express));
 
 app.get('/', function (req, res, next) {
-    Player.find().sort({ sold : -1 }).exec(function (err, players) {
+    Player.find({ sold : true }).sort({ sold : -1 }).exec(function (err, players) {
         res.render('stats', {
             players : players
         });
