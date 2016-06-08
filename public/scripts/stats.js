@@ -37,7 +37,7 @@ var svg = d3.select("#graph").append("svg")
     		date : new Date(el.created),
     		value: 1
     	}
-    }).sort(function(a, b ) { return +a.date > +b.date });
+    }).sort(function(a, b ) { return +new Date(a.date) > +new Date(b.date) });
     d = {};
     for (var i in data) {
     	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
