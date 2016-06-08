@@ -1,9 +1,9 @@
 $(function () {
 	console.log('stats');
 
-	var margin = {top: 20, right: 20, bottom: 70, left: 40},
+	var margin = {top: 20, right: 20, bottom: 100, left: 40},
     width = 1100 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    height = 700 - margin.top - margin.bottom;
 
 // Parse the date / time
 var	parseDate = d3.time.format("%Y-%m-%d").parse;
@@ -43,18 +43,10 @@ var svg = d3.select("#graph").append("svg")
     	d[moment(data[i].date).startOf('days').format()] = d[moment(data[i].date).startOf('days').format()] || 0;
     	d[moment(data[i].date).startOf('days').format()]++;
     }
-    console.log(d);
 	data = [];
     for (var i in d) {
     	data.push({value : d[i], date : new Date(i)})
     }
-
-    console.log(data);
-
-    // window.data = data;
- //    for (var i=0;i<100;i++) {
-	//     data.push({date: new Date(+new Date + 1000 * 60 * 26 * i), value : ~~(Math.random() * 500)});
-	// }
 	
   x.domain(data.map(function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.value; })]);
@@ -67,7 +59,7 @@ var svg = d3.select("#graph").append("svg")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
       .attr("dy", "-.55em")
-      .attr("transform", "rotate(-90)" );
+      .attr("transform", "rotate(-65)" );
 
   svg.append("g")
       .attr("class", "y axis")
@@ -79,7 +71,7 @@ var svg = d3.select("#graph").append("svg")
       .style("text-anchor", "end")
       .text("Проданных бандитов");
 
-  svg.selectAll("bar")
+  svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
       .style("fill", "steelblue")
@@ -87,5 +79,15 @@ var svg = d3.select("#graph").append("svg")
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); });
+
+  svg.selectAll("text.bar")
+      .data(data)
+    .enter().append("text")
+      .attr("class", "bar")
+      .attr("text-anchor", "middle")
+      .attr("y", function(d) { return y(d.value) })
+      .attr("x", function(d) { return x(d.date) })
+      .text(function(d) { return d.value; })
+      .attr('transform', 'translate(' + x.rangeBand() / 2 + ', 40)');
 
 });
