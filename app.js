@@ -24,7 +24,7 @@ var futapi = require("./futLib/index.js");
 var apiClient = new futapi(options);
 var trader = new (require('./trader.js'))(apiClient);
 
-var botStatus = false,
+var botStatus = true,
     buyStatus = true,
     inter,
     timeInter,
