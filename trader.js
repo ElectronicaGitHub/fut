@@ -1,15 +1,3 @@
-/**
- * Сделать чтоб тот ИД который продался клался в список с данными
- * После продажи мы сравниваем кого купили считали разницу и выставляли этому иду флаг ПРОДАН и за сколько
- * Когда мы выставили на продажу чтото у нас есть новый трейд ид и мы сохраняем по лайтовому
- * ассет ид, рейтинг, рейр, трейдид, за сколько купили, за сколько продать хотим, состояние(продан ли), какие были цены на момент покупки
- * когда купили tradeState : 'closed'
- *
- * Можно сделать баннед ассейт идс чтоб не покупать чертей которые не продаются
- *
- * Если мало мелких цен то покупаем и то и другое и потом продаем дороже
- */
-
 var fs = require('fs');
 var util = require('util');
 var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
@@ -30,7 +18,6 @@ console.log = function(d) {
 
 function Trader(apiClient) {
 	this.playersList = null;
-	// defaults, _.extend with .set({ obj })
 	this.options = {
 		bidIncr : 150,
 		buyNowIncr : 150,
@@ -266,13 +253,8 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			}
 		},
 		continueStatus : function () {
-			console.log('===============');
 			console.log('CONDITIONS CHECK');
-			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost);
-			console.log('spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit);
-			console.log('boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit);
-			console.log('credits', self.credits);
-			console.log('===============');
+			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost, 'spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit, 'boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit, 'credits', self.credits);
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
 				self.currentStrategyData.boughtItems > itemsLimit || 
@@ -290,7 +272,6 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 	// главная функция которая разруливает что делать дальше на каждой итерации
 	var handler = function () {
 		return function (callback) {
-			console.log('handler::NEW CYCLE');
 			setTimeout(function () {
 				if (self.currentStrategyData.continueStatus()) {
 					stack.splice(stack.length - 1, 0, 
@@ -345,7 +326,6 @@ Trader.prototype.each = function (notSingle, functions, MAINCALLBACK) {
 				fn.call(self, player, callback);
 			}, function (err, ok) {
 				if (err) return callback(err);
-				console.log('------------------');
 				callback(null);
 			});
 			
@@ -899,7 +879,7 @@ module.exports = Trader;
 //
 var UTILS = {
 	getTime : function () {
-		return new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+		return new Date().toLocaleString().replace(/T/, ' ').replace(/\..+/, '');
 	},
 	makeId : function () {
 	    return Math.random().toString(36).substring(7);
