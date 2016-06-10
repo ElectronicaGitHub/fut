@@ -1,4 +1,4 @@
-var twoFactorCode = '223667';
+// var twoFactorCode = '223667';
 
 var express = require('express');
 var path = require('path');
@@ -77,34 +77,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res, next) {
     Player.find().sort({ sold : -1 }).exec(function (err, players) {
-        res.render('index', {
-            status : botStatus,
-            players : players,
-            time : actualTime,
-            buyStatus : buyStatus,
-            twoFactorCode : twoFactorCode,
-            currentStrategy : currentStrategy,
-            playersListForStrategy : strategyOptions.players.list,
-            searchOptions : searchOptions,
-            strategyOptions : strategyOptions
+        readCodeFromFile(function (code) {
+            res.render('index', {
+                status : botStatus,
+                players : players,
+                time : actualTime,
+                buyStatus : buyStatus,
+                twoFactorCode : code,
+                currentStrategy : currentStrategy,
+                playersListForStrategy : strategyOptions.players.list,
+                searchOptions : searchOptions,
+                strategyOptions : strategyOptions,
+                playersInTradeList : trader.playersInTradeList
+            });
+                
         });
     })
 });
 app.get('/start', function (req, res, next) {
-    if (botStatus) {
-        return;
-    }
-    command();
-    inter = setInterval(function () { command(); }, time);
-    timeInter = setInterval(function () { actualTime -= 1000; }, 1000);
-    botStatus = true;
-    res.redirect('/log');
+    start();
+    res.redirect('/');
 });
 app.get('/stop', function (req, res, next) {
-    clearInterval(inter);
-    clearInterval(timeInter);
-    actualTime = time;
-    botStatus = false;
+    stop();
     res.redirect('/');
 });
 app.get('/log', function (req, res) {
@@ -117,7 +112,8 @@ app.get('/toggleBuying', function (req, res, next) {
 });
 app.post('/changeTwoFactorCode', function (req, res, next) {
     var data = req.body;
-    twoFactorCode = data.twoFactorCode;
+    // twoFactorCode = data.twoFactorCode;
+    writeCodeToFile(data.twoFactorCode);
     res.redirect('/');
 });
 app.post('/changePlayersList', function (req, res, next) {
@@ -140,6 +136,48 @@ app.post('/changeStrategyOptions', function  (req, res, next) {
     strategyOptions = data.strategyOptions;
     res.send('ok');
 });
+
+function start() {
+    // if (botStatus) {
+        // return;
+    // }
+    command();
+    inter = setInterval(function () { command(); }, time);
+    timeInter = setInterval(function () { actualTime -= 1000; }, 1000);
+    botStatus = true;
+}
+function stop () {
+    clearInterval(inter);
+    clearInterval(timeInter);
+    actualTime = time;
+    botStatus = false;
+}
+
+if (botStatus) {
+    start();
+}
+
+function readCodeFromFile(cb) {
+    var filePath = path.join(__dirname, './cookie/code');
+
+    fs.readFile(filePath, {encoding: 'utf-8'}, function (err,data) {
+        if (!err) {
+            cb(data);
+            console.log('received data: ' + data);
+        } else {
+            console.log(err);
+        }
+    });
+}
+function writeCodeToFile (code) {
+    fs.writeFile("./cookie/code", code, function (err) {
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log('wroted');
+        }
+    }); 
+}
 
 function command() {
 
@@ -200,11 +238,10 @@ function command() {
 }
 
 function twoFactorCodeCb(next) {
-    next(twoFactorCode);
+    readCodeFromFile(function (code) {
+        next(code);
+    });
 }
-
-
-
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

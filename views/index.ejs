@@ -29,7 +29,13 @@
 		<br>
 		<br>
 		<br>
-		<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
+		<p>В СПИСКЕ <%= playersInTradeList %> ЧЕЛОВЕК</p>
+		<br>
+		<br>
+		<br>
+		<div style="background: <%= status ? 'green' : 'red' %>">
+			<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
+		</div>
 		<% if (status) { %>
 			<p><a href="/stop">СТОП</a></p>
 		<% } else { %>

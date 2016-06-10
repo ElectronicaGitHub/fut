@@ -39,6 +39,7 @@ function Trader(apiClient) {
 		lowerCostCountForSkip : 3,
 		buyAndSellDiffNotToSkip : 200 // разница цены чтоб купить а не скипнуть
 	};
+	this.playersInTradeList = 0;
 	this.apiClient = apiClient;
 	this.timeoutTime = { max : 7000, min : 4000 };
 	this.freePacks = 0;
@@ -502,6 +503,9 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					sold_players = players.filter(function (el) {
 						return el.tradeState == 'closed';
 					});
+
+					self.playersInTradeList = players.length - sold_players.length;
+
 					console.log('reListWithDBSync::PLAYERS CLOSED COUNT **', sold_players.length, '**');
 
 					oldTradepile = players.map(function (player) {
