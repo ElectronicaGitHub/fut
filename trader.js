@@ -879,7 +879,7 @@ module.exports = Trader;
 //
 var UTILS = {
 	getTime : function () {
-		return new Date().toLocaleString().replace(/T/, ' ').replace(/\..+/, '');
+		return new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
 	},
 	makeId : function () {
 	    return Math.random().toString(36).substring(7);
