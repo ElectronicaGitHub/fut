@@ -167,7 +167,7 @@ function readCodeFromFile(cb) {
     fs.readFile(filePath, {encoding: 'utf-8'}, function (err,data) {
         if (!err) {
             cb(data);
-            console.log('received data: ' + data);
+            // console.log('received data: ' + data);
         } else {
             console.log(err);
         }
@@ -178,7 +178,7 @@ function writeCodeToFile (code) {
         if (err) {
             return console.log(err);
         } else {
-            console.log('wroted');
+            // console.log('wroted');
         }
     }); 
 }
