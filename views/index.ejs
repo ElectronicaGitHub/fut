@@ -78,7 +78,8 @@
 			    <th>TimeDiff( hours)</th>
 			</tr>
 			<% for (var i in players) { %>
-				<tr class="<%= players[i].sold ? 'sold' : ''%>">
+				<!-- <tr class="<%= players[i].sold ? 'sold' : ''%>"> -->
+				<tr>
 				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
 				    <td><%= players[i].rare %></td> 
 				    <td><%= players[i].rating %></td>
