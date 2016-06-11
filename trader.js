@@ -523,7 +523,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 						return cb(null);
 					});
 				});
-			}, 34078);
+			}, 100078);
 		},
 		function (cb) {
 			async.eachSeries(oldTradepile, function (player, cb) {
