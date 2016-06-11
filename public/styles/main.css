@@ -10,6 +10,6 @@ tr {
 	background: green;
 	color: white;
 }
-td {
+td, th {
 	text-align: center;
 }
