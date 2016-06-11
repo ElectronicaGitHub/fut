@@ -71,13 +71,15 @@
 		</table> -->
 		<table>
 			<tr>
-				<th>Date</th>
-			    <th>Money</th> 
+				<th>Date ** </th>
+			    <th>Buy Money ** </th> 
+			    <th>Sell Money</th> 
 			</tr>
 			<% for (var i in snapshots) { %>
 				<tr>
 				    <td><%= snapshots[i].created %></td> 
-				    <td><%= snapshots[i].money %></td> 
+				    <td><%= snapshots[i].buyMoney %></td> 
+				    <td><%= snapshots[i].sellMoney %></td> 
 				</tr>
 			<% } %>
 		</table>
