@@ -512,9 +512,12 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 				self.apiClient.getTradepile(function (err, data) {
 					if (err) return cb(err);
 					data.auctionInfo.map(function (player) {
-						var pr = player.itemData.lastSalePrice || 0;
-						buyMoney += pr;
-						sellMoney += player.buyNowPrice;
+						// если сделка не закрыта то прибавляем ценники
+						if (player.tradeState != 'closed') {
+							var pr = player.itemData.lastSalePrice || 0;
+							buyMoney += pr;
+							sellMoney += player.buyNowPrice;
+						}
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
