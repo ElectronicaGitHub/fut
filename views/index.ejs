@@ -17,7 +17,7 @@
 </head>
 <body ng-app="fifatrader" ng-controller="fifatrader">
 
-	<div class="col-xs-4">
+	<div class="col-xs-3">
 		<form action="/changeTwoFactorCode" method="POST">
 			<input type="text" name="twoFactorCode" value="<%= twoFactorCode %>">
 			<button type="submit">Поменять код</button>
@@ -50,26 +50,6 @@
 		<br>
 		<p><a href="/log">ЛОГ</a></p>
 
-		<!-- <table>
-			<tr>
-				<th>Image</th>
-			    <th>Rare</th> 
-			    <th>Rating</th>
-			    <th>Asset Id</th>
-			    <th>Revenue</th>
-			    <th>TimeDiff( hours)</th>
-			</tr>
-			<% for (var i in players) { %>
-				<tr class="<%= players[i].sold ? 'sold' : ''%>">
-				    <td><img width="25" height="25" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
-				    <td><%= players[i].rare %></td> 
-				    <td><%= players[i].rating %></td>
-				    <td><%= players[i].assetId %></td>
-				    <td><%= players[i].revenue %></td>
-				    <td><%= players[i].timeDiff %></td>
-				</tr>
-			<% } %>
-		</table> -->
 		<table>
 			<tr>
 				<th>Date ** </th>
@@ -85,7 +65,32 @@
 			<% } %>
 		</table>
 	</div>
-	<div class="col-xs-4">
+
+	<div class="col-xs-3">
+		<p>ПРОДАНО : <%= players.length %></p>
+		<table>
+			<tr>
+				<th>Image</th>
+			    <th>Rare</th> 
+			    <th>Rating</th>
+			    <th>Asset Id</th>
+			    <th>Revenue</th>
+			    <th>TimeDiff( hours)</th>
+			</tr>
+			<% for (var i in players) { %>
+				<tr class="<%= players[i].sold ? 'sold' : ''%>">
+				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/<%= players[i].assetId %>.png"></td>
+				    <td><%= players[i].rare %></td> 
+				    <td><%= players[i].rating %></td>
+				    <td><%= players[i].assetId %></td>
+				    <td><%= players[i].revenue %></td>
+				    <td><%= players[i].timeDiff %></td>
+				</tr>
+			<% } %>
+		</table>
+	</div>
+
+	<div class="col-xs-3">
 
 		<div class="filter">
 			<p>Фильтр поиска</p>
@@ -106,7 +111,7 @@
 
 	</div>
 	
-	<div class="col-xs-4">
+	<div class="col-xs-3">
 		<div ng-show="currentStrategy == 'players'">
 			<p>Поиск игроков</p>
 			<input type="text" ng-model="name">
