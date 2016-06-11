@@ -508,18 +508,19 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 		},
 		function (cb) {
 			setTimeout(function () {
-				var price = self.credits;
+				var buyMoney = self.credits, sellMoney = self.credits;
 				self.apiClient.getTradepile(function (err, data) {
 					if (err) return cb(err);
 					data.auctionInfo.map(function (player) {
 						var pr = player.itemData.lastSalePrice || 0;
-						price += pr;
+						buyMoney += pr;
+						sellMoney += player.buyNowPrice;
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
-					var ms = MoneySnapshot({money : price});
+					var ms = MoneySnapshot({buyMoney : buyMoney, sellMoney : sellMoney});
 					ms.save(function (err, ok) {
-						console.log('reListWithDBSync::SUMMARY MONEY', price);
+						console.log('reListWithDBSync::SUMMARY BUY MONEY', buyMoney, 'SELL MONEY', sellMoney);
 						return cb(null);
 					});
 				});
