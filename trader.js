@@ -659,12 +659,13 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 					buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(filteredCosts[1]);
 				}
 
-				// if ((Math.abs(buyPlayerFor - buyNowPriceOnMarketAvg) <  self.options.buyAndSellDiffNotToSkip) &&
-				// 	filteredCosts.length < 5) {
-				// 	// тут можно переставлять подороже например а можно скипать
-				// 	buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
-				// 	buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
-				// }
+				if (Math.abs(buyPlayerFor - buyNowPriceOnMarketAvg) <  self.options.buyAndSellDiffNotToSkip) {
+					self.iterateParams.costs[player.tradeId] = { was : true };
+					return cb(null);
+					// тут можно переставлять подороже например а можно скипать
+					// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
+					// buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
+				}
 
 				console.log('buyMin::BUY FOR *', buyPlayerFor);
 				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
