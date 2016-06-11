@@ -11,6 +11,7 @@ var config = require('./configs/config_file');
 var async = require('async');
 var fs = require('fs');
 var Player = require('./models/player.js');
+var MoneySnapshot = require('./models/MoneySnapshot.js');
 var app = express();
 
 
@@ -24,7 +25,8 @@ var futapi = require("./futLib/index.js");
 var apiClient = new futapi(options);
 var trader = new (require('./trader.js'))(apiClient);
 
-var botStatus = true,
+// var botStatus = true,
+var botStatus = false,
     buyStatus = true,
     inter,
     timeInter,
@@ -77,21 +79,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res, next) {
     Player.find().sort({ sold : -1 }).exec(function (err, players) {
-        readCodeFromFile(function (code) {
-            res.render('index', {
-                status : botStatus,
-                players : players,
-                time : actualTime,
-                buyStatus : buyStatus,
-                twoFactorCode : code,
-                currentStrategy : currentStrategy,
-                playersListForStrategy : strategyOptions.players.list,
-                searchOptions : searchOptions,
-                strategyOptions : strategyOptions,
-                playersInTradeList : trader.playersInTradeList
+        MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
+            readCodeFromFile(function (code) {
+                res.render('index', {
+                    status : botStatus,
+                    players : players,
+                    snapshots : snapshots,
+                    time : actualTime,
+                    buyStatus : buyStatus,
+                    twoFactorCode : code,
+                    currentStrategy : currentStrategy,
+                    playersListForStrategy : strategyOptions.players.list,
+                    searchOptions : searchOptions,
+                    strategyOptions : strategyOptions,
+                    playersInTradeList : trader.playersInTradeList
+                });     
             });
-                
-        });
+        })
     })
 });
 app.get('/start', function (req, res, next) {

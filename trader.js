@@ -6,6 +6,7 @@ var async = require('async');
 var futapi = require("./futLib/index.js");
 var _ = require('lodash');
 var Player = require('./models/player.js');
+var MoneySnapshot = require('./models/MoneySnapshot.js');
 var moment = require('moment');
 
 console.log = function(d) {
@@ -253,7 +254,6 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			}
 		},
 		continueStatus : function () {
-			console.log('CONDITIONS CHECK');
 			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost, 'spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit, 'boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit, 'credits', self.credits);
 			var res = !(findObject.maxb > maxCost || 
 				self.currentStrategyData.spendMoney > moneyLimit || 
@@ -508,14 +508,18 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 		},
 		function (cb) {
 			setTimeout(function () {
+				var price = self.credits;
 				self.apiClient.getTradepile(function (err, data) {
 					if (err) return cb(err);
 					data.auctionInfo.map(function (player) {
+						price += player.buyNowPrice;
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
-					// console.log('reListWithDBSync::NEW TRADEPILE GET AND MAP FORMED', newTradepileObject);
-					return cb(null);
+					var ms = MoneySnapshot({money : price}, function (err, ok) {
+						console.log('reListWithDBSync::SUMMARY MONEY', price);
+						return cb(null);
+					});
 				});
 			}, 34078);
 		},
@@ -527,7 +531,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					soldTime : new Date(),
 				}, {new : true}, function (dbError, dbResult) {
 					if (dbResult) {
-						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId);
+						console.log('reListWithDBSync::DB::PLAYER UPDATED WITH TRADEID', player.tradeId, 'TO', dbResult.tradeId, ' | :::SOLD:::', player.sold);
 					} 
 					// else {
 						// console.log('reListWithDBSync::DB::PLAYER NOT FOUND');
