@@ -2,8 +2,8 @@ $(function () {
 	console.log('stats');
 
 	var margin = {top: 20, right: 20, bottom: 100, left: 40},
-    width = $(window).width - margin.left - margin.right,
-    height = $(window).height/1.5 - margin.top - margin.bottom;
+    width = $(window).width() - margin.left - margin.right,
+    height = $(window).height()/1.5 - margin.top - margin.bottom;
 
 // Parse the date / time
 var	parseDate = d3.time.format("%Y-%m-%d").parse;
