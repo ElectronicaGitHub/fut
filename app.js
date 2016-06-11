@@ -86,6 +86,7 @@ app.get('/', function (req, res, next) {
                     players : players,
                     snapshots : snapshots,
                     time : actualTime,
+                    credits : trader.credits,
                     buyStatus : buyStatus,
                     twoFactorCode : code,
                     currentStrategy : currentStrategy,
