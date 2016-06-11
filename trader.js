@@ -512,7 +512,8 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 				self.apiClient.getTradepile(function (err, data) {
 					if (err) return cb(err);
 					data.auctionInfo.map(function (player) {
-						price += player.buyNowPrice;
+						var pr = player.itemData.lastSalePrice || 0;
+						price += pr;
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
