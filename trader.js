@@ -517,7 +517,8 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 						newTradepileObject[player.itemData.id] = player.tradeId;
 						return { cardId : player.itemData.id, tradeId : player.tradeId, oldTradeId : oldTradepileObject[player.itemData.id] };
 					});
-					var ms = MoneySnapshot({money : price}, function (err, ok) {
+					var ms = MoneySnapshot({money : price});
+					ms.save(function (err, ok) {
 						console.log('reListWithDBSync::SUMMARY MONEY', price);
 						return cb(null);
 					});
