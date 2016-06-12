@@ -91,11 +91,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 }])
 
 
-.filter('fastBuyPlayers', function () {
+.filter('fastBuyPlayers', function ($rootScope) {
 	return function (players, arr) {
 		var min = arr[0];
 		var max = arr[1];
-		$scope._players = [];
+		$rootScope._players = [];
 		for (var i in players) {
 			if (players[i].timeDiff) {
 				if (players[i].timeDiff >= min && players[i].timeDiff <= max) {
