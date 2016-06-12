@@ -12,6 +12,7 @@
 	</script>
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/moment/moment.js"></script>
 	<script src="scripts/main.js"></script>
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="styles/main.css">
@@ -90,7 +91,7 @@
 			    <td>{{ p.rating }}</td>
 			    <td>{{ p.revenue }}</td>
 			    <td>{{ p.timeDiff }}</td>
-			    <td>{{ p.soldTime }}</td>
+			    <td>{{ moment(p.soldTime).format('DD.MM hh:mm:ss') }}</td>
 			</tr>
 		</table>
 	</div>
