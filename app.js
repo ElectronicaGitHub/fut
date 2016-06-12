@@ -25,8 +25,8 @@ var futapi = require("./futLib/index.js");
 var apiClient = new futapi(options);
 var trader = new (require('./trader.js'))(apiClient);
 
-// var botStatus = true,
-var botStatus = false,
+var botStatus = true,
+// var botStatus = false,
     buyStatus = true,
     inter,
     timeInter,
@@ -78,8 +78,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', require('./routes/index.js')(express));
 
 app.get('/', function (req, res, next) {
-    Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
-    // Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
+    // Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
+    Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
         MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
             readCodeFromFile(function (code) {
                 res.render('index', {
