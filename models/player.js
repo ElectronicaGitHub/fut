@@ -24,8 +24,10 @@ var Player = new Schema({
 	    default: Date.now
 	}
 });
+
 Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice * 1.0525; });
-Player.virtual('timeDiff').get(function() { 
+Player.virtual('timeDiff').get(function() {
+	console.log('a'); 
 	if (this.soldTime && this.created) {
 		var a = moment(this.soldTime);
 		var b = moment(this.created);
@@ -35,5 +37,8 @@ Player.virtual('timeDiff').get(function() {
 		return d;
 	} else return null;
 });
+
+Player.set('toObject', { getters: true });
+Player.set('toJSON', { getters: true });
 
 module.exports = mongoose.model('Player', Player);
