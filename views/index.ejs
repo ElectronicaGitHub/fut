@@ -83,7 +83,8 @@
 			    <th>Revenue</th>
 			    <th>TimeDiff( hours)</th>
 			</tr>
-			<tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | filter:'-soldTime'">
+			<!-- <tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | filter:soldTime'"> -->
+			<tr ng-repeat="p in players | filter:'soldTime'">
 			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 			    <td>{{ p.rare }}</td> 
 			    <td>{{ p.rating }}</td>
