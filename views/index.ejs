@@ -77,11 +77,11 @@
 			    <th>TimeDiff( hours)</th>
 			</tr>
 			<tr ng-repeat="p in players"></tr>
-			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/<%= p.assetId %>.png"></td>
-			    <td><%= p.rare %></td> 
-			    <td><%= p.rating %></td>
-			    <td><%= p.revenue %></td>
-			    <td><%= p.timeDiff %></td>
+			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
+			    <td>{{ p.rare }}</td> 
+			    <td>{{ p.rating }}</td>
+			    <td>{{ p.revenue }}</td>
+			    <td>{{ p.timeDiff }}</td>
 			</tr>
 		</table>
 	</div>
