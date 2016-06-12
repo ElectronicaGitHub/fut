@@ -97,10 +97,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		var max = arr[1];
 		var _players = [];
 		for (var i in players) {
-			if (players[i].timeDiff >= min && players[i].timeDiff <= max) {
-				_players.push(players[i]);
+			if (players[i].timeDiff) {
+				if (players[i].timeDiff >= min && players[i].timeDiff <= max) {
+					_players.push(players[i]);
+				}
 			}
-			
 		}
 		return _players;
 	}
