@@ -25,7 +25,7 @@ var Player = new Schema({
 	}
 });
 
-Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice; });
+Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice * 1.0525; });
 Player.virtual('timeDiff').get(function() { 
 	if (this.soldTime && this.created) {
 		var a = moment(this.soldTime);

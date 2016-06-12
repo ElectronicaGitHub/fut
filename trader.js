@@ -660,7 +660,16 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 					buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(filteredCosts[1]);
 				}
 
-				if (Math.abs(buyPlayerFor - buyNowPriceOnMarketAvg) <  self.options.buyAndSellDiffNotToSkip) {
+				// Последняя проверка с добавлением процента который берет себе фифа 0.0525
+				// 4000 4200 -10
+				// 4000 * 1.0525 = (4210 - 4200) = НЕ ОК
+				// 
+				// 4600 - 4000 ->
+				// 4600 - 4210 = ОК
+				// 
+				// 4200 - 4210 = НЕ ОК
+				// 
+				if ((buyNowPriceOnMarketAvg - (buyPlayerFor * 1.0525)) <  self.options.buyAndSellDiffNotToSkip) {
 					self.iterateParams.costs[player.tradeId] = { was : true };
 					return cb(null);
 					// тут можно переставлять подороже например а можно скипать
