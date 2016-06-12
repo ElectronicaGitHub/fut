@@ -82,6 +82,7 @@
 			    <th>Rating</th>
 			    <th>Revenue</th>
 			    <th>TimeDiff( hours)</th>
+			    <th>SoldTime</th>
 			</tr>
 			<!-- <tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | filter:soldTime'"> -->
 			<tr ng-repeat="p in players | orderBy:'-soldTime'">
@@ -90,6 +91,7 @@
 			    <td>{{ p.rating }}</td>
 			    <td>{{ p.revenue }}</td>
 			    <td>{{ p.timeDiff }}</td>
+			    <td>{{ p.soldTime }}</td>
 			</tr>
 		</table>
 	</div>
