@@ -15,7 +15,8 @@ var variables = {
 
 angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', function ($scope, $http) {
 	$scope.name = '';
-	$scope.playersList = [],
+	$scope.playersList = [];
+	$scope.players = players;
 	$scope.searchPlayersList = window.playersListForStrategy;
 	$scope.searchOptions = window.searchOptions;
 	$scope.strategyOptions = window.strategyOptions;
