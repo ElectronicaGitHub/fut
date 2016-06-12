@@ -68,7 +68,13 @@
 	</div>
 
 	<div class="col-xs-3">
-		<p>ПРОДАНО : <%= players.length %></p>
+		<div class="filters">
+			<div class="fastBuyPlayers">
+				<input type="text" ng-model="filters.fastBuyPlayers.min">
+				<input type="text" ng-model="filters.fastBuyPlayers.max">
+			</div>
+		</div>
+		<p>ПРОДАНО : {{ players.length }} </p>
 		<table>
 			<tr>
 				<th>Image</th>
@@ -77,7 +83,7 @@
 			    <th>Revenue</th>
 			    <th>TimeDiff( hours)</th>
 			</tr>
-			<tr ng-repeat="p in players">
+			<tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max]">
 			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 			    <td>{{ p.rare }}</td> 
 			    <td>{{ p.rating }}</td>

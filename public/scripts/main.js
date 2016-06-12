@@ -22,6 +22,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.strategyOptions = window.strategyOptions;
 	$scope.currentStrategy = window.currentStrategy;
 	$scope.rareVariants = [0, 1, 'SP', 3, 11];
+	$scope.filters = {
+		fastBuyPlayers : {
+			min : 0,
+			max : 2
+		}
+	};
 
 	$scope.changeStrategy = function (strategy) {
 		$scope.currentStrategy = strategy;
@@ -82,4 +88,20 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		.success(function (data) { console.log(data);})
 		.error(function (data) { console.log(data);});
 	}, true);
-}]);
+}])
+
+
+.filter('fastBuyPlayers', function () {
+	return function (players, arr) {
+		var min = arr[0];
+		var max = arr[1];
+		var _players = [];
+		for (var i in players) {
+			if (players[i].timeDiff >= min && players[i].timeDiff <= max) {
+				_players.push(players[i]);
+			}
+			
+		}
+		return _players;
+	}
+});
