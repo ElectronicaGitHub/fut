@@ -95,7 +95,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	return function (players, arr) {
 		var min = arr[0];
 		var max = arr[1];
-		var _players = [];
+		$scope._players = [];
 		for (var i in players) {
 			if (players[i].timeDiff) {
 				if (players[i].timeDiff >= min && players[i].timeDiff <= max) {
