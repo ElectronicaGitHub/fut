@@ -26,7 +26,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.filters = {
 		fastBuyPlayers : {
 			min : 0,
-			max : 2
+			max : 1000
 		}
 	};
 
