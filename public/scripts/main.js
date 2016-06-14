@@ -63,7 +63,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					obj[keys[i]].buyMoneyDiffP = obj[keys[i]].buyMoneyDiff / lastObj.buyMoney;
 					obj[keys[i]].sellMoneyDiffP = obj[keys[i]].sellMoneyDiff / lastObj.sellMoney;
 				}
-				lastObj = obj[i];
+				lastObj = obj[keys[i]];
 			}
 			$scope.moneyLog.data.byDates = obj;
 		}
