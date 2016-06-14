@@ -53,6 +53,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			}
 
 			for (var i in obj) {
+				debugger;
 				if (obj[i-1]) {
 					obj[i].buyMoneyDiff -= obj[i-1].buyMoneyDiff;
 					obj[i].sellMoneyDiff -= obj[i-1].sellMoneyDiff;
