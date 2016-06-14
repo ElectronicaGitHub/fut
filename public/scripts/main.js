@@ -55,11 +55,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			var lastObj;
 			for (var i in obj) {
 				if (lastObj) {
-					obj[i].buyMoneyDiff -= obj[i-1].buyMoneyDiff;
-					obj[i].sellMoneyDiff -= obj[i-1].sellMoneyDiff;
+					obj[i].buyMoneyDiff -= lastObj.buyMoneyDiff;
+					obj[i].sellMoneyDiff -= lastObj.sellMoneyDiff;
 
-					obj[i].buyMoneyDiffP = obj[i].buyMoneyDiff / obj[i-1].buyMoney;
-					obj[i].sellMoneyDiffP = obj[i].sellMoneyDiff / obj[i-1].sellMoney;
+					obj[i].buyMoneyDiffP = obj[i].buyMoneyDiff / lastObj.buyMoney;
+					obj[i].sellMoneyDiffP = obj[i].sellMoneyDiff / lastObj.sellMoney;
 				}
 				lastObj = obj[i];
 			}
