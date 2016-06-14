@@ -36,11 +36,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		},
 		state : 'byDates',
 		changeState : function () {
-			this.state = this.state == 'byTimes' ? 'byDates' : 'byTimes';
+			$scope.moneyLog.state = $scope.moneyLog.state == 'byTimes' ? 'byDates' : 'byTimes';
 		},
 		makeByDates : function () {
 			var obj = {};
-			var data = this.data.byDates;
+			var data = $scope.moneyLog.data.byDates;
 			for (var i in data) {
 				var d = moment(data[i].created).format('DD-MM-YY');
 				obj[d] = obj[d] || { buyMoney : [], sellMoney : [] };
