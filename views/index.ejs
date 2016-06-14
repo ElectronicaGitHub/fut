@@ -74,10 +74,10 @@
 				    <th>Buy Money</th> 
 				    <th>Sell Money</th> 
 				</tr>
-				<tr ng-repeat="s in moneyLog.data.byDates">
-				    <td>{{ s.created }}</td> 
-				    <td>{{ s.buyMoney }}</td> 
-				    <td>{{ s.sellMoney }}</td> 
+				<tr ng-repeat="(k,v) in moneyLog.data.byDates">
+				    <td>{{ k }}</td> 
+				    <td>{{ v.buyMoney }}</td> 
+				    <td>{{ v.sellMoney }}</td> 
 				</tr>
 			</table>
 
