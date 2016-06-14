@@ -36,15 +36,17 @@ var actualTime = time,
     currentStrategy = 'default',
     searchOptions = {
         rare : 'SP',
-        maxb : 7000,
-        minb : 5000,
+        maxb : 13000,
+        minb : 11000,
+        zone : 'attacker'
     },
     strategyOptions = {
         default : {
-            minPlayerSpeed : 78,
-            buyAndSellDiffNotToSkip : 200,
+            minPlayerSpeed : 80,
+            minPlayerDribling : 80,
+            buyAndSellDiffNotToSkip : 300,
             lowerCostCountForSkip : 3,
-            step : 300,
+            step : 500,
             buyMinNoiseCoef : 1.25,
             moneyLimit : null,
             itemsLimit : 8,
