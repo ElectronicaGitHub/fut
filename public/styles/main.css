@@ -12,4 +12,5 @@ tr {
 }
 td, th {
 	text-align: center;
+	padding: 0 2px;
 }
