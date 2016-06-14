@@ -52,8 +52,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				obj[i].sellMoney = Math.max.apply(null, obj[i].sellMoney);
 			}
 
-			for (var i in obj) {
-				debugger;
+			for (var i = 0; i < Object.keys(obj).length; i++) {
 				if (obj[i-1]) {
 					obj[i].buyMoneyDiff -= obj[i-1].buyMoneyDiff;
 					obj[i].sellMoneyDiff -= obj[i-1].sellMoneyDiff;
