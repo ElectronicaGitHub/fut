@@ -55,7 +55,7 @@
 
 		<div>
 			<button class="btn btn-info" ng-click="moneyLog.changeState()">Изменить отображение</button>
-			<table ng-show="moneyLog.state = 'byTimes'">
+			<table ng-show="moneyLog.state == 'byTimes'">
 				<tr>
 					<th>Date</th>
 				    <th>Buy Money</th> 
@@ -67,7 +67,8 @@
 				    <td>{{ s.sellMoney }}</td> 
 				</tr>
 			</table>
-			<table ng-show="moneyLog.state = 'byDates'">
+
+			<table ng-show="moneyLog.state == 'byDates'">
 				<tr>
 					<th>Date</th>
 				    <th>Buy Money</th> 
