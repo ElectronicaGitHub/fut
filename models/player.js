@@ -19,6 +19,7 @@ var Player = new Schema({
 	soldTime : {
 		type : Date
 	},
+	position : String,
 	created: {
 	    type: Date,
 	    default: Date.now
