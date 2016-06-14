@@ -51,6 +51,16 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				obj[i].buyMoney = Math.max.apply(null, obj[i].buyMoney);
 				obj[i].sellMoney = Math.max.apply(null, obj[i].sellMoney);
 			}
+
+			for (var i in obj) {
+				if (obj[i-1]) {
+					obj[i].buyMoneyDiff -= obj[i-1].buyMoneyDiff;
+					obj[i].sellMoneyDiff -= obj[i-1].sellMoneyDiff;
+
+					obj[i].buyMoneyDiffP = obj[i].buyMoneyDiff / obj[i-1].buyMoney;
+					obj[i].sellMoneyDiffP = obj[i].sellMoneyDiff / obj[i-1].sellMoney;
+				}
+			}
 			$scope.moneyLog.data.byDates = obj;
 		}
 	}
