@@ -51,6 +51,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				obj[i].buyMoney = Math.max.apply(null, obj[i].buyMoney);
 				obj[i].sellMoney = Math.max.apply(null, obj[i].sellMoney);
 			}
+			$scope.moneyLog.data.byDates;
 		}
 	}
 	$scope.moneyLog.makeByDates();
