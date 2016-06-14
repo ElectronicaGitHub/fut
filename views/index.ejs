@@ -78,8 +78,8 @@
 				</tr>
 				<tr ng-repeat="(k,v) in moneyLog.data.byDates">
 				    <td>{{ k }}</td> 
-				    <td>{{ v.buyMoney }} (+{{ v.buyMoneyDiff}})</td> 
-				    <td>{{ v.sellMoney }} (+{{ v.sellMoneyDiff}})</td> 
+				    <td>{{ v.buyMoney }} <b>( +{{ v.buyMoneyDiff}} )</b></td> 
+				    <td>{{ v.sellMoney }} <b>( +{{ v.sellMoneyDiff}} )</b></td> 
 				    <td>{{ v.buyMoneyDiffP }}</td>
 				    <td>{{ v.sellMoneyDiffP }}</td>
 				</tr>
