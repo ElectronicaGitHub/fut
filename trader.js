@@ -328,6 +328,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 	})
 }
 Trader.prototype.instantBuyAndSellPlayers = function (players, CALLBACK) {
+	console.log('instantBuyAndSellPlayers::STARTED');
 	var self = this;
 	self.playersList = players;
 	self.each.bind(trader, false, [self.buy, self.toTradepile, self.sell], function (err, ok) {
