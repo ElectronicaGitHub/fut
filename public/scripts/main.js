@@ -29,6 +29,31 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			max : 1000
 		}
 	};
+	$scope.moneyLog = {
+		data : {
+			byDates : angular.copy(window.snapshots),
+			byTimes : angular.copy(window.snapshots)
+		},
+		state : 'byDates',
+		changeState : function () {
+			this.state = this.state == 'byTimes' ? 'byDates' : 'byTimes';
+		},
+		makeByDates : function () {
+			var obj = {};
+			var data = this.data.byDates;
+			for (var i in data) {
+				var d = moment(data[i].created).format('DD-MM-YY');
+				obj[d] = obj[d] || { buyMoney : [], sellMoney : [] };
+				obj[d].buyMoney.push(data[i].buyMoney);
+				obj[d].sellMoney.push(data[i].sellMoney);
+			}
+			for (var i in obj) {
+				obj[i].buyMoney = Math.max.apply(null, obj[i].buyMoney);
+				obj[i].sellMoney = Math.max.apply(null, obj[i].sellMoney);
+			}
+		}
+	}
+	$scope.moneyLog.makeByDates();
 
 	$scope.changeStrategy = function (strategy) {
 		$scope.currentStrategy = strategy;
