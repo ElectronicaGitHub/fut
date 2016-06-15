@@ -82,25 +82,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function (req, res, next) {
     // Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
     Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
-        MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
-            readCodeFromFile(function (code) {
-                res.render('index', {
-                    status : botStatus,
-                    players : players,
-                    snapshots : snapshots,
-                    time : actualTime,
-                    credits : trader.credits,
-                    buyStatus : buyStatus,
-                    twoFactorCode : code,
-                    currentStrategy : currentStrategy,
-                    playersListForStrategy : strategyOptions.players.list,
-                    searchOptions : searchOptions,
-                    strategyOptions : strategyOptions,
-                    playersInTradeList : trader.playersInTradeList
-                });     
+        Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
+            MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
+                readCodeFromFile(function (code) {
+                    res.render('index', {
+                        status : botStatus,
+                        players : players,
+                        activePlayers : activePlayers,
+                        snapshots : snapshots,
+                        time : actualTime,
+                        credits : trader.credits,
+                        buyStatus : buyStatus,
+                        twoFactorCode : code,
+                        currentStrategy : currentStrategy,
+                        playersListForStrategy : strategyOptions.players.list,
+                        searchOptions : searchOptions,
+                        strategyOptions : strategyOptions,
+                        playersInTradeList : trader.playersInTradeList
+                    });     
+                });
             });
-        })
-    })
+        });
+    });
 });
 app.get('/start', function (req, res, next) {
     start();
@@ -143,6 +146,23 @@ app.post('/changeStrategyOptions', function  (req, res, next) {
     var data = req.body;
     strategyOptions = data.strategyOptions;
     res.send('ok');
+});
+
+// API
+// 
+app.get('/api/players', function (req, res, next) {
+    Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
+        res.json({
+            players : players,
+        });
+    });
+});
+app.get('/api/snapshots', function (req, res, next) {
+    MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
+        res.json({
+            snapshots : snapshots
+        });
+    });
 });
 
 function start() {

@@ -18,6 +18,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.moment = moment;
 	$scope.playersList = [];
 	$scope.players = window.players;
+	$scope.activePlayers = window.activePlayers;
 	$scope.searchPlayersList = window.playersListForStrategy;
 	$scope.searchOptions = window.searchOptions;
 	$scope.strategyOptions = window.strategyOptions;
@@ -29,6 +30,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			max : 1000
 		}
 	};
+	$scope.playersLog = {
+		state : 'sold',
+		changeState : function () {
+			$scope.playersLog.state = $scope.playersLog.state == 'sold' ? 'active' : 'sold';
+		}
+	}
 	$scope.moneyLog = {
 		data : {
 			byDates : angular.copy(window.snapshots),

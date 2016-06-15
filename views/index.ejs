@@ -9,6 +9,7 @@
 		window.searchOptions = <%- JSON.stringify(searchOptions) %>;
 		window.strategyOptions = <%- JSON.stringify(strategyOptions) %>;
 		window.players = <%- JSON.stringify(players) %>;
+		window.activePlayers = <%- JSON.stringify(activePlayers) %>;
 		window.snapshots = <%- JSON.stringify(snapshots) %>;
 	</script>
 	<script src="libs/jquery/dist/jquery.min.js"></script>
@@ -89,33 +90,57 @@
 	</div>
 
 	<div class="col-xs-3">
-		<div class="filters">
-			<div class="fastBuyPlayers">
-				<input type="text" ng-model="filters.fastBuyPlayers.min">
-				<input type="text" ng-model="filters.fastBuyPlayers.max">
-			</div>
+		<button class="btn btn-info" ng-click="playersLog.changeState()">Изменить отображение</button>
+
+		<div ng-show="playersLog.state == 'active'">
+			<table>
+				<tr>
+					<th>Image</th>
+					<th>AssetId</th>
+				    <th>Rare</th> 
+				    <th>Rating</th>
+				    <th>Revenue</th>
+				    <th>BoughtTime</th>
+				</tr>
+				<tr ng-repeat="p in activePlayers">
+				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
+				    <td>{{ p.assetId }}</td> 
+				    <td>{{ p.rare }}</td> 
+				    <td>{{ p.rating }}</td>
+				    <td>{{ p.revenue }}</td>
+				    <td>{{ moment(p.created).format('DD.MM hh:mm:ss') }}</td>
+				</tr>
+			</table>
 		</div>
-		<p>ПРОДАНО : {{ _players.length }} </p>
-		<table>
-			<tr>
-				<th>Image</th>
-				<th>assetId</th>
-			    <th>Rare</th> 
-			    <th>Rating</th>
-			    <th>Revenue</th>
-			    <th>TimeDiff( hours)</th>
-			    <th>SoldTime</th>
-			</tr>
-			<tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
-			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
-			    <td>{{ p.assetId }}</td> 
-			    <td>{{ p.rare }}</td> 
-			    <td>{{ p.rating }}</td>
-			    <td>{{ p.revenue }}</td>
-			    <td>{{ p.timeDiff }}</td>
-			    <td>{{ moment(p.soldTime).format('DD.MM hh:mm:ss') }}</td>
-			</tr>
-		</table>
+		<div ng-show="playersLog.state == 'sold'">
+			<div class="filters">
+				<div class="fastBuyPlayers">
+					<input type="text" ng-model="filters.fastBuyPlayers.min">
+					<input type="text" ng-model="filters.fastBuyPlayers.max">
+				</div>
+			</div>
+			<p>ПРОДАНО : {{ _players.length }} </p>
+			<table>
+				<tr>
+					<th>Image</th>
+					<th>AssetId</th>
+				    <th>Rare</th> 
+				    <th>Rating</th>
+				    <th>Revenue</th>
+				    <th>TimeDiff( hours)</th>
+				    <th>SoldTime</th>
+				</tr>
+				<tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
+				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
+				    <td>{{ p.assetId }}</td> 
+				    <td>{{ p.rare }}</td> 
+				    <td>{{ p.rating }}</td>
+				    <td>{{ p.revenue }}</td>
+				    <td>{{ p.timeDiff }}</td>
+				    <td>{{ moment(p.soldTime).format('DD.MM hh:mm:ss') }}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
 	<div class="col-xs-3">
