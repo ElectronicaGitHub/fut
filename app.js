@@ -234,6 +234,7 @@ function command() {
                     rare: searchOptions.rare, 
                     minb: searchOptions.minb, 
                     maxb: searchOptions.maxb, 
+                    zone: searchOptions.zone, 
                     start: 0, 
                     num: 20 
                 }, 100000, 
