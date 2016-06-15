@@ -7,8 +7,8 @@ tr {
 	font-size: 10px;
 }
 .sold {
-	background: #27A13D;
-	color: white;
+	background: rgba(129, 226, 147, 0.43);
+	/*color: white;*/
 }
 td, th {
 	text-align: center;
