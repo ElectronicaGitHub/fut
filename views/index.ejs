@@ -99,6 +99,7 @@
 		<table>
 			<tr>
 				<th>Image</th>
+				<th>assetId</th>
 			    <th>Rare</th> 
 			    <th>Rating</th>
 			    <th>Revenue</th>
@@ -108,6 +109,7 @@
 			<tr ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
 			    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 			    <td>{{ p.rare }}</td> 
+			    <td>{{ p.assetId }}</td> 
 			    <td>{{ p.rating }}</td>
 			    <td>{{ p.revenue }}</td>
 			    <td>{{ p.timeDiff }}</td>
