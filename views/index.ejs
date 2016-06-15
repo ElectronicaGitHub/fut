@@ -140,7 +140,7 @@
 				    <td>{{ p.rare }}</td> 
 				    <td>{{ p.rating }}</td>
 				    <td>{{ p.revenue }}</td>
-				    <td>{{ p.timeDiff }}</td>
+				    <td class="p.timeDiff <=24 ? 'sold' : ''">{{ p.timeDiff }}</td>
 				    <td>{{ moment(p.soldTime).format('DD.MM HH:mm:ss') }}</td>
 				</tr>
 			</table>
