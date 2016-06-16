@@ -221,7 +221,7 @@ Trader.prototype.buyAndSellSelectedPlayers = function (findObject, playersArray,
  * @param  {number} moneyLimit максимальная разрешимая для траты в стратегии сумма
  * @param  {number} itemsLimit максимальное количество вещей купленных в стратегии
  */
-Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, maxPlayersInListToBuy, buyMinNoiseCoef, moneyLimit, itemsLimit, callback) {
+Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, step, maxPlayersInListToBuy, buyMinNoiseCoef, moneyLimit, itemsLimit, maxSoldTimeToSkipInDays, callback) {
 	if (this.credits < findObject.maxb) {
 		console.log('buyAndSellWithIncreasingCost::NOT ENOUGHT MONEY FOR START STRATEGY');
 		return callback(null);
@@ -275,6 +275,21 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 				minCostCount : minCostCount
 			}
 		},
+		isPlayerGoodForBuying : function (player, cb) {
+			Player.find({ 
+				assetId : player.itemData.assetId,
+				sold : true
+			}, function (err, players) {
+				if (err) return cb(err);
+				if (!players || players.length == 0) return cb(null, true);
+				var timeDiffs = players.map(function (el) {
+					return el.timeDiff;
+				});
+				var max = Math.max.apply(null, timeDiffs);
+				if (max >= (maxSoldTimeToSkipInDays * 24)) { return cb(null, false); }
+				else return cb(null, true);
+			})
+		}
 		continueStatus : function () {
 			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost, 'spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit, 'boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit, 'credits', self.credits);
 			var res = !(findObject.maxb > maxCost || 
@@ -664,169 +679,183 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 		return BUYMINCALLBACK(null);
 	}
 
-	async.waterfall([
-		function (cb) {
-			time = self.randomTime();
-			console.log('buyMin::SEARCH QUERY', self.currentStrategyData.getBuyMinObject(player));
-			setTimeout(function () {
-				self.apiClient.search(self.currentStrategyData.getBuyMinObject(player), function (error, response) {
-					if (!response.auctionInfo) {
-						console.log('buyMin::ERROR, RESPONSE', response);
-						cb(null, []);
-					} else {
-						cb(null, response.auctionInfo);
-					}
-				});
-			}, time);
-		},
-		function (players, cb) {
-			if (!players.length) {
-				self.iterateParams.costs[player.tradeId] = { was : true };
-				return cb(null);
-			}
-
-			// если количество игроков слишком велико то нам не целесообразно их покупать и мы скипаем
-			if (players.length > self.currentStrategyData.maxPlayersInListToBuy) {
-				console.log('buyMin::TOO MANY PLAYERS IN SEARCH TO CONTINUE, LIMIT', self.currentStrategyData.maxPlayersInListToBuy);
-				self.iterateParams.costs[player.tradeId] = { was : true };
-				return cb(null);
-			}
-
-			console.log('buyMin::PLAYERS FOUND BY ID', player.itemData.assetId, 'NUMBER', players.length);
-			time = self.randomTime();
-			setTimeout(function () {
-
-				var buyPlayerFor, buyNowPriceOnMarketAvg, filteredCosts, filteredPlayers, ardId, buyId, minCostCount;
-
-				var _d = self.currentStrategyData.buyMinMakePrice(players, self, player);
-
-				if (_d.skip) {
-					return cb(null);
-				} else {
-					buyPlayerFor = _d.buyPlayerFor;
-					filteredCosts = _d.filteredCosts;
-					filteredPlayers = _d.filteredPlayers;
-					buyId = _d.buyId;
-					cardId = _d.cardId;
-					minCostCount = _d.minCostCount;
-				}
-
-				// если количество мелких цен меньше указанного то скипаем [1, 1, 1, 1, 2, 3, 4, 5];
-				// много единиц -> скипаем
-				if (minCostCount >= self.options.lowerCostCountForSkip) {
-					console.log('buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE');
-					self.iterateParams.costs[player.tradeId] = { was : true };
-					return cb(null);
-				}
-				// ищем средние цены по рынку из фильтрованного списка
-				var buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
-				// если цены совпали то увеличиваем немного цену
-				if (buyPlayerFor == buyNowPriceOnMarketAvg) {
-					buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(self.findAverage(filteredCosts));
-				}
-
-				// если в фильтранутом списке вдруг окажется лишь наша цена то мы выкупаем и
-				// переставляем на значение нашего коэффициента и да будет кайф
-				if (filteredCosts.length == 1) {
-					// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
-					buyNowPriceOnMarketAvg += 400;
-					buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
-				}
-
-				// обработка вот такой ситуации current [ 6500, 7800 ] тк средняя будет 7100 а так продадим за 7600
-				if (filteredCosts.length == 2) {
-					var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.1);
-
-					// buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(filteredCosts[1]);
-					buyNowPriceOnMarketAvg = validPrice;
-
-					// добавляем в список игрока и указываем ему цену за которую он должен быть выставлен
-					filteredPlayers[1].sellPrice = validPrice;
-					filteredPlayers[1].filteredCosts = filteredCosts;
-					self.playersForInstantBuy.push(filteredPlayers[1]);
-				}
-
-				// Последняя проверка с добавлением процента который берет себе фифа 0.0525
-				// 4000 4200 -10
-				// 4000 * 1.0525 = (4210 - 4200) = НЕ ОК
-				// 
-				// 4600 - 4000 ->
-				// 4600 - 4210 = ОК
-				// 
-				// 4200 - 4210 = НЕ ОК
-				// 
-				if ((buyNowPriceOnMarketAvg - (buyPlayerFor * 1.0525)) <  self.options.buyAndSellDiffNotToSkip) {
-					self.iterateParams.costs[player.tradeId] = { was : true };
-					return cb(null);
-					// тут можно переставлять подороже например а можно скипать
-					// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
-					// buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
-				}
-
-				console.log('buyMin::BUY FOR *', buyPlayerFor);
-				console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
-				
-				self.apiClient.placeBid(buyId, buyPlayerFor, function (err, pl) {
-					console.log('buyMin::DEBUG INFO', pl);
-
-					if (pl.code == 461) {
-						self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
-						self.iterateParams.costs[player.tradeId] = {
-							was : true
-						};
-						return cb(null);
-					}
-
-					if (pl.code == 470) {
-						console.log('buyMin::NO MONEY FOR BUYING');
-						return cb(new Error('NO MONEY FOR BUYING'));
-					}
-					if (pl.success == false) {
-						// ошибка при покупке
-						console.log('buyMin::ERROR', pl);
-						return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
-					} else {
-						var tradeId = player.tradeId;
-
-						// if (!boughtPlayer) {
-						// 	return cb(null);
-						// }
-						// var boughtPlayer = pl.auctionInfo[0];
-						// tradeId = boughtPlayer.tradeId;
-						// 
-						// все нормально покупка прошла успешно
-						self.currentStrategyData.spendMoney += buyPlayerFor;
-						self.currentStrategyData.boughtItems++;
-						self.credits -= buyPlayerFor;
-
-						// Указываем параметры для удобной работы потом с ними внутри следующих методов по
-						// тому же плеер трейд id который был в списке, тк они меняются
-						self.iterateParams.costs[player.tradeId] = { 
-							bid : futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg), 
-							buyNow : buyNowPriceOnMarketAvg,
-							// tradeId : boughtPlayer.tradeId,
-							tradeId : tradeId,
-							cardId : cardId,
-							id : buyId,
-							position : player.itemData.preferredPosition,
-							rare : player.itemData.rareflag,
-							rating : player.itemData.rating,
-							marketPrices : filteredCosts,
-							assetId : player.itemData.assetId,
-							buyPrice : buyPlayerFor,
-							sellPrice : buyNowPriceOnMarketAvg,
-						};
-
-						console.log('buyMin::PLAYER', tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
-						return cb(null);
-					}
-				});
-
-			}, time);
-		}
-	], function (err, ok) {
+	// Если надо сделать еще то сюда переносятся все асинхронные проверки
+	// проверяем на максимальное время продажи чела, если больше то скипаем
+	self.currentStrategyData.isPlayerGoodForBuying(player, function (err, status) {
 		if (err) return BUYMINCALLBACK(err);
-		BUYMINCALLBACK(null);
+		if (!status) {
+			console.log('buyMin::isPlayerGoodForBuying::STATUS = false, SKIP');
+			self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
+			self.iterateParams.costs[player.tradeId].was = true;
+			return BUYMINCALLBACK(null);
+		} else {
+			// console.log('buyMin::isPlayerGoodForBuying::STATUS = true, CONTINUE');
+
+			async.waterfall([
+				function (cb) {
+					time = self.randomTime();
+					console.log('buyMin::SEARCH QUERY', self.currentStrategyData.getBuyMinObject(player));
+					setTimeout(function () {
+						self.apiClient.search(self.currentStrategyData.getBuyMinObject(player), function (error, response) {
+							if (!response.auctionInfo) {
+								console.log('buyMin::ERROR, RESPONSE', response);
+								cb(null, []);
+							} else {
+								cb(null, response.auctionInfo);
+							}
+						});
+					}, time);
+				},
+				function (players, cb) {
+					if (!players.length) {
+						self.iterateParams.costs[player.tradeId] = { was : true };
+						return cb(null);
+					}
+
+					// если количество игроков слишком велико то нам не целесообразно их покупать и мы скипаем
+					if (players.length > self.currentStrategyData.maxPlayersInListToBuy) {
+						console.log('buyMin::TOO MANY PLAYERS IN SEARCH TO CONTINUE, LIMIT', self.currentStrategyData.maxPlayersInListToBuy);
+						self.iterateParams.costs[player.tradeId] = { was : true };
+						return cb(null);
+					}
+
+					console.log('buyMin::PLAYERS FOUND BY ID', player.itemData.assetId, 'NUMBER', players.length);
+					time = self.randomTime();
+					setTimeout(function () {
+
+						var buyPlayerFor, buyNowPriceOnMarketAvg, filteredCosts, filteredPlayers, ardId, buyId, minCostCount;
+
+						var _d = self.currentStrategyData.buyMinMakePrice(players, self, player);
+
+						if (_d.skip) {
+							return cb(null);
+						} else {
+							buyPlayerFor = _d.buyPlayerFor;
+							filteredCosts = _d.filteredCosts;
+							filteredPlayers = _d.filteredPlayers;
+							buyId = _d.buyId;
+							cardId = _d.cardId;
+							minCostCount = _d.minCostCount;
+						}
+
+						// если количество мелких цен меньше указанного то скипаем [1, 1, 1, 1, 2, 3, 4, 5];
+						// много единиц -> скипаем
+						if (minCostCount >= self.options.lowerCostCountForSkip) {
+							console.log('buyMin::TOO MANY PLAYERS WITH SAME LOW PRICE');
+							self.iterateParams.costs[player.tradeId] = { was : true };
+							return cb(null);
+						}
+						// ищем средние цены по рынку из фильтрованного списка
+						var buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
+						// если цены совпали то увеличиваем немного цену
+						if (buyPlayerFor == buyNowPriceOnMarketAvg) {
+							buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(self.findAverage(filteredCosts));
+						}
+
+						// если в фильтранутом списке вдруг окажется лишь наша цена то мы выкупаем и
+						// переставляем на значение нашего коэффициента и да будет кайф
+						if (filteredCosts.length == 1) {
+							// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
+							buyNowPriceOnMarketAvg += 400;
+							buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg);
+						}
+
+						// обработка вот такой ситуации current [ 6500, 7800 ] тк средняя будет 7100 а так продадим за 7600
+						if (filteredCosts.length == 2) {
+							var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.1);
+
+							// buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(filteredCosts[1]);
+							buyNowPriceOnMarketAvg = validPrice;
+
+							// добавляем в список игрока и указываем ему цену за которую он должен быть выставлен
+							filteredPlayers[1].sellPrice = validPrice;
+							filteredPlayers[1].filteredCosts = filteredCosts;
+							self.playersForInstantBuy.push(filteredPlayers[1]);
+						}
+
+						// Последняя проверка с добавлением процента который берет себе фифа 0.0525
+						// 4000 4200 -10
+						// 4000 * 1.0525 = (4210 - 4200) = НЕ ОК
+						// 
+						// 4600 - 4000 ->
+						// 4600 - 4210 = ОК
+						// 
+						// 4200 - 4210 = НЕ ОК
+						// 
+						if ((buyNowPriceOnMarketAvg - (buyPlayerFor * 1.0525)) <  self.options.buyAndSellDiffNotToSkip) {
+							self.iterateParams.costs[player.tradeId] = { was : true };
+							return cb(null);
+							// тут можно переставлять подороже например а можно скипать
+							// buyNowPriceOnMarketAvg *= self.currentStrategyData.buyMinNoiseCoef;
+							// buyNowPriceOnMarketAvg = futapi.calculateNextHigherPrice(buyNowPriceOnMarketAvg);
+						}
+
+						console.log('buyMin::BUY FOR *', buyPlayerFor);
+						console.log('buyMin::AVERAGE COST *', buyNowPriceOnMarketAvg);
+						
+						self.apiClient.placeBid(buyId, buyPlayerFor, function (err, pl) {
+							console.log('buyMin::DEBUG INFO', pl);
+
+							if (pl.code == 461) {
+								self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
+								self.iterateParams.costs[player.tradeId] = {
+									was : true
+								};
+								return cb(null);
+							}
+
+							if (pl.code == 470) {
+								console.log('buyMin::NO MONEY FOR BUYING');
+								return cb(new Error('NO MONEY FOR BUYING'));
+							}
+							if (pl.success == false) {
+								// ошибка при покупке
+								console.log('buyMin::ERROR', pl);
+								return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
+							} else {
+								var tradeId = player.tradeId;
+
+								// if (!boughtPlayer) {
+								// 	return cb(null);
+								// }
+								// var boughtPlayer = pl.auctionInfo[0];
+								// tradeId = boughtPlayer.tradeId;
+								// 
+								// все нормально покупка прошла успешно
+								self.currentStrategyData.spendMoney += buyPlayerFor;
+								self.currentStrategyData.boughtItems++;
+								self.credits -= buyPlayerFor;
+
+								// Указываем параметры для удобной работы потом с ними внутри следующих методов по
+								// тому же плеер трейд id который был в списке, тк они меняются
+								self.iterateParams.costs[player.tradeId] = { 
+									bid : futapi.calculateNextLowerPrice(buyNowPriceOnMarketAvg), 
+									buyNow : buyNowPriceOnMarketAvg,
+									// tradeId : boughtPlayer.tradeId,
+									tradeId : tradeId,
+									cardId : cardId,
+									id : buyId,
+									position : player.itemData.preferredPosition,
+									rare : player.itemData.rareflag,
+									rating : player.itemData.rating,
+									marketPrices : filteredCosts,
+									assetId : player.itemData.assetId,
+									buyPrice : buyPlayerFor,
+									sellPrice : buyNowPriceOnMarketAvg,
+								};
+
+								console.log('buyMin::PLAYER', tradeId, 'WITH RATING *', player.itemData.rating, '* BOUGHT FOR', buyPlayerFor);
+								return cb(null);
+							}
+						});
+
+					}, time);
+				}
+			], function (err, ok) {
+				if (err) return BUYMINCALLBACK(err);
+				BUYMINCALLBACK(null);
+			});
+		}
 	});
 
 	return this;

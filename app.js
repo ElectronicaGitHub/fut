@@ -50,7 +50,8 @@ var actualTime = time,
             buyMinNoiseCoef : 1.25,
             moneyLimit : null,
             itemsLimit : 8,
-            maxPlayersInListToBuy : 25
+            maxPlayersInListToBuy : 25,
+            maxSoldTimeToSkipInDays : 5
         },
         players : {
             list : [],
@@ -242,7 +243,8 @@ function command() {
                     strategyOptions.default.maxPlayersInListToBuy, 
                     strategyOptions.default.buyMinNoiseCoef, 
                     strategyOptions.default.moneyLimit, 
-                    strategyOptions.default.itemsLimit));
+                    strategyOptions.default.itemsLimit,
+                    strategyOptions.default.maxSoldTimeToSkipInDays));
 
             } else if (currentStrategy == 'players') {
                 tradeList.push(trader.buyAndSellSelectedPlayers.bind(trader, {
