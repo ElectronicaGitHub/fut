@@ -30,6 +30,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			max : 1000
 		}
 	};
+	$scope.activePlayers = $scope.activePlayers.map(function (el) {
+		el.timeInList = (+newDate()-(+new Date(p.created))) / ( 1000 * 60 * 24);
+		return el;
+	})
 	$scope.playersLog = {
 		state : 'sold',
 		changeState : function () {

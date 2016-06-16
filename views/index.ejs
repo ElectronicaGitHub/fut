@@ -112,7 +112,7 @@
 				    <td>{{ p.rating }}</td>
 				    <td>{{ p.revenue }}</td>
 				    <td>{{ moment(p.created).format('DD.MM HH:mm:ss') }}</td>
-				    <td>{{ (+newDate()-(+new Date(p.created)) / ( 1000 * 60 * 24) }}</td>
+				    <td>{{ p.timeInList }}</td>
 				</tr>
 			</table>
 		</div>
