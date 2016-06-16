@@ -161,12 +161,12 @@
 
 		<div class="filter" ng-show="currentStrategy == 'default'">
 			<p>Фильтр повышающей стратегии</p>
-			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="text" ng-model="strategyOptions[currentStrategy][key]"></p>
+			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
 		</div>
 		
 		<div class="filter" ng-show="currentStrategy == 'players'">
 			<p>Фильтр стратегии игроков</p>
-			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="text" ng-model="strategyOptions[currentStrategy][key]"></p>
+			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
 		</div>
 
 	</div>
