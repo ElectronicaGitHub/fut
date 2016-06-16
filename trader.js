@@ -289,7 +289,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 				if (max >= (maxSoldTimeToSkipInDays * 24)) { return cb(null, false); }
 				else return cb(null, true);
 			})
-		}
+		},
 		continueStatus : function () {
 			console.log('findObject.maxb', findObject.maxb, '||| maxCost', maxCost, 'spendMoney', self.currentStrategyData.spendMoney, '||| moneyLimit', moneyLimit, 'boughtItems', self.currentStrategyData.boughtItems, '||| itemsLimit', itemsLimit, 'credits', self.credits);
 			var res = !(findObject.maxb > maxCost || 
