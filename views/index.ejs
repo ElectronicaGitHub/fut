@@ -102,6 +102,7 @@
 				    <th>Rating</th>
 				    <th>Revenue</th>
 				    <th>BoughtTime</th>
+				    <th>TimeInList, h</th>
 				</tr>
 				<tr ng-repeat="p in activePlayers">
 				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
@@ -111,6 +112,7 @@
 				    <td>{{ p.rating }}</td>
 				    <td>{{ p.revenue }}</td>
 				    <td>{{ moment(p.created).format('DD.MM HH:mm:ss') }}</td>
+				    <td>{{ (+newDate()-(+new Date(p.created)) / ( 1000 * 60 * 24) }}</td>
 				</tr>
 			</table>
 		</div>
