@@ -63,7 +63,7 @@
 				    <th>Sell Money</th> 
 				</tr>
 				<tr ng-repeat="s in moneyLog.data.byTimes">
-				    <td>{{ s.created }}</td> 
+				    <td>{{ moment(s.created).format('DD.MM HH:mm:ss') }}</td> 
 				    <td>{{ s.buyMoney }}</td> 
 				    <td>{{ s.sellMoney }}</td> 
 				</tr>
