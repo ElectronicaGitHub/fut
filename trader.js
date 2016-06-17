@@ -478,6 +478,8 @@ Trader.prototype.buy = function (player, сb) {
 					position : player.itemData.preferredPosition,
 					rare : player.itemData.rareflag,
 					rating : player.itemData.rating,
+					quantityOnMarket : player.quantityOnMarket,
+					stats : player.itemData.attributeList,				
 					strategyType : player.strategyType || self.currentStrategyData.type,				
 					marketPrices : player.filteredCosts,
 					assetId : player.itemData.assetId,
@@ -773,6 +775,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 							filteredPlayers[1].sellPrice = validPrice;
 							filteredPlayers[1].filteredCosts = filteredCosts;
 							filteredPlayers[1].strategyType = 'bothPlayers';
+							filteredPlayers[1].quantityOnMarket = players.length;
 
 							self.playersForInstantBuy.push(filteredPlayers[1]);
 						}
@@ -817,15 +820,9 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 								console.log('buyMin::ERROR', pl);
 								return cb(new Error('ERROR OCCURED WITH REASON', pl.reason));
 							} else {
+								// все нормально покупка прошла успешно
 								var tradeId = player.tradeId;
 
-								// if (!boughtPlayer) {
-								// 	return cb(null);
-								// }
-								// var boughtPlayer = pl.auctionInfo[0];
-								// tradeId = boughtPlayer.tradeId;
-								// 
-								// все нормально покупка прошла успешно
 								self.currentStrategyData.spendMoney += buyPlayerFor;
 								self.currentStrategyData.boughtItems++;
 								self.credits -= buyPlayerFor;
@@ -839,6 +836,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 									tradeId : tradeId,
 									cardId : cardId,
 									id : buyId,
+									quantityOnMarket : players.length,
+									stats : player.itemData.attributeList,
 									strategyType : player.strategyType || self.currentStrategyData.type,
 									position : player.itemData.preferredPosition,
 									rare : player.itemData.rareflag,

@@ -19,6 +19,17 @@ var Player = new Schema({
 	soldTime : {
 		type : Date
 	},
+	// показатель количества на рынке игрока с текущим assetId и rare
+	quantityOnMarket : Number,
+	stats : {
+		type : String,
+		set : function (val) {
+			return JSON.stringify(val);
+		},
+		get : function (string) {
+			return JSON.parse(string);
+		}
+	},
 	strategyType : String,
 	// ключ отображающий покупку двух игроков одновременно
 	position : String,
