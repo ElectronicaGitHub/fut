@@ -104,6 +104,8 @@
 				    <th>BoughtTime</th>
 				    <th>TimeInList, h</th>
 				    <th>Strategy</th>
+				    <th>QuantityOnMarket</th>
+				    <th>Stats</th>
 				</tr>
 				<tr ng-repeat="p in activePlayers">
 				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
@@ -115,6 +117,8 @@
 				    <td>{{ moment(p.created).format('DD.MM HH:mm') }}</td>
 				    <td>{{ p.timeInList }}</td>
 				    <td>{{ p.strategyType }}</td>
+				    <td>{{ p.quantityOnMarket }}</td>
+				    <td>{{ p.stats }}</td>
 				</tr>
 			</table>
 		</div>
