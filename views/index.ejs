@@ -141,6 +141,8 @@
 				    <th>TimeDiff</th>
 				    <th>SoldTime</th>
 				    <th>Strategy</th>
+				    <th>QuantityOnMarket</th>
+				    <th>Stats</th>
 				</tr>
 				<tr ng-class="{ sold : p.timeDiff <=24 }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
 				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
@@ -152,6 +154,8 @@
 				    <td>{{ p.timeDiff }}</td>
 				    <td>{{ moment(p.soldTime).format('DD.MM HH:mm:ss') }}</td>
 				    <td>{{ p.strategyType }}</td>
+					<td>{{ p.quantityOnMarket }}</td>
+				    <td>{{ p.stats }}</td>
 				</tr>
 			</table>
 		</div>
