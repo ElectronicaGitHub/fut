@@ -478,6 +478,7 @@ Trader.prototype.buy = function (player, сb) {
 					position : player.itemData.preferredPosition,
 					rare : player.itemData.rareflag,
 					rating : player.itemData.rating,
+					strategyType : player.strategyType || self.currentStrategyData.type,				
 					marketPrices : player.filteredCosts,
 					assetId : player.itemData.assetId,
 					buyPrice : player.buyNowPrice,
@@ -764,12 +765,15 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 						if (filteredCosts.length == 2) {
 							var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.1);
 
-							// buyNowPriceOnMarketAvg = futapi.calculateNextLowerPrice(filteredCosts[1]);
 							buyNowPriceOnMarketAvg = validPrice;
 
+							// записываем тип стратегии покупки для игрока
+							player.strategyType = 'bothPlayers';
 							// добавляем в список игрока и указываем ему цену за которую он должен быть выставлен
 							filteredPlayers[1].sellPrice = validPrice;
 							filteredPlayers[1].filteredCosts = filteredCosts;
+							filteredPlayers[1].strategyType = 'bothPlayers';
+
 							self.playersForInstantBuy.push(filteredPlayers[1]);
 						}
 
@@ -835,6 +839,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 									tradeId : tradeId,
 									cardId : cardId,
 									id : buyId,
+									strategyType : player.strategyType || self.currentStrategyData.type,
 									position : player.itemData.preferredPosition,
 									rare : player.itemData.rareflag,
 									rating : player.itemData.rating,

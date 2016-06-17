@@ -19,6 +19,8 @@ var Player = new Schema({
 	soldTime : {
 		type : Date
 	},
+	strategyType : String,
+	// ключ отображающий покупку двух игроков одновременно
 	position : String,
 	created: {
 	    type: Date,
