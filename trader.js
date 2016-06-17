@@ -347,7 +347,7 @@ Trader.prototype.instantBuyAndSellPlayers = function (players, CALLBACK) {
 	console.log('instantBuyAndSellPlayers::STARTED');
 	var self = this;
 	self.playersList = players;
-	self.each.bind(trader, false, [self.buy, self.toTradepile, self.sell], function (err, ok) {
+	self.each.bind(self, false, [self.buy, self.toTradepile, self.sell], function (err, ok) {
 		if (err) return CALLBACK(err);
 		console.log('instantBuyAndSellPlayers::ALL PLAYERS BOUGHT AND SOLD');
 		return CALLBACK(null);
