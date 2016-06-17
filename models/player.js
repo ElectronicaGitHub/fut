@@ -27,6 +27,7 @@ var Player = new Schema({
 			return JSON.stringify(val);
 		},
 		get : function (string) {
+			if (!string) return null;
 			return JSON.parse(string);
 		}
 	},
