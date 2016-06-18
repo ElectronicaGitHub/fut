@@ -51,7 +51,8 @@ var actualTime = time,
             moneyLimit : null,
             itemsLimit : 8,
             maxPlayersInListToBuy : 25,
-            maxSoldTimeToSkipInDays : 5
+            maxSoldTimeToSkipInDays : 3,
+            minimumRating : 76
         },
         players : {
             list : [],

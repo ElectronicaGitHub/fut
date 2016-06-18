@@ -35,6 +35,7 @@ function Trader(apiClient) {
 		buyMinPercent : 90,
 		minPlayerSpeed : 75,
 		minPlayerDribling : 75,
+		minimumRating : 76,
 		lowerCostCountForSkip : 3,
 		buyAndSellDiffNotToSkip : 200 // разница цены чтоб купить а не скипнуть
 	};
@@ -667,7 +668,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 	if (self.currentStrategyData.type == 'default') {
 		// проверка на пиздатую скорость и дриблинг
 		if (player.itemData.attributeList[0].value <= self.options.minPlayerSpeed || 
-			player.itemData.attributeList[3].value <= self.options.minPlayerDribling) {
+			player.itemData.attributeList[3].value <= self.options.minPlayerDribling ||
+			player.itemData.rating < self.options.minimumRating) {
 			console.log('buyMin::TOO LOW SPEED, SKIP THIS PLAYER');
 			self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
 			self.iterateParams.costs[player.tradeId].was = true;
