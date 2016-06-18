@@ -36,8 +36,8 @@ var actualTime = time,
     currentStrategy = 'default',
     searchOptions = {
         rare : 'SP',
-        maxb : 13000,
-        minb : 11000,
+        maxb : 16000,
+        minb : 13000,
         zone : 'attacker'
     },
     strategyOptions = {
