@@ -15,14 +15,5 @@ td, th {
 	padding: 0 2px;
 }
 .last-sold {
-	position: relative;
+	border-left: 7px solid rgb(104, 150, 112);
 }
-.last-sold::before {
-	background: rgb(104, 150, 112);
-	content : '';
-	width: 7px;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: -7px;
-} 
