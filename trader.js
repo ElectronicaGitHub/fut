@@ -39,6 +39,7 @@ function Trader(apiClient) {
 		lowerCostCountForSkip : 3,
 		buyAndSellDiffNotToSkip : 200 // разница цены чтоб купить а не скипнуть
 	};
+	this.soldPlayersCount = 0;
 	this.playersForInstantBuy = [];
 	this.playersInTradeList = 0;
 	this.apiClient = apiClient;
@@ -583,6 +584,7 @@ Trader.prototype.reListWithDBSync = function (CALLBACK) {
 					self.playersInTradeList = players.length - sold_players.length;
 
 					console.log('reListWithDBSync::PLAYERS CLOSED COUNT **', sold_players.length, '**');
+					self.soldPlayersCount = sold_players.length;
 
 					oldTradepile = players.map(function (player) {
 						oldTradepileObject[player.itemData.id] = player.tradeId;

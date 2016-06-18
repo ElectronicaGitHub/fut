@@ -18,6 +18,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.moment = moment;
 	$scope.playersList = [];
 	$scope.players = window.players;
+	$scope.soldPlayersCount = window.soldPlayersCount;
 	$scope.activePlayers = window.activePlayers;
 	$scope.searchPlayersList = window.playersListForStrategy;
 	$scope.searchOptions = window.searchOptions;

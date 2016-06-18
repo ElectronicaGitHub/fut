@@ -14,3 +14,6 @@ td, th {
 	text-align: center;
 	padding: 0 2px;
 }
+.last-sold {
+	border-left: 7px solid rgb(104, 150, 112);
+}

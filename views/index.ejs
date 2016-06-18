@@ -11,6 +11,7 @@
 		window.players = <%- JSON.stringify(players) %>;
 		window.activePlayers = <%- JSON.stringify(activePlayers) %>;
 		window.snapshots = <%- JSON.stringify(snapshots) %>;
+		window.soldPlayersCount = <%- JSON.stringify(soldPlayersCount) %>;
 	</script>
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="libs/angular/angular.min.js"></script>
@@ -130,6 +131,7 @@
 				</div>
 			</div>
 			<p>ПРОДАНО : {{ _players.length }} </p>
+			<p>ПОСЛЕДНИХ ПРОДАННЫХ : {{ soldPlayersCount }} </p>
 			<table>
 				<tr>
 					<th>Image</th>
@@ -144,7 +146,7 @@
 				    <th>QuantityOnMarket</th>
 				    <!-- <th>Stats</th> -->
 				</tr>
-				<tr ng-class="{ sold : p.timeDiff <=24 }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
+				<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
 				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 				    <td>{{ p.assetId }}</td> 
 				    <td>{{ p.position }}</td> 

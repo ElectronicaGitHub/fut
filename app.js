@@ -100,7 +100,8 @@ app.get('/', function (req, res, next) {
                         playersListForStrategy : strategyOptions.players.list,
                         searchOptions : searchOptions,
                         strategyOptions : strategyOptions,
-                        playersInTradeList : trader.playersInTradeList
+                        playersInTradeList : trader.playersInTradeList,
+                        soldPlayersCount : trader.soldPlayersCount
                     });     
                 });
             });
