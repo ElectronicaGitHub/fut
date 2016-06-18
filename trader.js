@@ -305,6 +305,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 	};
 	// this.options.buyMinNoiseCoef = buyMinNoiseCoef;
 	findObject.maxb = findObject.maxb - step;
+	findObject.minb = findObject.minb - step;
 	// вспомогательная функция для нормального пуша
 	var exit = function (callback) { 
 		if (self.playersForInstantBuy.length) {
