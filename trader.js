@@ -666,8 +666,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 	// ПРОВЕРКА ДЕФОЛТНОЙ ПОВЫШАЮЩЕЙ СТРАТЕГИИ
 	if (self.currentStrategyData.type == 'default') {
 		// проверка на пиздатую скорость и дриблинг
-		if (player.itemData.attributeList[0].value <= self.options.minPlayerSpeed && 
-			player.itemData.attributeList[4].value <= self.options.minPlayerDribling) {
+		if (player.itemData.attributeList[0].value <= self.options.minPlayerSpeed || 
+			player.itemData.attributeList[3].value <= self.options.minPlayerDribling) {
 			console.log('buyMin::TOO LOW SPEED, SKIP THIS PLAYER');
 			self.iterateParams.costs[player.tradeId] = self.iterateParams.costs[player.tradeId] || {};
 			self.iterateParams.costs[player.tradeId].was = true;
