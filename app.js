@@ -239,7 +239,7 @@ function command() {
                     maxb: searchOptions.maxb, 
                     zone: searchOptions.zone, 
                     start: 0, 
-                    num: 20 
+                    num: 40 
                 }, 100000, 
                     strategyOptions.default.step, 
                     strategyOptions.default.maxPlayersInListToBuy, 
