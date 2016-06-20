@@ -12,6 +12,8 @@
 		window.activePlayers = <%- JSON.stringify(activePlayers) %>;
 		window.snapshots = <%- JSON.stringify(snapshots) %>;
 		window.soldPlayersCount = <%- JSON.stringify(soldPlayersCount) %>;
+		window.parsingData = <%- JSON.stringify(parsingData) %>;
+		window.dataItems = <%- JSON.stringify(dataItems) %>;
 	</script>
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="libs/angular/angular.min.js"></script>
@@ -222,6 +224,31 @@
 	
 	<div ng-show="app.state == 'stats'">
 		<h2>СТАТИСТИКА</h2>
+		<p>ЕДИНИЦ СТАТИСТИКИ: {{ dataItems.length }}</p>
+		<p>Поиск игроков</p>
+		<input type="text" ng-model="parseData.name">
+		<button class="btn btn-info" ng-click="parseData.search()">Показать</button>
+
+		<div class="players-list">
+			<div class="player" ng-repeat="player in parseData.playersList" ng-click="parseData.select(player)">
+				<p>
+					<b>{{ player.itemData.rating }}</b>
+			    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+					({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+				</p>
+			</div>
+		</div>
+	
+		<p>Выбранные игроки</p>
+		<div class="players-list">
+			<div class="player" ng-repeat="player in parseData.searchPlayersList" ng-click="parseData.deselect($index)">
+				<p>
+					<b>{{ player.itemData.rating }}</b>
+			    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+					({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+				</p>
+			</div>
+		</div>
 	</div>
 
 	

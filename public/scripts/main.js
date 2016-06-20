@@ -20,6 +20,8 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.players = window.players;
 	$scope.soldPlayersCount = window.soldPlayersCount;
 	$scope.activePlayers = window.activePlayers;
+	$scope.parsingData = window.parsingData;
+	$scope.dataItems = window.dataItems;
 	$scope.searchPlayersList = window.playersListForStrategy;
 	$scope.searchOptions = window.searchOptions;
 	$scope.strategyOptions = window.strategyOptions;
@@ -42,6 +44,41 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		state : 'sold',
 		changeState : function () {
 			$scope.playersLog.state = $scope.playersLog.state == 'sold' ? 'active' : 'sold';
+		}
+	}
+	$scope.parseData = {
+		name : '',
+		playersList : [],
+		searchPlayersList : parsingData.players,
+		select : function (player) {
+			$scope.parseData.searchPlayersList.push(player);
+			$scope.parseData.playersList = [];
+			$scope.parseData.name = '';
+			$scope.parseData.changePlayersList($scope.parseData.searchPlayersList);
+		},
+		deselect :function (index) {
+			$scope.parseData.searchPlayersList.splice(index, 1);
+			$scope.parseData.changePlayersList($scope.parseData.searchPlayersList);
+		},
+		changePlayersList : function (list) {
+			$http.post('/changeParsePlayersList', { changeParsePlayersList : list })
+			.success(function (data) { console.log(data);})
+			.error(function (data) { console.log(data);});
+		},
+		search : function () {
+			$.ajax({
+				url : variables.url,
+				method : 'POST', 
+				data : { player : { name : $scope.parseData.name } }, 
+				success : function (data) {
+					$scope.parseData.playersList = data.result;
+					$scope.$apply();
+					console.log(data);
+				}, 
+				error : function (data) {
+					console.log(data);
+				}
+			})
 		}
 	}
 	$scope.moneyLog = {
@@ -113,13 +150,6 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				console.log(data);
 			}
 		})
-		// $http.post(variables.url, )
-		// .success(function (data) {
-		// 	console.log(data.result);
-		// })
-		// .error(function (data) {
-		// 	console.log(data);
-		// });
 	}
 	$scope.select = function (player) {
 		$scope.searchPlayersList.push(player);

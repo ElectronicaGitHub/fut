@@ -11,6 +11,7 @@ var config = require('./configs/config_file');
 var async = require('async');
 var fs = require('fs');
 var Player = require('./models/player.js');
+var DataItem = require('./models/DataItem.js');
 var MoneySnapshot = require('./models/MoneySnapshot.js');
 var app = express();
 
@@ -87,26 +88,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res, next) {
     // Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
-    Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
-        Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
-            MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
-                readCodeFromFile(function (code) {
-                    res.render('index', {
-                        status : botStatus,
-                        players : players,
-                        activePlayers : activePlayers,
-                        snapshots : snapshots,
-                        time : actualTime,
-                        credits : trader.credits,
-                        buyStatus : buyStatus,
-                        twoFactorCode : code,
-                        currentStrategy : currentStrategy,
-                        playersListForStrategy : strategyOptions.players.list,
-                        searchOptions : searchOptions,
-                        strategyOptions : strategyOptions,
-                        playersInTradeList : trader.playersInTradeList,
-                        soldPlayersCount : trader.soldPlayersCount
-                    });     
+    DataItem.find(function (err, dataItems) {
+        Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
+            Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
+                MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
+                    readCodeFromFile(function (code) {
+                        res.render('index', {
+                            status : botStatus,
+                            players : players,
+                            activePlayers : activePlayers,
+                            snapshots : snapshots,
+                            time : actualTime,
+                            credits : trader.credits,
+                            buyStatus : buyStatus,
+                            twoFactorCode : code,
+                            currentStrategy : currentStrategy,
+                            playersListForStrategy : strategyOptions.players.list,
+                            searchOptions : searchOptions,
+                            strategyOptions : strategyOptions,
+                            playersInTradeList : trader.playersInTradeList,
+                            soldPlayersCount : trader.soldPlayersCount,
+                            parsingData : parsingData,
+                            dataItems : dataItems
+                        });     
+                    });
                 });
             });
         });
@@ -137,6 +142,11 @@ app.post('/changeTwoFactorCode', function (req, res, next) {
 app.post('/changePlayersList', function (req, res, next) {
     var data = req.body;
     strategyOptions.players.list = data.searchPlayersList;
+    res.send('ok');
+});
+app.post('/changeParsePlayersList', function (req, res, next) {
+    var data = req.body;
+    parsingData.players = data.changeParsePlayersList;
     res.send('ok');
 });
 app.post('/saveCurrentStrategy', function (req, res, next) {
@@ -232,7 +242,7 @@ function command() {
 
         var tradeList = [
             trader.reListWithDBSync.bind(trader),
-            // trader.startParse.bind(trader, parsingData.players)
+            trader.startParse.bind(trader, parsingData.players)
         ];
         if (buyStatus) {
             if (currentStrategy == 'default') {
