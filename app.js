@@ -242,7 +242,7 @@ function command() {
 
         var tradeList = [
             trader.reListWithDBSync.bind(trader),
-            trader.startParse.bind(trader, parsingData.players)
+            trader.startParse.bind(trader, parsingData.players, strategyOptions.default.buyMinNoiseCoef)
         ];
         if (buyStatus) {
             if (currentStrategy == 'default') {
@@ -275,9 +275,9 @@ function command() {
                     strategyOptions.players.itemsLimit));
             }
 
-            // trader.buyAndSellWithIncreasingCost.bind(trader, {type: "player", lev: 'bronze', maxb : 200, start:0, num:20 }, 100000, 50, 1.25, null, 1)
-            // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
         }
+       // trader.buyAndSellWithIncreasingCost.bind(trader, {type:'player', rare:'SP', minb: 3000, maxb: 4000, start:0, num:20 }, 100000, 200, 1.25, null, 8)
+       // trader.buyAndSellWithIncreasingCost.bind(trader, {type: "player", lev: 'bronze', maxb : 200, start:0, num:20 }, 100000, 50, 1.25, null, 1)
 
         trader.set(strategyOptions[currentStrategy])
         .tradeCycle(tradeList);

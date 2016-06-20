@@ -7,6 +7,7 @@ var DataItem = new Schema({
 	assetId : String,
 	minPrice : Number,
 	averagePrice : Number,
+	countOnMarket : Number,
 	created : {
 		type: Date,	
 		default : Date.now

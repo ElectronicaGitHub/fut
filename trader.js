@@ -75,6 +75,8 @@ Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
 				var players = self.playersList;
 				if (players.length == 0) return callback(null);
 
+				var countOnMarket = players.length;
+
 				var minMaxPlayersSorted = self.minMaxSortWith(players, false, ['buyNowPrice', 'tradeId', 'startingBid']);
 				buyPlayerFor = minMaxPlayersSorted[0].buyNowPrice;
 				// фильтруем цены которые не больше минимальной ставки * коэффициент
@@ -90,7 +92,8 @@ Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
 				var di = new DataItem({
 					assetId : id,
 					minPrice : buyPlayerFor,
-					averagePrice : buyNowPriceOnMarketAvg
+					averagePrice : buyNowPriceOnMarketAvg,
+					countOnMarket : countOnMarket
 				});
 
 				di.save(function (err, result) {
