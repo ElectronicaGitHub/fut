@@ -40,7 +40,7 @@ var Player = new Schema({
 	}
 });
 
-Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice * 1.0562; });
+Player.virtual('revenue').get(function() { return this.sellPrice - this.buyPrice * 1.0559; });
 Player.virtual('timeDiff').get(function() {
 	if (this.soldTime && this.created) {
 		var a = moment(this.soldTime);
