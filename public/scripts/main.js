@@ -31,6 +31,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			max : 1000
 		}
 	};
+	$scope.app = {
+		state : 'main',
+	}
 	$scope.activePlayers = $scope.activePlayers.map(function (el) {
 		el.timeInList = moment().diff(moment(el.created), 'hours', true).toFixed(2);
 		return el;

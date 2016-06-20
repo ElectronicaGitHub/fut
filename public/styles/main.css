@@ -17,3 +17,6 @@ td, th {
 .last-sold {
 	border-left: 7px solid rgb(104, 150, 112);
 }
+.buttons-row {
+	margin-bottom: 10px;
+}

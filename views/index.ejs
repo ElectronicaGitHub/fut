@@ -21,198 +21,208 @@
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body ng-app="fifatrader" ng-controller="fifatrader">
-
-	<div class="col-xs-3">
-		<form action="/changeTwoFactorCode" method="POST">
-			<input type="text" name="twoFactorCode" value="<%= twoFactorCode %>">
-			<button type="submit">Поменять код</button>
-		</form>
-		<br>
-		<p>ТЕКУЩАЯ СТРАТЕГИЯ : {{ currentStrategy }} </p>
-			<!-- <button class="btn btn-info" ng-click="changeStrategy('players')">Стратегия поиска игроков</button> -->
-			<!-- <button class="btn btn-info" ng-click="changeStrategy('default')">Обычная повышающая стратегия</button> -->
-		<br>
-		<br>
-		<br>
-		<p>В СПИСКЕ <b><%= playersInTradeList %></b> ЧЕЛОВЕК</p>
-		<p>БАБОК В КАРМАНЕ <b><%= credits %></b></p>
-		<br>
-		<br>
-		<br>
-		<div style="background: <%= status ? 'green' : 'red' %>">
-			<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
-		</div>
-		<% if (status) { %>
-			<p><a href="/stop">СТОП</a></p>
-		<% } else { %>
-			<p><a href="/start">СТАРТ</a></p>
-		<% } %>
-		<br>
-		<p>ДО СЛЕДУЮЩЕГО ЗАПУСКА: <b id="timeout" data-go="<%= status %>"><%= time/1000 %></b> секунд</p>
-		<br>
-		<p>СТАТУС ПОКУПОК : <%= buyStatus ? 'ПОКУПАЕМ' : 'НЕ ПОКУПАЕМ, ТОЛЬКО ПРОДАЕМ' %></p>
-		<p><a href="/toggleBuying"><%= buyStatus ? 'ПЕРЕСТАТЬ ПОКУПАТЬ' : 'НАЧАТЬ ПОКУПАТЬ' %></a></p>
-		<br>
-		<p><a href="/log">ЛОГ</a></p>
-
-		<div>
-			<button class="btn btn-info" ng-click="moneyLog.changeState()">Изменить отображение</button>
-			<table ng-show="moneyLog.state == 'byTimes'">
-				<tr>
-					<th>Date</th>
-				    <th>Buy Money</th> 
-				    <th>Sell Money</th> 
-				</tr>
-				<tr ng-repeat="s in moneyLog.data.byTimes">
-				    <td>{{ moment(s.created).format('DD.MM HH:mm:ss') }}</td> 
-				    <td>{{ s.buyMoney }}</td> 
-				    <td>{{ s.sellMoney }}</td> 
-				</tr>
-			</table>
-
-			<table ng-show="moneyLog.state == 'byDates'">
-				<tr>
-					<th>Date</th>
-				    <th>Buy Money</th> 
-				    <th>Sell Money</th> 
-				    <th>Buy Money Diff, %</th> 
-				    <th>Sell Money Diff, %</th> 
-				</tr>
-				<tr ng-repeat="(k,v) in moneyLog.data.byDates">
-				    <td>{{ k }}</td> 
-				    <td>{{ v.buyMoney }} <b>( +{{ v.buyMoneyDiff}} )</b></td> 
-				    <td>{{ v.sellMoney }} <b>( +{{ v.sellMoneyDiff}} )</b></td> 
-				    <td>{{ v.buyMoneyDiffP }}</td>
-				    <td>{{ v.sellMoneyDiffP }}</td>
-				</tr>
-			</table>
-
-		</div>
+	<div class="buttons-row">
+		<button class="btn btn-info" ng-click="app.state = 'main'">Основной вид</button>
+		<button class="btn btn-info" ng-click="app.state = 'stats'">Статистика</button>
 	</div>
 
-	<div class="col-xs-6">
-		<button class="btn btn-info" ng-click="playersLog.changeState()">Изменить отображение</button>
-
-		<div ng-show="playersLog.state == 'active'">
-			<table>
-				<tr>
-					<th>Image</th>
-					<th>AssetId</th>
-					<th>Pos</th>
-				    <th>Rare</th> 
-				    <th>Rating</th>
-				    <th>Revenue</th>
-				    <th>BoughtTime</th>
-				    <th>TimeInList, h</th>
-				    <th>Strategy</th>
-				    <th>QuantityOnMarket</th>
-				    <!-- <th>Stats</th> -->
-				</tr>
-				<tr ng-repeat="p in activePlayers">
-				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
-				    <td>{{ p.assetId }}</td> 
-				    <td>{{ p.position }}</td> 
-				    <td>{{ p.rare }}</td> 
-				    <td>{{ p.rating }}</td>
-				    <td>{{ p.revenue }}</td>
-				    <td>{{ moment(p.created).format('DD.MM HH:mm') }}</td>
-				    <td>{{ p.timeInList }}</td>
-				    <td>{{ p.strategyType }}</td>
-				    <td>{{ p.quantityOnMarket }}</td>
-				    <!-- <td>{{ p.stats }}</td> -->
-				</tr>
-			</table>
-		</div>
-		<div ng-show="playersLog.state == 'sold'">
-			<div class="filters">
-				<div class="fastBuyPlayers">
-					<input type="text" ng-model="filters.fastBuyPlayers.min">
-					<input type="text" ng-model="filters.fastBuyPlayers.max">
-				</div>
+	<div ng-show="app.state == 'main'">
+		<div class="col-xs-3">
+			<form action="/changeTwoFactorCode" method="POST">
+				<input type="text" name="twoFactorCode" value="<%= twoFactorCode %>">
+				<button type="submit">Поменять код</button>
+			</form>
+			<br>
+			<p>ТЕКУЩАЯ СТРАТЕГИЯ : {{ currentStrategy }} </p>
+				<!-- <button class="btn btn-info" ng-click="changeStrategy('players')">Стратегия поиска игроков</button> -->
+				<!-- <button class="btn btn-info" ng-click="changeStrategy('default')">Обычная повышающая стратегия</button> -->
+			<br>
+			<br>
+			<br>
+			<p>В СПИСКЕ <b><%= playersInTradeList %></b> ЧЕЛОВЕК</p>
+			<p>БАБОК В КАРМАНЕ <b><%= credits %></b></p>
+			<br>
+			<br>
+			<br>
+			<div style="background: <%= status ? 'green' : 'red' %>">
+				<p>СТАТУС : <%= status ? 'ЗАПУЩЕНО' : 'ВЫКЛЮЧЕНО'%></p>
 			</div>
-			<p>ПРОДАНО : {{ _players.length }} </p>
-			<p>ПОСЛЕДНИХ ПРОДАННЫХ : {{ soldPlayersCount }} </p>
-			<table>
-				<tr>
-					<th>Image</th>
-					<th>AssetId</th>
-					<th>Pos</th>
-				    <th>Rare</th> 
-				    <th>Rating</th>
-				    <th>Revenue</th>
-				    <th>TimeDiff</th>
-				    <th>SoldTime</th>
-				    <th>Strategy</th>
-				    <th>QuantityOnMarket</th>
-				    <!-- <th>Stats</th> -->
-				</tr>
-				<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
-				    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
-				    <td>{{ p.assetId }}</td> 
-				    <td>{{ p.position }}</td> 
-				    <td>{{ p.rare }}</td> 
-				    <td>{{ p.rating }}</td>
-				    <td>{{ p.revenue }}</td>
-				    <td>{{ p.timeDiff }}</td>
-				    <td>{{ moment(p.soldTime).format('DD.MM HH:mm:ss') }}</td>
-				    <td>{{ p.strategyType }}</td>
-					<td>{{ p.quantityOnMarket }}</td>
-				    <!-- <td>{{ p.stats }}</td> -->
-				</tr>
-			</table>
+			<% if (status) { %>
+				<p><a href="/stop">СТОП</a></p>
+			<% } else { %>
+				<p><a href="/start">СТАРТ</a></p>
+			<% } %>
+			<br>
+			<p>ДО СЛЕДУЮЩЕГО ЗАПУСКА: <b id="timeout" data-go="<%= status %>"><%= time/1000 %></b> секунд</p>
+			<br>
+			<p>СТАТУС ПОКУПОК : <%= buyStatus ? 'ПОКУПАЕМ' : 'НЕ ПОКУПАЕМ, ТОЛЬКО ПРОДАЕМ' %></p>
+			<p><a href="/toggleBuying"><%= buyStatus ? 'ПЕРЕСТАТЬ ПОКУПАТЬ' : 'НАЧАТЬ ПОКУПАТЬ' %></a></p>
+			<br>
+			<p><a href="/log">ЛОГ</a></p>
+
+			<div>
+				<button class="btn btn-info" ng-click="moneyLog.changeState()">Изменить отображение</button>
+				<table ng-show="moneyLog.state == 'byTimes'">
+					<tr>
+						<th>Date</th>
+					    <th>Buy Money</th> 
+					    <th>Sell Money</th> 
+					</tr>
+					<tr ng-repeat="s in moneyLog.data.byTimes">
+					    <td>{{ moment(s.created).format('DD.MM HH:mm:ss') }}</td> 
+					    <td>{{ s.buyMoney }}</td> 
+					    <td>{{ s.sellMoney }}</td> 
+					</tr>
+				</table>
+
+				<table ng-show="moneyLog.state == 'byDates'">
+					<tr>
+						<th>Date</th>
+					    <th>Buy Money</th> 
+					    <th>Sell Money</th> 
+					    <th>Buy Money Diff, %</th> 
+					    <th>Sell Money Diff, %</th> 
+					</tr>
+					<tr ng-repeat="(k,v) in moneyLog.data.byDates">
+					    <td>{{ k }}</td> 
+					    <td>{{ v.buyMoney }} <b>( +{{ v.buyMoneyDiff}} )</b></td> 
+					    <td>{{ v.sellMoney }} <b>( +{{ v.sellMoneyDiff}} )</b></td> 
+					    <td>{{ v.buyMoneyDiffP }}</td>
+					    <td>{{ v.sellMoneyDiffP }}</td>
+					</tr>
+				</table>
+
+			</div>
 		</div>
-	</div>
 
-	<div class="col-xs-3">
+		<div class="col-xs-6">
+			<button class="btn btn-info" ng-click="playersLog.changeState()">Изменить отображение</button>
 
-		<div class="filter">
-			<p>Фильтр поиска</p>
-			<p><label>rare</label><select ng-options="rv as rv for rv in rareVariants" ng-model="searchOptions.rare"></select></p>
-			<p><label>minb</label><input type="text" ng-model="searchOptions.minb"></p>
-			<p><label>maxb</label><input type="text" ng-model="searchOptions.maxb"></p>
-			<p><label>zone</label><input type="text" ng-model="searchOptions.zone"></p>
+			<div ng-show="playersLog.state == 'active'">
+				<table>
+					<tr>
+						<th>Image</th>
+						<th>AssetId</th>
+						<th>Pos</th>
+					    <th>Rare</th> 
+					    <th>Rating</th>
+					    <th>Revenue</th>
+					    <th>BoughtTime</th>
+					    <th>TimeInList, h</th>
+					    <th>Strategy</th>
+					    <th>QuantityOnMarket</th>
+					    <!-- <th>Stats</th> -->
+					</tr>
+					<tr ng-repeat="p in activePlayers">
+					    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
+					    <td>{{ p.assetId }}</td> 
+					    <td>{{ p.position }}</td> 
+					    <td>{{ p.rare }}</td> 
+					    <td>{{ p.rating }}</td>
+					    <td>{{ p.revenue }}</td>
+					    <td>{{ moment(p.created).format('DD.MM HH:mm') }}</td>
+					    <td>{{ p.timeInList }}</td>
+					    <td>{{ p.strategyType }}</td>
+					    <td>{{ p.quantityOnMarket }}</td>
+					    <!-- <td>{{ p.stats }}</td> -->
+					</tr>
+				</table>
+			</div>
+			<div ng-show="playersLog.state == 'sold'">
+				<div class="filters">
+					<div class="fastBuyPlayers">
+						<input type="text" ng-model="filters.fastBuyPlayers.min">
+						<input type="text" ng-model="filters.fastBuyPlayers.max">
+					</div>
+				</div>
+				<p>ПРОДАНО : {{ _players.length }} </p>
+				<p>ПОСЛЕДНИХ ПРОДАННЫХ : {{ soldPlayersCount }} </p>
+				<table>
+					<tr>
+						<th>Image</th>
+						<th>AssetId</th>
+						<th>Pos</th>
+					    <th>Rare</th> 
+					    <th>Rating</th>
+					    <th>Revenue</th>
+					    <th>TimeDiff</th>
+					    <th>SoldTime</th>
+					    <th>Strategy</th>
+					    <th>QuantityOnMarket</th>
+					    <!-- <th>Stats</th> -->
+					</tr>
+					<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
+					    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
+					    <td>{{ p.assetId }}</td> 
+					    <td>{{ p.position }}</td> 
+					    <td>{{ p.rare }}</td> 
+					    <td>{{ p.rating }}</td>
+					    <td>{{ p.revenue }}</td>
+					    <td>{{ p.timeDiff }}</td>
+					    <td>{{ moment(p.soldTime).format('DD.MM HH:mm:ss') }}</td>
+					    <td>{{ p.strategyType }}</td>
+						<td>{{ p.quantityOnMarket }}</td>
+					    <!-- <td>{{ p.stats }}</td> -->
+					</tr>
+				</table>
+			</div>
 		</div>
 
-		<div class="filter" ng-show="currentStrategy == 'default'">
-			<p>Фильтр повышающей стратегии</p>
-			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
+		<div class="col-xs-3">
+
+			<div class="filter">
+				<p>Фильтр поиска</p>
+				<p><label>rare</label><select ng-options="rv as rv for rv in rareVariants" ng-model="searchOptions.rare"></select></p>
+				<p><label>minb</label><input type="text" ng-model="searchOptions.minb"></p>
+				<p><label>maxb</label><input type="text" ng-model="searchOptions.maxb"></p>
+				<p><label>zone</label><input type="text" ng-model="searchOptions.zone"></p>
+			</div>
+
+			<div class="filter" ng-show="currentStrategy == 'default'">
+				<p>Фильтр повышающей стратегии</p>
+				<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
+			</div>
+			
+			<div class="filter" ng-show="currentStrategy == 'players'">
+				<p>Фильтр стратегии игроков</p>
+				<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
+			</div>
+
 		</div>
 		
-		<div class="filter" ng-show="currentStrategy == 'players'">
-			<p>Фильтр стратегии игроков</p>
-			<p ng-repeat="(key, value) in strategyOptions[currentStrategy]"><label>{{ key }}</label><input type="number" ng-model="strategyOptions[currentStrategy][key]"></p>
-		</div>
+		<!-- <div class="col-xs-2">
+			<div ng-show="currentStrategy == 'players'">
+				<p>Поиск игроков</p>
+				<input type="text" ng-model="name">
+				<button class="btn btn-info" ng-click="search()">Показать</button>
 
+				<div class="players-list">
+					<div class="player" ng-repeat="player in playersList" ng-click="select(player)">
+						<p>
+							<b>{{ player.itemData.rating }}</b>
+					    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+							({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+						</p>
+					</div>
+				</div>
+			
+				<p>Выбранные игроки</p>
+				<div class="players-list">
+					<div class="player" ng-repeat="player in searchPlayersList" ng-click="deselect($index)">
+						<p>
+							<b>{{ player.itemData.rating }}</b>
+					    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+							({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+						</p>
+					</div>
+				</div>
+			</div>
+		</div> -->
 	</div>
 	
-	<!-- <div class="col-xs-2">
-		<div ng-show="currentStrategy == 'players'">
-			<p>Поиск игроков</p>
-			<input type="text" ng-model="name">
-			<button class="btn btn-info" ng-click="search()">Показать</button>
-
-			<div class="players-list">
-				<div class="player" ng-repeat="player in playersList" ng-click="select(player)">
-					<p>
-						<b>{{ player.itemData.rating }}</b>
-				    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
-						({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
-					</p>
-				</div>
-			</div>
-		
-			<p>Выбранные игроки</p>
-			<div class="players-list">
-				<div class="player" ng-repeat="player in searchPlayersList" ng-click="deselect($index)">
-					<p>
-						<b>{{ player.itemData.rating }}</b>
-				    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
-						({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
-					</p>
-				</div>
-			</div>
-		</div>
-	</div> -->
+	<div ng-show="app.state == 'stats'">
+		<h2>СТАТИСТИКА</h2>
+	</div>
 
 	
 </body>
