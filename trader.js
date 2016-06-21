@@ -336,8 +336,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 		},
 		isPlayerGoodForBuying : function (player, cb) {
 			Player.find({ 
-				assetId : player.itemData.assetId,
-				sold : true
+				assetId : player.itemData.assetId
 			}, function (err, players) {
 				if (err) return cb(err);
 				if (!players || players.length == 0) return cb(null, true);
