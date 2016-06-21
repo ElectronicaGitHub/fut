@@ -15,6 +15,11 @@ var DataItem = require('./models/DataItem.js');
 var MoneySnapshot = require('./models/MoneySnapshot.js');
 var app = express();
 
+var heapdump = require('heapdump');
+var path = require('path');
+var fs = require('fs');
+heapdump.writeSnapshot(path.join(__dirname, 'var/local/') + Date.now() + '.heapsnapshot');
+
 
 var port = process.env.PORT || 5000;
 var options = {
