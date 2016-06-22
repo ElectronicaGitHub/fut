@@ -826,7 +826,8 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 
 						// обработка вот такой ситуации current [ 6500, 7800 ] тк средняя будет 7100 а так продадим за 7600
 						if (filteredCosts.length == 2) {
-							var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.1);
+							// var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.1);
+							var validPrice = futapi.calculateValidPrice(buyNowPriceOnMarketAvg * 1.03);
 
 							buyNowPriceOnMarketAvg = validPrice;
 
