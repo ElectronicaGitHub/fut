@@ -23,6 +23,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.parsingData = window.parsingData;
 	$scope.dataItems = window.dataItems;
 	$scope.searchPlayersList = window.playersListForStrategy;
+	$scope.dataStorage = window.dataStorage;
 	$scope.searchOptions = window.searchOptions;
 	$scope.strategyOptions = window.strategyOptions;
 	$scope.currentStrategy = window.currentStrategy;
@@ -46,10 +47,46 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			$scope.playersLog.state = $scope.playersLog.state == 'sold' ? 'active' : 'sold';
 		}
 	}
+	$scope.noSkip = {
+		name : '',
+		playersList : [],
+		searchPlayersList : $scope.dataStorage.noSkip || [],
+		select : function (player) {
+			$scope.noSkip.searchPlayersList.push(player);
+			$scope.noSkip.playersList = [];
+			$scope.noSkip.name = '';
+			$scope.noSkip.changePlayersList($scope.noSkip.searchPlayersList);
+		},
+		deselect :function (index) {
+			$scope.noSkip.searchPlayersList.splice(index, 1);
+			$scope.noSkip.changePlayersList($scope.noSkip.searchPlayersList);
+		},
+		changePlayersList : function (list) {
+			$http.post('/changeDataStorage', { noSkip : list })
+			.success(function (data) { console.log(data);})
+			.error(function (data) { console.log(data);});
+		},
+		search : function () {
+			$.ajax({
+				url : variables.url,
+				method : 'POST', 
+				data : { player : { name : $scope.noSkip.name } }, 
+				success : function (data) {
+					$scope.noSkip.playersList = data.result;
+					$scope.$apply();
+					console.log(data);
+				}, 
+				error : function (data) {
+					console.log(data);
+				}
+			})
+		}
+	}
+
 	$scope.parseData = {
 		name : '',
 		playersList : [],
-		searchPlayersList : parsingData.players,
+		searchPlayersList : $scope.dataStorage.playersForParse || [],
 		select : function (player) {
 			$scope.parseData.searchPlayersList.push(player);
 			$scope.parseData.playersList = [];
@@ -61,7 +98,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			$scope.parseData.changePlayersList($scope.parseData.searchPlayersList);
 		},
 		changePlayersList : function (list) {
-			$http.post('/changeParsePlayersList', { changeParsePlayersList : list })
+			$http.post('/changeDataStorage', { playersForParse : list })
 			.success(function (data) { console.log(data);})
 			.error(function (data) { console.log(data);});
 		},

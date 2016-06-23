@@ -56,61 +56,66 @@ Trader.prototype.randomTime = function () {
 }
 
 Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
-	if (!players || players.length == 0) { return _CALLBACK(null); }
-	var self = this, stack, n = 0, findObject = {
-		type: "player", 
-		// maskedDefId: player.itemData.assetId, 
-		rare: 3,
-		start: 0, 
-		num: 50
-	};
+	DataStorage.findOne(function (err, ok) {
+		if (err) return cb(err);
+		var players = ok.data.playersForParse;
 
-	async.eachSeries(players, function (player, callback) {
-		var id = player.itemData.assetId;
+		if (!players || players.length == 0) { return _CALLBACK(null); }
+		var self = this, stack, n = 0, findObject = {
+			type: "player", 
+			// maskedDefId: player.itemData.assetId, 
+			rare: 3,
+			start: 0, 
+			num: 50
+		};
 
-		async.series([
-			self.search.bind(self, _.extend(findObject, { maskedDefId : id}) ),
-			function (callback) {
-				// игроки в playersList после search уже будут
-				var players = self.playersList;
-				if (players.length == 0) return callback(null);
+		async.eachSeries(players, function (player, callback) {
+			var id = player.itemData.assetId;
 
-				var countOnMarket = players.length;
+			async.series([
+				self.search.bind(self, _.extend(findObject, { maskedDefId : id}) ),
+				function (callback) {
+					// игроки в playersList после search уже будут
+					var players = self.playersList;
+					if (players.length == 0) return callback(null);
 
-				var minMaxPlayersSorted = self.minMaxSortWith(players, false, ['buyNowPrice', 'tradeId', 'startingBid']);
-				buyPlayerFor = minMaxPlayersSorted[0].buyNowPrice;
-				// фильтруем цены которые не больше минимальной ставки * коэффициент
-				filteredCosts = minMaxPlayersSorted.map(function (el) { return el.buyNowPrice; })
-					.filter(function (cost) { return cost < buyPlayerFor * buyMinNoiseCoef; });
+					var countOnMarket = players.length;
 
-				filteredPlayers = minMaxPlayersSorted
-					.filter(function (player) { return player.buyNowPrice < buyPlayerFor * buyMinNoiseCoef; });
+					var minMaxPlayersSorted = self.minMaxSortWith(players, false, ['buyNowPrice', 'tradeId', 'startingBid']);
+					buyPlayerFor = minMaxPlayersSorted[0].buyNowPrice;
+					// фильтруем цены которые не больше минимальной ставки * коэффициент
+					filteredCosts = minMaxPlayersSorted.map(function (el) { return el.buyNowPrice; })
+						.filter(function (cost) { return cost < buyPlayerFor * buyMinNoiseCoef; });
 
-				minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
-				buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
+					filteredPlayers = minMaxPlayersSorted
+						.filter(function (player) { return player.buyNowPrice < buyPlayerFor * buyMinNoiseCoef; });
 
-				var di = new DataItem({
-					assetId : id,
-					minPrice : buyPlayerFor,
-					averagePrice : buyNowPriceOnMarketAvg,
-					countOnMarket : countOnMarket
-				});
+					minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
+					buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
 
-				di.save(function (err, result) {
-					if (err) return callback(err);
-					return callback(null);
-				});
-			}
-		], function (err, ok) {
-			if (err) return callback(err);
-			return callback(null);
-		});
-		
-	}, function (err, ok) {
-		if (err) return _CALLBACK(err);
-		console.log('startParse::ENDED');
-		return _CALLBACK(null);
-	});	
+					var di = new DataItem({
+						assetId : id,
+						minPrice : buyPlayerFor,
+						averagePrice : buyNowPriceOnMarketAvg,
+						countOnMarket : countOnMarket
+					});
+
+					di.save(function (err, result) {
+						if (err) return callback(err);
+						return callback(null);
+					});
+				}
+			], function (err, ok) {
+				if (err) return callback(err);
+				return callback(null);
+			});
+			
+		}, function (err, ok) {
+			if (err) return _CALLBACK(err);
+			console.log('startParse::ENDED');
+			return _CALLBACK(null);
+		});	
+	});
 }
 
 /**
@@ -335,17 +340,27 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 			}
 		},
 		isPlayerGoodForBuying : function (player, cb) {
-			Player.find({ 
-				assetId : player.itemData.assetId
-			}, function (err, players) {
+			DataStorage.findOne(function (err, ok) {
 				if (err) return cb(err);
-				if (!players || players.length == 0) return cb(null, true);
-				var timeDiffs = players.map(function (el) {
-					return el.timeDiff;
+				if (ok.data.noSkip.length) {
+					var arr = ok.data.noSkip.map(function (el) { return el.itemData.assetId });
+					if (arr.indexOf(player.itemData.assetId) != -1) {
+						return cb(null, true);
+					}
+				}
+
+				Player.find({ 
+					assetId : player.itemData.assetId
+				}, function (err, players) {
+					if (err) return cb(err);
+					if (!players || players.length == 0) return cb(null, true);
+					var timeDiffs = players.map(function (el) {
+						return el.timeDiff;
+					});
+					var max = Math.max.apply(null, timeDiffs);
+					if (max >= (maxSoldTimeToSkipInDays * 24)) { return cb(null, false); }
+					else return cb(null, true);
 				});
-				var max = Math.max.apply(null, timeDiffs);
-				if (max >= (maxSoldTimeToSkipInDays * 24)) { return cb(null, false); }
-				else return cb(null, true);
 			})
 		},
 		continueStatus : function () {

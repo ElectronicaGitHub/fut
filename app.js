@@ -12,14 +12,25 @@ var async = require('async');
 var fs = require('fs');
 var Player = require('./models/player.js');
 var DataItem = require('./models/DataItem.js');
+var DataStorage = require('./models/DataStorage.js');
 var MoneySnapshot = require('./models/MoneySnapshot.js');
+var _ = require('lodash');
+
 var app = express();
 
+// проверка аргументов
+var DEBUG = false;
+var argv = require('minimist')(process.argv.slice(2));
+if (argv.DEBUG) {
+    DEBUG = true;
+    console.log('DEBUG MODE');
+}
+
+// для снепшотов
 var heapdump = require('heapdump');
 var path = require('path');
 var fs = require('fs');
 heapdump.writeSnapshot(path.join(__dirname, 'var/local/') + Date.now() + '.heapsnapshot');
-
 
 var port = process.env.PORT || 5000;
 var options = {
@@ -31,8 +42,7 @@ var futapi = require("./futLib/index.js");
 var apiClient = new futapi(options);
 var trader = new (require('./trader.js'))(apiClient);
 
-var botStatus = true,
-// var botStatus = false,
+var botStatus = !DEBUG,
     buyStatus = true,
     inter,
     timeInter,
@@ -92,30 +102,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', require('./routes/index.js')(express));
 
 app.get('/', function (req, res, next) {
-    // Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
-    DataItem.find(function (err, dataItems) {
-        Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
-            Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
-                MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
-                    readCodeFromFile(function (code) {
-                        res.render('index', {
-                            status : botStatus,
-                            players : players,
-                            activePlayers : activePlayers,
-                            snapshots : snapshots,
-                            time : actualTime,
-                            credits : trader.credits,
-                            buyStatus : buyStatus,
-                            twoFactorCode : code,
-                            currentStrategy : currentStrategy,
-                            playersListForStrategy : strategyOptions.players.list,
-                            searchOptions : searchOptions,
-                            strategyOptions : strategyOptions,
-                            playersInTradeList : trader.playersInTradeList,
-                            soldPlayersCount : trader.soldPlayersCount,
-                            parsingData : parsingData,
-                            dataItems : dataItems
-                        });     
+    DataStorage.findOne(function (err, dataStorage) {
+        DataItem.find(function (err, dataItems) {
+            Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
+            // Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
+                Player.find().sort({ created : -1 }).exec(function (err, activePlayers) {
+                // Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
+                    MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
+                        readCodeFromFile(function (code) {
+                            res.render('index', {
+                                status : botStatus,
+                                players : players,
+                                activePlayers : activePlayers,
+                                snapshots : snapshots,
+                                time : actualTime,
+                                dataStorage : dataStorage.data,
+                                credits : trader.credits,
+                                buyStatus : buyStatus,
+                                twoFactorCode : code,
+                                currentStrategy : currentStrategy,
+                                playersListForStrategy : strategyOptions.players.list,
+                                searchOptions : searchOptions,
+                                strategyOptions : strategyOptions,
+                                playersInTradeList : trader.playersInTradeList,
+                                soldPlayersCount : trader.soldPlayersCount,
+                                parsingData : parsingData,
+                                dataItems : dataItems
+                            });     
+                        });
                     });
                 });
             });
@@ -149,10 +163,17 @@ app.post('/changePlayersList', function (req, res, next) {
     strategyOptions.players.list = data.searchPlayersList;
     res.send('ok');
 });
-app.post('/changeParsePlayersList', function (req, res, next) {
+app.post('/changeDataStorage', function (req, res, next) {
     var data = req.body;
-    parsingData.players = data.changeParsePlayersList;
-    res.send('ok');
+    DataStorage.findOne({}, function (err, ok) {
+        if (err) return next(err);
+        var _data = _.extend(ok.data, data);
+        ok.data = _data;
+        ok.save(function (err, ok) {
+            if (err) return next(err);
+            res.send('ok');
+        })
+    });
 });
 app.post('/saveCurrentStrategy', function (req, res, next) {
     var data = req.body;

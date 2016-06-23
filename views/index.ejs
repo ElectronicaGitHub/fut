@@ -11,6 +11,7 @@
 		window.players = <%- JSON.stringify(players) %>;
 		window.activePlayers = <%- JSON.stringify(activePlayers) %>;
 		window.snapshots = <%- JSON.stringify(snapshots) %>;
+		window.dataStorage = <%- JSON.stringify(dataStorage) %>;
 		window.soldPlayersCount = <%- JSON.stringify(soldPlayersCount) %>;
 		window.parsingData = <%- JSON.stringify(parsingData) %>;
 		window.dataItems = <%- JSON.stringify(dataItems) %>;
@@ -26,6 +27,7 @@
 	<div class="buttons-row">
 		<button class="btn btn-info" ng-click="app.state = 'main'">Основной вид</button>
 		<button class="btn btn-info" ng-click="app.state = 'stats'">Статистика</button>
+		<button class="btn btn-info" ng-click="app.state = 'noskiplist'">Пацаны не для скипа нахуй</button>
 	</div>
 
 	<div ng-show="app.state == 'main'">
@@ -153,7 +155,8 @@
 					    <th>QuantityOnMarket</th>
 					    <!-- <th>Stats</th> -->
 					</tr>
-					<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
+					<!-- <tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'"> -->
+					<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | orderBy:'-soldTime'">
 					    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 					    <td>{{ p.assetId }}</td> 
 					    <td>{{ p.position }}</td> 
@@ -242,6 +245,34 @@
 		<p>Выбранные игроки</p>
 		<div class="players-list">
 			<div class="player" ng-repeat="player in parseData.searchPlayersList" ng-click="parseData.deselect($index)">
+				<p>
+					<b>{{ player.itemData.rating }}</b>
+			    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+					({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="app.state == 'noskiplist'">
+		<h2>НЕ СКИПАЕМ ЭТИХ БРОДЯГ</h2>
+		<p>Поиск игроков</p>
+		<input type="text" ng-model="noSkip.name">
+		<button class="btn btn-info" ng-click="noSkip.search()">Показать</button>
+
+		<div class="players-list">
+			<div class="player" ng-repeat="player in noSkip.playersList" ng-click="noSkip.select(player)">
+				<p>
+					<b>{{ player.itemData.rating }}</b>
+			    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
+					({{ player.itemData.position }}) {{ player.itemData.name }} ({{ player.itemData.assetId }})
+				</p>
+			</div>
+		</div>
+	
+		<p>Выбранные игроки</p>
+		<div class="players-list">
+			<div class="player" ng-repeat="player in noSkip.searchPlayersList" ng-click="noSkip.deselect($index)">
 				<p>
 					<b>{{ player.itemData.rating }}</b>
 			    	<img width="30" height="30" ng-src="http://futhead.cursecdn.com/static/img/16/players/{{ player.itemData.assetId }}.png">
