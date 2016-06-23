@@ -104,10 +104,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function (req, res, next) {
     DataStorage.findOne(function (err, dataStorage) {
         DataItem.find(function (err, dataItems) {
-            Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
-            // Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
-                Player.find().sort({ created : -1 }).exec(function (err, activePlayers) {
-                // Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
+            // Player.find().sort({ soldTime : -1 }).exec(function (err, players) {
+            Player.find({ sold : true }).sort({ soldTime : -1 }).exec(function (err, players) {
+                // Player.find().sort({ created : -1 }).exec(function (err, activePlayers) {
+                Player.find({ sold : false }).sort({ created : -1 }).exec(function (err, activePlayers) {
                     MoneySnapshot.find().sort({ created : -1 }).exec(function (err, snapshots) {
                         readCodeFromFile(function (code) {
                             res.render('index', {
