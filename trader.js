@@ -15,6 +15,7 @@ var _ = require('lodash');
 var Player = require('./models/player.js');
 var MoneySnapshot = require('./models/MoneySnapshot.js');
 var DataItem = require('./models/DataItem.js');
+var DataStorage = require('./models/DataStorage.js');
 var moment = require('moment');
 
 console.log = function(d) {
@@ -345,6 +346,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 				if (ok.data.noSkip.length) {
 					var arr = ok.data.noSkip.map(function (el) { return el.itemData.assetId });
 					if (arr.indexOf(player.itemData.assetId) != -1) {
+						console.log('PLAYER IN NON SKIP LIST');
 						return cb(null, true);
 					}
 				}
