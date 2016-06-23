@@ -744,6 +744,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 
 	// ПРОВЕРКА ДЕФОЛТНОЙ ПОВЫШАЮЩЕЙ СТРАТЕГИИ
 	if (self.currentStrategyData.type == 'default') {
+		console.log('PLAYER WITH LEVEL', player.itemData.rating, 'vs', self.options.minimumRating , 'SPEED', player.itemData.attributeList[0].value, 'vs', self.options.minPlayerSpeed ,', DRIBLING', player.itemData.attributeList[3].value, 'vs', self.options.minPlayerDribling);
 		// проверка на пиздатую скорость и дриблинг
 		if (player.itemData.attributeList[0].value <= self.options.minPlayerSpeed || 
 			player.itemData.attributeList[3].value <= self.options.minPlayerDribling ||
