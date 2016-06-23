@@ -346,6 +346,7 @@ Trader.prototype.buyAndSellWithIncreasingCost = function (findObject, maxCost, s
 				if (err) return cb(err);
 				if (ok.data.noSkip.length) {
 					var arr = ok.data.noSkip.map(function (el) { return el.itemData.assetId });
+					console.log('isPlayerGoodForBuying::id, ', player.itemData.assetId, ', map of ids', arr);
 					if (arr.indexOf(player.itemData.assetId) != -1) {
 						console.log('PLAYER IN NON SKIP LIST');
 						return cb(null, true);
