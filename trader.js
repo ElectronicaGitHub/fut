@@ -57,18 +57,19 @@ Trader.prototype.randomTime = function () {
 }
 
 Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
+	var self = this, stack, n = 0, findObject = {
+		type: "player", 
+		// maskedDefId: player.itemData.assetId, 
+		rare: 3,
+		start: 0, 
+		num: 50
+	};
+	
 	DataStorage.findOne(function (err, ok) {
 		if (err) return cb(err);
 		var players = ok.data.playersForParse;
 
 		if (!players || players.length == 0) { return _CALLBACK(null); }
-		var self = this, stack, n = 0, findObject = {
-			type: "player", 
-			// maskedDefId: player.itemData.assetId, 
-			rare: 3,
-			start: 0, 
-			num: 50
-		};
 
 		async.eachSeries(players, function (player, callback) {
 			var id = player.itemData.assetId;
