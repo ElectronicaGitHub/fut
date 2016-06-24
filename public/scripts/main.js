@@ -48,6 +48,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			$scope.playersLog.state = $scope.playersLog.state == 'sold' ? 'active' : 'sold';
 		}
 	}
+	$scope.playerSelection = {
+		selected : null,
+		select : function (player) {
+			console.log(player);
+			this.selected = player;
+		}
+	}
 	$scope.noSkip = {
 		name : '',
 		playersList : [],
@@ -171,27 +178,16 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			for (var i in self.graphsData) {
 				var pl = self.graphsData[i];
 				var canvas = $("#canvas-" + n++)[0];
-				// var ctx = canvas.getContext('2d');
-				// console.log(self.graphsData);
 				var obj = {
-					backgroundColor : 'rgba(99, 209, 136, 0.4)',
-					borderColor : 'rgba(99, 209, 136, 0.4)',
-					pointBackgroundColor : 'rgba(84, 176, 115, 0.5)',
-					pointBorderColor : 'rgba(84, 176, 115, 0.5)',
-					pointBorderWidth : 1,
-					label : 'Min Price',
-					data : []
+					backgroundColor : 'rgba(99, 209, 136, 0.4)', borderColor : 'rgba(99, 209, 136, 0.4)',
+					pointBackgroundColor : 'rgba(84, 176, 115, 0.5)', pointBorderColor : 'rgba(84, 176, 115, 0.5)',
+					pointBorderWidth : 1, label : 'Min Price', data : []
 				}
 				var obj2 = {
-					backgroundColor : 'rgba(237, 207, 89, 0.5)',
-					borderColor : 'rgba(237, 207, 89, 0.5)',
-					pointBackgroundColor : 'rgba(199, 173, 75, 0.5)',
-					pointBorderColor : 'rgba(199, 173, 75, 0.5)',
-					pointBorderWidth : 1,
-					label : 'Average Price',
-					data : []
+					backgroundColor : 'rgba(237, 207, 89, 0.5)', borderColor : 'rgba(237, 207, 89, 0.5)',
+					pointBackgroundColor : 'rgba(199, 173, 75, 0.5)', pointBorderColor : 'rgba(199, 173, 75, 0.5)',
+					pointBorderWidth : 1, label : 'Average Price', data : []
 				}
-				// d.data.datasets = [obj, obj2];
 
 				for (var j in self.graphsData[i]) {
 					obj.data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
@@ -199,13 +195,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				}
 				self.dataByIds[i] = { data : [obj, obj2], canvas : canvas };
 
+				// добавляем функцию в отложенные вызовы
 				self.charts.push(function (i, player) {
 					var __ctx = self.dataByIds[i].canvas.getContext('2d');
 					var _d = angular.copy(d);
-					_d.options.title = {
-	                    display : true,
-	                    text : player.itemData.name + ' (' + i + ')'
-	                };
+					// добавляем текст
+					_d.options.title = { display : true, text : player.itemData.name + ' (' + i + ')' };
 					var __d = angular.extend(_d, { data : { datasets : self.dataByIds[i].data } });
 					console.log(i, self.dataByIds[i].canvas, self.dataByIds[i], __d);
 					new Chart(__ctx, __d);

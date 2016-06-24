@@ -20,3 +20,7 @@ td, th {
 .buttons-row {
 	margin-bottom: 10px;
 }
+.selected {
+	background: rgba(104, 200, 212, 0.7);
+	border-left: 7px solid rgb(104, 200, 212);
+}

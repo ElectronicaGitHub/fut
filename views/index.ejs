@@ -156,7 +156,7 @@
 					    <th>QuantityOnMarket</th>
 					    <!-- <th>Stats</th> -->
 					</tr>
-					<tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
+					<tr ng-class="{ selected : playersSelection.selected.assetId == p.assetId, sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-click="playersSelection.select(p)" ng-repeat="p in players | fastBuyPlayers:[filters.fastBuyPlayers.min,filters.fastBuyPlayers.max] | orderBy:'-soldTime'">
 					<!-- <tr ng-class="{ sold : p.timeDiff <=24 , 'last-sold' : $index < soldPlayersCount }" ng-repeat="p in players | orderBy:'-soldTime'"> -->
 					    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 					    <td>{{ p.assetId }}</td> 
