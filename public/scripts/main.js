@@ -171,45 +171,45 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 						}
 					}
 				}
-					for (var i in self.graphsData) {
-						var pl = self.graphsData[i];
-						var canvas = $("#canvas-" + n++)[0];
-						ctx = canvas.getContext('2d');
-						// console.log(self.graphsData);
-						var obj = {
-							backgroundColor : "rgba(74,238,226,0.5)",
-							borderColor : "rgba(72,171,164,0.4)",
-							pointBackgroundColor : "rgba(90,77,205,0.5)",
-							pointBorderColor : "rgba(20,193,7,0.7)",
-							pointBorderWidth : 1,
-							label : i + 'minPrice',
-							data : []
-						}
-						var obj2 = {
-							backgroundColor : "rgba(52,19,130,0.5)",
-							borderColor : "rgba(184,122,16,0.4)",
-							pointBackgroundColor : "rgba(90,77,205,0.5)",
-							pointBorderColor : "rgba(20,193,7,0.7)",
-							pointBorderWidth : 1,
-							label : i + 'averagePrice',
-							data : []
-						}
-						d.data.datasets = [obj, obj2];
-
-						// obj.data = [];
-						// obj.data.push(self.graphsData[i]);
-						for (var j in self.graphsData[i]) {
-							d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
-							d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
-						}
-						self.dataByIds[i] = d;
-						(function (ctx, i) {
-							self.charts.push(function () {
-								console.log(i);
-								new Chart(ctx, self.dataByIds[i]);
-							});
-						})(ctx, i);
+				for (var i in self.graphsData) {
+					var pl = self.graphsData[i];
+					var canvas = $("#canvas-" + n++)[0];
+					ctx = canvas.getContext('2d');
+					// console.log(self.graphsData);
+					var obj = {
+						backgroundColor : "rgba(74,238,226,0.5)",
+						borderColor : "rgba(72,171,164,0.4)",
+						pointBackgroundColor : "rgba(90,77,205,0.5)",
+						pointBorderColor : "rgba(20,193,7,0.7)",
+						pointBorderWidth : 1,
+						label : i + 'minPrice',
+						data : []
 					}
+					var obj2 = {
+						backgroundColor : "rgba(52,19,130,0.5)",
+						borderColor : "rgba(184,122,16,0.4)",
+						pointBackgroundColor : "rgba(90,77,205,0.5)",
+						pointBorderColor : "rgba(20,193,7,0.7)",
+						pointBorderWidth : 1,
+						label : i + 'averagePrice',
+						data : []
+					}
+					d.data.datasets = [obj, obj2];
+
+					// obj.data = [];
+					// obj.data.push(self.graphsData[i]);
+					for (var j in self.graphsData[i]) {
+						d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
+						d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
+					}
+					(function (ctx, i, d) {
+						self.dataByIds[i] = d;
+						self.charts.push(function () {
+							console.log(i);
+							new Chart(ctx, self.dataByIds[i]);
+						});
+					})(ctx, i, d);
+				}
 				// });
 			})(n);
 			console.log(self.dataByIds);
