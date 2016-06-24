@@ -172,7 +172,6 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				// setTimeout(function () {
 					var d = angular.copy(self.graphsConfig);
 					d.data = {};
-					d.data.datasets = [[], []];
 					for (var i in self.graphsData) {
 						var pl = self.graphsData[i];
 						var canvas = $("#canvas-" + n++)[0];
@@ -186,15 +185,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							pointBorderWidth : 1,
 							label : i,
 						}
+						d.data.datasets = [obj, obj];
 						obj.data = [];
-						console.log(self.graphsData[i]);
-						obj.data.push(self.graphsData[i]);
-						debugger;
+						// obj.data.push(self.graphsData[i]);
 						for (var j in self.graphsData[i]) {
-							d.data.datasets[0].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
-							d.data.datasets[1].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
+							d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
+							d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 						}
-						debugger;
 						(function (ctx, d) {
 							self.charts.push(function () {
 								new Chart(ctx, d);
