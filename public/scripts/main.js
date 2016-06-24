@@ -170,7 +170,8 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			(function (n) {
 				var ctx;
 				// setTimeout(function () {
-				var d = type: 'line',
+				var d = {
+					type : 'line',
 					data : { 
 						datasets : []
 					},
@@ -193,7 +194,8 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 								}
 							}]
 						}
-					};
+					}
+				}
 					for (var i in self.graphsData) {
 						var pl = self.graphsData[i];
 						var canvas = $("#canvas-" + n++)[0];
