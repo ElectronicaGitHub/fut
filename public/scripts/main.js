@@ -86,10 +86,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			data1 = [];
 			for (var i in playersAll) {
 				if (playersAll[i].sold) {
-					obj0[playersAll[i].timeDiff] = obj0[playersAll[i].timeDiff] || 0;
+					obj0[playersAll[i].timeDiff] = obj0[playersAll[i].timeDiff] || 2;
 					obj0[playersAll[i].timeDiff]++;
 				} else {
-					obj1[playersAll[i].timeDiff] = obj1[playersAll[i].timeDiff] || 0;
+					obj1[playersAll[i].timeDiff] = obj1[playersAll[i].timeDiff] || 2;
 					obj1[playersAll[i].timeDiff]++;
 					// data1.push({ x : playersAll[i].timeDiff, y : 2, r : 2 });
 				}
