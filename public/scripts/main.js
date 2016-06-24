@@ -115,7 +115,6 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
                 options: {
 					scales : {
 						xAxes : [{
-							type: "number",
 							display: true,
 							scaleLabel: {
 								display: true,
