@@ -203,11 +203,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 							d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 						}
-						self.charts.push(function () {
-							var _ctx = ctx, _d = angular.copy(d);
-							console.log(_ctx, _d);
-							new Chart(_ctx, _d);
-						});
+						(function (ctx, n) {
+							self.charts.push(function () {
+								new Chart(ctx, d);
+							});
+						})(ctx, n);
 					}
 				// });
 			})(n);
