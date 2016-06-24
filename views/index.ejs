@@ -258,7 +258,6 @@
 		<div class="col-xs-9">
 			<button class="btn btn-info" ng-click="parseData.makeGraph()">Сделать графики</button>
 			<div ng-repeat="pl in parseData.graphsData">
-				<h4>PLAYER {{ pl.assetId }}</h4>
 				<canvas id="canvas-{{ $index }}" width="600" height="200"></canvas>
 			</div>
 		</div>

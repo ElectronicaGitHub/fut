@@ -179,7 +179,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					pointBackgroundColor : 'rgba(84, 176, 115, 0.5)',
 					pointBorderColor : 'rgba(84, 176, 115, 0.5)',
 					pointBorderWidth : 1,
-					label : i + ' minPrice',
+					label : 'Min Price',
 					data : []
 				}
 				var obj2 = {
@@ -188,7 +188,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					pointBackgroundColor : 'rgba(199, 173, 75, 0.5)',
 					pointBorderColor : 'rgba(199, 173, 75, 0.5)',
 					pointBorderWidth : 1,
-					label : i + ' averagePrice',
+					label : 'Average Price',
 					data : []
 				}
 				// d.data.datasets = [obj, obj2];
