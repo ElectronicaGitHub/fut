@@ -104,9 +104,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		},
 		makeGraph : function () {
 			var self = this;
+			var data = self.makeData();
+			console.log(data);
+			
 			new Chart(ctx, {
                 type: 'bubble',
-                data: { datasets : self.makeData() },
+                data: { datasets : data },
                 options: {
                     responsive: true,
                     title:{
