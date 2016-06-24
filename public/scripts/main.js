@@ -55,6 +55,18 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			this.selected = player;
 		},
 		showInfo : function (player) {
+			$.ajax({
+				url : variables.url,
+				method : 'POST', 
+				data : { player : { assetId : player.assetId } }, 
+				success : function (data) {
+					angular.extend(player, data.result[0]);
+					$scope.$apply();
+				}, 
+				error : function (data) {
+					console.log(data);
+				}
+			})
 			$('#selectedPlayerModal').modal('show');	
 		},
 		makeData : function () {
