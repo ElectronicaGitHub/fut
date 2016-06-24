@@ -199,11 +199,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				}
 				self.dataByIds[i] = [obj, obj2];
 
-				self.charts.push(function (i) {
-					var __ctx = ctx;
-					var __d = angular.extend(d, { data : { datasets : self.dataByIds[i] } });
-					new Chart(__ctx, __d);
-				});
+				(function (ctx) {
+					self.charts.push(function (i) {
+						var __ctx = ctx;
+						var __d = angular.extend(d, { data : { datasets : self.dataByIds[i] } });
+						new Chart(__ctx, __d);
+					});
+				})(ctx);
 			}
 			console.log(self.dataByIds);
 			for (var i in self.charts) {
