@@ -191,21 +191,23 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					label : i + ' averagePrice',
 					data : []
 				}
-				d.data.datasets = [obj, obj2];
+				// d.data.datasets = [obj, obj2];
 
 				for (var j in self.graphsData[i]) {
-					d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
-					d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
+					obj.data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
+					obj2.data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
 				self.dataByIds[i] = [obj, obj2];
 
-				(function (ctx) {
+				(function (ctx, d) {
 					self.charts.push(function (i) {
 						var __ctx = ctx;
-						var __d = angular.extend(d, { data : { datasets : self.dataByIds[i] } });
+						var _d = angular.copy(d);
+						var __d = angular.extend(_d, { data : { datasets : self.dataByIds[i] } });
+						console.log(self.dataByIds[i], __d);
 						new Chart(__ctx, __d);
 					});
-				})(ctx);
+				})(ctx, d);
 			}
 			console.log(self.dataByIds);
 			for (var i in self.charts) {
