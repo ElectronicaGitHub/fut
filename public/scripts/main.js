@@ -212,6 +212,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					}
 				// });
 			})(n);
+			console.log(self.dataByIds);
 			for (var i in self.charts) {
 				self.charts[i]();
 			}
