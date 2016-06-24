@@ -142,76 +142,70 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		makeGraph : function () {
 			var self = this, n = 0;
 			self.charts = self.charts || [];
-			(function (n) {
-				var ctx;
-				// setTimeout(function () {
-				var d = {
-					type : 'line',
-					data : { 
-						datasets : []
-					},
-					options : {
-						responsive: true,
-						scales : {
-							xAxes : [{
-								type: "time",
+			var ctx, d = {
+				type : 'line',
+				data : { 
+					datasets : []
+				},
+				options : {
+					responsive: true,
+					scales : {
+						xAxes : [{
+							type: "time",
+							display: true,
+							scaleLabel: {
 								display: true,
-								scaleLabel: {
-									display: true,
-									labelString: 'Date'
-								}
-							}],
-							yAxes : [{
+								labelString: 'Date'
+							}
+						}],
+						yAxes : [{
+							display: true,
+							scaleLabel: {
 								display: true,
-								scaleLabel: {
-									display: true,
-									labelString: 'value'
-								}
-							}]
-						}
+								labelString: 'value'
+							}
+						}]
 					}
 				}
-				for (var i in self.graphsData) {
-					var pl = self.graphsData[i];
-					var canvas = $("#canvas-" + n++)[0];
-					ctx = canvas.getContext('2d');
-					// console.log(self.graphsData);
-					var obj = {
-						backgroundColor : "rgba(74,238,226,0.5)",
-						borderColor : "rgba(72,171,164,0.4)",
-						pointBackgroundColor : "rgba(90,77,205,0.5)",
-						pointBorderColor : "rgba(20,193,7,0.7)",
-						pointBorderWidth : 1,
-						label : i + 'minPrice',
-						data : []
-					}
-					var obj2 = {
-						backgroundColor : "rgba(52,19,130,0.5)",
-						borderColor : "rgba(184,122,16,0.4)",
-						pointBackgroundColor : "rgba(90,77,205,0.5)",
-						pointBorderColor : "rgba(20,193,7,0.7)",
-						pointBorderWidth : 1,
-						label : i + 'averagePrice',
-						data : []
-					}
-					d.data.datasets = [obj, obj2];
+			}
+			for (var i in self.graphsData) {
+				var pl = self.graphsData[i];
+				var canvas = $("#canvas-" + n++)[0];
+				ctx = canvas.getContext('2d');
+				// console.log(self.graphsData);
+				var obj = {
+					backgroundColor : "rgba(74,238,226,0.5)",
+					borderColor : "rgba(72,171,164,0.4)",
+					pointBackgroundColor : "rgba(90,77,205,0.5)",
+					pointBorderColor : "rgba(20,193,7,0.7)",
+					pointBorderWidth : 1,
+					label : i + ' minPrice',
+					data : []
+				}
+				var obj2 = {
+					backgroundColor : "rgba(52,19,130,0.5)",
+					borderColor : "rgba(184,122,16,0.4)",
+					pointBackgroundColor : "rgba(90,77,205,0.5)",
+					pointBorderColor : "rgba(20,193,7,0.7)",
+					pointBorderWidth : 1,
+					label : i + ' averagePrice',
+					data : []
+				}
+				d.data.datasets = [obj, obj2];
 
-					// obj.data = [];
-					// obj.data.push(self.graphsData[i]);
-					for (var j in self.graphsData[i]) {
-						d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
-						d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
-					}
-					(function (ctx, i, d) {
-						self.dataByIds[i] = d;
-						self.charts.push(function () {
-							console.log(i);
-							new Chart(ctx, self.dataByIds[i]);
-						});
-					})(ctx, i, d);
+				for (var j in self.graphsData[i]) {
+					d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
+					d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
-				// });
-			})(n);
+				self.dataByIds[i] = d;
+
+				(function (ctx, i) {
+					self.charts.push(function () {
+						console.log(i);
+						new Chart(ctx, self.dataByIds[i]);
+					});
+				})(ctx, i);
+			}
 			console.log(self.dataByIds);
 			for (var i in self.charts) {
 				self.charts[i]();
