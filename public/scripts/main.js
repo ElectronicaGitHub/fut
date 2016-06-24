@@ -197,7 +197,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 					d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
-				self.dataByIds[i] = data : [obj, obj2];
+				self.dataByIds[i] = [obj, obj2];
 
 				self.charts.push(function (i) {
 					var __ctx = ctx;
