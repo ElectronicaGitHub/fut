@@ -204,10 +204,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 						}
 						self.charts.push(function () {
-							var ctx = ctx, d = d;
-							new Chart(ctx, d);
+							var ctx = ctx, _d = angular.copy(d);
+							new Chart(ctx, _d);
 						});
-						console.log(d);
 					}
 				// });
 			})(n);
