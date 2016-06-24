@@ -138,32 +138,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			this.makeData();
 			// this.makeGraph();
 		},
-		graphsConfig : {
-			type: 'line',
-			data: { 
-				datasets : []
-			},
-			options: {
-				responsive: true,
-				scales: {
-					xAxes: [{
-						type: "time",
-						display: true,
-						scaleLabel: {
-							display: true,
-							labelString: 'Date'
-						}
-					}],
-					yAxes: [{
-						display: true,
-						scaleLabel: {
-							display: true,
-							labelString: 'value'
-						}
-					}]
-				}
-			}
-		},
+		dataByIds : {},
 		makeGraph : function () {
 			var self = this, n = 0;
 			self.charts = self.charts || [];
@@ -228,12 +203,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 							d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 						}
-						(function (ctx, d) {
+						self.dataByIds[i] = d;
+						(function (ctx, i) {
 							self.charts.push(function () {
-								console.log(d);
-								new Chart(ctx, d);
+								new Chart(ctx, self.dataByIds[i]);
 							});
-						})(ctx, d);
+						})(ctx, i);
 					}
 				// });
 			})(n);
