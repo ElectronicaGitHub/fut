@@ -35,6 +35,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		}
 	};
 	$scope.app = {
+		// state : 'stats',
 		state : 'main',
 	}
 	$scope.activePlayers = $scope.activePlayers.map(function (el) {
@@ -85,6 +86,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 
 	$scope.parseData = {
 		name : '',
+		graphsData : null,
 		playersList : [],
 		searchPlayersList : $scope.dataStorage.playersForParse || [],
 		select : function (player) {
@@ -116,8 +118,91 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					console.log(data);
 				}
 			})
+		},
+		makeData : function () {
+			var n = {};
+			for (var i in window.dataItems) {
+			    el = window.dataItems[i];
+			    n[el.assetId] = n[el.assetId] || [];
+
+			    el.graphsData = el.graphsData || [[], []];
+			    n[el.assetId].push({ x : el.created, y : el.minPrice });
+			    n[el.assetId].push({ x : el.created, y : el.averagePrice });
+
+			    // n[el.assetId].push(el);
+			}
+			// console.log(n);
+			this.graphsData = n;
+		},
+		init : function () {
+			this.makeData();
+			// this.makeGraph();
+		},
+		graphsConfig : {
+			type: 'line',
+			data: { 
+				datasets : []
+			},
+			options: {
+				responsive: true,
+				scales: {
+					xAxes: [{
+						type: "time",
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Date'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'value'
+						}
+					}]
+				}
+			}
+		},
+		makeGraph : function () {
+			var self = this, n = 0;
+			self.charts = self.charts || [];
+			(function (n) {
+				var ctx;
+				// setTimeout(function () {
+					var d = angular.copy(self.graphsConfig);
+					d.data = {};
+					d.data.datasets = [];
+					for (var i in self.graphsData) {
+						var pl = self.graphsData[i];
+						var canvas = $("#canvas-" + n++)[0];
+						ctx = canvas.getContext('2d');
+						// console.log(self.graphsData);
+						var obj = {
+							backgroundColor : i == 0 ? "rgba(52,19,130,0.5)" : "rgba(74,238,226,0.5)",
+							borderColor : i == 0 ? "rgba(184,122,16,0.4)" : "rgba(72,171,164,0.4)",
+							pointBackgroundColor : "rgba(90,77,205,0.5)",
+							pointBorderColor : "rgba(20,193,7,0.7)",
+							pointBorderWidth : 1,
+							label : i,
+						}
+						obj.data = [];
+						console.log(self.graphsData);
+						for (var j in self.graphsData[i]) {
+							obj.data.push(self.graphsData[i][j])
+						}
+						d.data.datasets.push(obj);
+						(function (ctx, d) {
+							self.charts.push(new Chart(ctx, d));
+							console.log(d);
+						})(ctx, d);
+					}
+				// });
+			})(n);
 		}
 	}
+	$scope.parseData.init();
+
 	$scope.moneyLog = {
 		data : {
 			byDates : angular.copy(window.snapshots),
@@ -126,6 +211,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		state : 'byDates',
 		changeState : function () {
 			$scope.moneyLog.state = $scope.moneyLog.state == 'byTimes' ? 'byDates' : 'byTimes';
+		},
+		init : function () {
+			this.makeByDates();
 		},
 		makeByDates : function () {
 			var obj = {};
@@ -157,7 +245,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			$scope.moneyLog.data.byDates = obj;
 		}
 	}
-	$scope.moneyLog.makeByDates();
+	$scope.moneyLog.init();
 
 	$scope.changeStrategy = function (strategy) {
 		$scope.currentStrategy = strategy;
