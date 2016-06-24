@@ -118,7 +118,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							display: true,
 							scaleLabel: {
 								display: true,
-								labelString: 'Date'
+								labelString: 'Hours'
 							}
 						}],
 						yAxes : [{ display: false }]
@@ -126,7 +126,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
                     responsive: true,
                     title:{
                         display:true,
-                        text:'Chart.js Bubble Chart'
+                        text: self.selected.itemData.name + ' (' + self.selected.assetId + ')'
                     }
                 }
             });
