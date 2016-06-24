@@ -54,6 +54,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			console.log(player);
 			this.selected = player;
 		},
+		showInfo : function (player) {
+			$('#selectedPlayerModal').modal('show');	
+		},
 		makeData : function () {
 			var playersAll = $scope.players.concat($scope.activePlayers).filter(function (el) {
 				return el.assetId == self.selected.assetId;
