@@ -172,7 +172,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				// setTimeout(function () {
 					var d = angular.copy(self.graphsConfig);
 					d.data = {};
-					d.data.datasets = [];
+					d.data.datasets = [[], []];
 					for (var i in self.graphsData) {
 						var pl = self.graphsData[i];
 						var canvas = $("#canvas-" + n++)[0];
@@ -189,10 +189,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 						obj.data = [];
 						console.log(self.graphsData[i]);
 						obj.data.push(self.graphsData[i]);
-						// for (var j in self.graphsData[i]) {
-						// 	obj.data.push(self.graphsData[i][j])
-						// }
-						d.data.datasets.push(obj);
+						for (var j in self.graphsData[i]) {
+							d.data.datasets[0].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
+							d.data.datasets[1].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
+						}
 						(function (ctx, d) {
 							self.charts.push(function () {
 								new Chart(ctx, d);
