@@ -189,10 +189,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 						obj.data = [];
 						console.log(self.graphsData[i]);
 						obj.data.push(self.graphsData[i]);
+						debugger;
 						for (var j in self.graphsData[i]) {
 							d.data.datasets[0].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 							d.data.datasets[1].push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 						}
+						debugger;
 						(function (ctx, d) {
 							self.charts.push(function () {
 								new Chart(ctx, d);
