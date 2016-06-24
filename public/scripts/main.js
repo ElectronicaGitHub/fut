@@ -174,19 +174,19 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				// var ctx = canvas.getContext('2d');
 				// console.log(self.graphsData);
 				var obj = {
-					backgroundColor : randomColor(),
-					borderColor : randomColor(),
-					pointBackgroundColor : randomColor(),
-					pointBorderColor : randomColor(),
+					backgroundColor : '#79FF81',
+					borderColor : '#79FF81',
+					pointBackgroundColor : '#54B059',
+					pointBorderColor : '#54B059',
 					pointBorderWidth : 1,
 					label : i + ' minPrice',
 					data : []
 				}
 				var obj2 = {
-					backgroundColor : randomColor(),
-					borderColor : randomColor(),
-					pointBackgroundColor : randomColor(),
-					pointBorderColor : randomColor(),
+					backgroundColor : '#E8CA57',
+					borderColor : '#E8CA57',
+					pointBackgroundColor : '#C7AD4B',
+					pointBorderColor : '#C7AD4B',
 					pointBorderWidth : 1,
 					label : i + ' averagePrice',
 					data : []
