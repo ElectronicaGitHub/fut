@@ -174,19 +174,19 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				// var ctx = canvas.getContext('2d');
 				// console.log(self.graphsData);
 				var obj = {
-					backgroundColor : "rgba(74,238,226,0.5)",
-					borderColor : "rgba(72,171,164,0.4)",
-					pointBackgroundColor : "rgba(90,77,205,0.5)",
-					pointBorderColor : "rgba(20,193,7,0.7)",
+					backgroundColor : randomColor(),
+					borderColor : randomColor(),
+					pointBackgroundColor : randomColor(),
+					pointBorderColor : randomColor(),
 					pointBorderWidth : 1,
 					label : i + ' minPrice',
 					data : []
 				}
 				var obj2 = {
-					backgroundColor : "rgba(52,19,130,0.5)",
-					borderColor : "rgba(184,122,16,0.4)",
-					pointBackgroundColor : "rgba(90,77,205,0.5)",
-					pointBorderColor : "rgba(20,193,7,0.7)",
+					backgroundColor : randomColor(),
+					borderColor : randomColor(),
+					pointBackgroundColor : randomColor(),
+					pointBorderColor : randomColor(),
 					pointBorderWidth : 1,
 					label : i + ' averagePrice',
 					data : []
@@ -328,6 +328,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		.success(function (data) { console.log(data);})
 		.error(function (data) { console.log(data);});
 	}, true);
+
+	function randomColorFactor() {
+		return Math.round(Math.random() * 255);
+	}
+	function randomColor(opacity) {
+		return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+	}
 }])
 
 
