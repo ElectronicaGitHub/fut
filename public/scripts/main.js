@@ -203,6 +203,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					self.charts.push(function (i) {
 						var __ctx = ctx;
 						var _d = angular.copy(d);
+						_d.options.title = {
+		                    display : true,
+		                    text : i
+		                };
 						var __d = angular.extend(_d, { data : { datasets : self.dataByIds[i] } });
 						console.log(self.dataByIds[i], __d);
 						new Chart(__ctx, __d);
