@@ -140,7 +140,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		},
 		dataByIds : {},
 		makeGraph : function () {
-			var self = this, n = 0, ctx, d = {
+			var self = this, n = 0, d = {
 				type : 'line',
 				data : { 
 					datasets : []
@@ -167,11 +167,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				}
 			}
 			self.charts = self.charts || [];
-
+			console.log(self.graphsData);
 			for (var i in self.graphsData) {
 				var pl = self.graphsData[i];
 				var canvas = $("#canvas-" + n++)[0];
-				ctx = canvas.getContext('2d');
+				// var ctx = canvas.getContext('2d');
 				// console.log(self.graphsData);
 				var obj = {
 					backgroundColor : "rgba(74,238,226,0.5)",
@@ -197,25 +197,36 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					obj.data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 					obj2.data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
-				self.dataByIds[i] = [obj, obj2];
+				self.dataByIds[i] = { data : [obj, obj2], canvas : canvas };
 
-				(function (ctx, d) {
-					self.charts.push(function (i) {
-						var __ctx = ctx;
-						var _d = angular.copy(d);
-						_d.options.title = {
-		                    display : true,
-		                    text : i
-		                };
-						var __d = angular.extend(_d, { data : { datasets : self.dataByIds[i] } });
-						console.log(self.dataByIds[i], __d);
-						new Chart(__ctx, __d);
-					});
-				})(ctx, d);
+				self.charts.push(function (i, player) {
+					var __ctx = self.dataByIds[i].canvas.getContext('2d');
+					var _d = angular.copy(d);
+					_d.options.title = {
+	                    display : true,
+	                    text : player.itemData.name + ' (' + i + ')'
+	                };
+					var __d = angular.extend(_d, { data : { datasets : self.dataByIds[i].data } });
+					console.log(i, self.dataByIds[i].canvas, self.dataByIds[i], __d);
+					new Chart(__ctx, __d);
+				});
 			}
-			console.log(self.dataByIds);
+			var idKeys = Object.keys(self.dataByIds);
 			for (var i in self.charts) {
-				self.charts[i](Object.keys(self.dataByIds)[i]);
+				(function (i) {
+					$.ajax({
+						url : variables.url,
+						method : 'POST', 
+						data : { player : { assetId : idKeys[i] } }, 
+						success : function (data) {
+							player = data.result[0];
+							self.charts[i](idKeys[i], player);
+						}, 
+						error : function (data) {
+							console.log(data);
+						}
+					})
+				})(i);
 			}
 		}
 	}
