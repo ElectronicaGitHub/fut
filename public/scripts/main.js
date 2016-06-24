@@ -53,6 +53,36 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		select : function (player) {
 			console.log(player);
 			this.selected = player;
+		},
+		makeData : function () {
+			var playersAll = $scope.players.concat($scope.activePlayers).filter(function (el) {
+				return el.assetId == self.selected.assetId;
+			});
+			var self = this;
+			// купленные
+			data0 = [];
+			// еще не купленные
+			data1 = [];
+			for (var i in playersAll) {
+				if (playersAll[i].sold) {
+					data0.push({ x : playersAll[i].soldTime, y : 10 })
+				} else {
+					data1.push({ x : playersAll[i].soldTime, y : 10 })
+				}
+			}
+		},
+		makeGraph : function () {
+			new Chart(ctx, {
+                type: 'bubble',
+                data: {},
+                options: {
+                    responsive: true,
+                    title:{
+                        display:true,
+                        text:'Chart.js Bubble Chart'
+                    },
+                }
+            });
 		}
 	}
 	$scope.noSkip = {
