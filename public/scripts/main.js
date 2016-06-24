@@ -106,7 +106,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			var self = this;
 			var data = self.makeData();
 			console.log(data);
-			
+				
+			var ctx = $('#selected-player-modal-canvas').get(0).getContext('2d');
+
 			new Chart(ctx, {
                 type: 'bubble',
                 data: { datasets : data },
