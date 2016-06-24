@@ -48,7 +48,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			$scope.playersLog.state = $scope.playersLog.state == 'sold' ? 'active' : 'sold';
 		}
 	}
-	$scope.playerSelection = {
+	$scope.playersSelection = {
 		selected : null,
 		select : function (player) {
 			console.log(player);
