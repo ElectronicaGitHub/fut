@@ -62,12 +62,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				success : function (data) {
 					angular.extend(player, data.result[0]);
 					$scope.$apply();
+					$('#selectedPlayerModal').modal('show');	
 				}, 
 				error : function (data) {
 					console.log(data);
 				}
 			})
-			$('#selectedPlayerModal').modal('show');	
 		},
 		makeData : function () {
 			var playersAll = $scope.players.concat($scope.activePlayers).filter(function (el) {
