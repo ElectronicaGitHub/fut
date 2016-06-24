@@ -178,14 +178,23 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 						ctx = canvas.getContext('2d');
 						// console.log(self.graphsData);
 						var obj = {
-							backgroundColor : i == 0 ? "rgba(52,19,130,0.5)" : "rgba(74,238,226,0.5)",
-							borderColor : i == 0 ? "rgba(184,122,16,0.4)" : "rgba(72,171,164,0.4)",
+							backgroundColor : "rgba(74,238,226,0.5)",
+							borderColor : "rgba(72,171,164,0.4)",
 							pointBackgroundColor : "rgba(90,77,205,0.5)",
 							pointBorderColor : "rgba(20,193,7,0.7)",
 							pointBorderWidth : 1,
-							label : i,
+							label : id + 'minPrice'
 						}
-						d.data.datasets = [obj, obj];
+						var obj2 = {
+							backgroundColor : "rgba(52,19,130,0.5)",
+							borderColor : "rgba(184,122,16,0.4)",
+							pointBackgroundColor : "rgba(90,77,205,0.5)",
+							pointBorderColor : "rgba(20,193,7,0.7)",
+							pointBorderWidth : 1,
+							label : id + 'averagePrice'
+						}
+						d.data.datasets = [obj, obj2];
+
 						obj.data = [];
 						// obj.data.push(self.graphsData[i]);
 						for (var j in self.graphsData[i]) {
