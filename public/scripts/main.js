@@ -113,6 +113,17 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
                 type: 'bubble',
                 data: { datasets : data },
                 options: {
+					scales : {
+						xAxes : [{
+							type: "time",
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'Date'
+							}
+						}],
+						yAxes : [{ display: false }]
+					}
                     responsive: true,
                     title:{
                         display:true,
