@@ -118,7 +118,7 @@
 					    <th>QuantityOnMarket</th>
 					    <!-- <th>Stats</th> -->
 					</tr>
-					<tr ng-class="{ selected : playersSelection.selected.assetId == p.assetId }" ng-repeat="p in activePlayers">
+					<tr ng-click="playersSelection.select(p)" ng-class="{ selected : playersSelection.selected.assetId == p.assetId }" ng-repeat="p in activePlayers">
 					    <td><img width="20" height="20" src="http://futhead.cursecdn.com/static/img/16/players/{{ p.assetId }}.png"></td>
 					    <td>{{ p.assetId }}</td> 
 					    <td>{{ p.position }}</td> 
