@@ -74,10 +74,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			})
 		},
 		makeData : function () {
+			var self = this;
 			var playersAll = $scope.players.concat($scope.activePlayers).filter(function (el) {
 				return el.assetId == self.selected.assetId;
 			});
-			var self = this;
 			// купленные
 			data0 = [];
 			// еще не купленные
