@@ -84,9 +84,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			data1 = [];
 			for (var i in playersAll) {
 				if (playersAll[i].sold) {
-					data0.push({ x : playersAll[i].timeDiff, r : 4 });
+					data0.push({ x : playersAll[i].timeDiff, y : 2, r : 4 });
 				} else {
-					data1.push({ x : playersAll[i].timeDiff, r : 2 });
+					data1.push({ x : playersAll[i].timeDiff, y : 2, r : 2 });
 				}
 			}
 			return [
