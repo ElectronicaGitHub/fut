@@ -55,6 +55,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			this.selected = player;
 		},
 		showInfo : function (player) {
+			var self = this;
 			$.ajax({
 				url : variables.url,
 				method : 'POST', 
@@ -62,7 +63,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				success : function (data) {
 					angular.extend(player, data.result[0]);
 					$scope.$apply();
-					$('#selectedPlayerModal').modal('show');	
+					$('#selectedPlayerModal').modal('show');
+					setTimeout(function () {
+						self.makeGraph();
+					},500);
 				}, 
 				error : function (data) {
 					console.log(data);
@@ -80,16 +84,29 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			data1 = [];
 			for (var i in playersAll) {
 				if (playersAll[i].sold) {
-					data0.push({ x : playersAll[i].soldTime, y : 10 })
+					data0.push({ x : playersAll[i].timeDiff, y : 10, r : 2 });
 				} else {
-					data1.push({ x : playersAll[i].soldTime, y : 10 })
+					data1.push({ x : playersAll[i].timeDiff, y : 10, r : 2 });
 				}
 			}
+			return [
+				{
+					label : 'SOLD',
+					data : data0,
+					backgroundColor : 'rgba(129, 226, 147, 0.43)'
+				},
+				{
+					label : 'ACTIVE',
+					data : data1,
+					backgroundColor : 'rgba(100, 50, 47, 0.43)'
+				}
+			]
 		},
 		makeGraph : function () {
+			var self = this;
 			new Chart(ctx, {
                 type: 'bubble',
-                data: {},
+                data: { datasets : self.makeData() },
                 options: {
                     responsive: true,
                     title:{
