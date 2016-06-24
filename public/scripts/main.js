@@ -140,9 +140,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		},
 		dataByIds : {},
 		makeGraph : function () {
-			var self = this, n = 0;
-			self.charts = self.charts || [];
-			var ctx, d = {
+			var self = this, n = 0, ctx, d = {
 				type : 'line',
 				data : { 
 					datasets : []
@@ -168,6 +166,8 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					}
 				}
 			}
+			self.charts = self.charts || [];
+
 			for (var i in self.graphsData) {
 				var pl = self.graphsData[i];
 				var canvas = $("#canvas-" + n++)[0];
@@ -197,18 +197,17 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 					d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
-				self.dataByIds[i] = [obj, obj2];
+				self.dataByIds[i] = data : [obj, obj2];
 
-				(function (ctx, i) {
-					self.charts.push(function (i) {
-						var __d = angular.extend(d, { data : { datasets : self.dataByIds[i] } });
-						new Chart(ctx, __d);
-					});
-				})(ctx, i);
+				self.charts.push(function (i) {
+					var __ctx = ctx;
+					var __d = angular.extend(d, { data : { datasets : self.dataByIds[i] } });
+					new Chart(__ctx, __d);
+				});
 			}
 			console.log(self.dataByIds);
 			for (var i in self.charts) {
-				self.charts[i](i);
+				self.charts[i](Object.keys(self.dataByIds)[i]);
 			}
 		}
 	}
