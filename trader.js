@@ -103,7 +103,7 @@ Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
 							var b = moment(+Date.now());
 
 							var d = b.diff(a, 'hours');
-							if (d < 12) {
+							if (d < 4) {
 								console.log('SKIP PLAYER, LOWER THAN 4 HOURS LAST SKIP WAS');
 								return callback(null);
 							} else {
