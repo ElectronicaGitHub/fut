@@ -95,17 +95,37 @@ Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
 					minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
 					buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
 
-					var di = new DataItem({
-						assetId : id,
-						minPrice : buyPlayerFor,
-						averagePrice : buyNowPriceOnMarketAvg,
-						countOnMarket : countOnMarket
-					});
+					DataItem.findOne({ assetId : id }, {}, { created : -1 }, function (err, lastItem) {
+						if (!lastItem) {
+							save();
+						} else {
+							var a = moment(lastItem.created);
+							var b = moment(+Date.now());
 
-					di.save(function (err, result) {
-						if (err) return callback(err);
-						return callback(null);
-					});
+							var d = b.diff(a, 'hours');
+							if (d < 4) {
+								console.log('SKIP PLAYER, LOWER THAN 4 HOURS LAST SKIP WAS');
+								return callback(null);
+							} else {
+								save();
+							}
+						}
+
+						function save () {
+							var di = new DataItem({
+								assetId : id,
+								minPrice : buyPlayerFor,
+								averagePrice : buyNowPriceOnMarketAvg,
+								countOnMarket : countOnMarket
+							});
+
+							di.save(function (err, result) {
+								if (err) return callback(err);
+								return callback(null);
+							});
+						}
+					})
+
 				}
 			], function (err, ok) {
 				if (err) return callback(err);
