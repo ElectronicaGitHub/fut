@@ -205,6 +205,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 						}
 						(function (ctx, n) {
 							self.charts.push(function () {
+								console.log(d);
 								new Chart(ctx, d);
 							});
 						})(ctx, n);
