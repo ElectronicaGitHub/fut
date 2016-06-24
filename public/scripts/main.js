@@ -197,12 +197,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 					d.data.datasets[0].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].minPrice });
 					d.data.datasets[1].data.push({ x : self.graphsData[i][j].created, y : self.graphsData[i][j].averagePrice });
 				}
-				self.dataByIds[i] = d;
+				// self.dataByIds[i] = d;
 
 				(function (ctx, i) {
 					self.charts.push(function () {
-						console.log(i);
-						new Chart(ctx, self.dataByIds[i]);
+						var __d = extend(d, { data : { datasets : [obj, obj2] } });
+						// new Chart(ctx, self.dataByIds[i]);
+						new Chart(ctx, __d);
 					});
 				})(ctx, i);
 			}
