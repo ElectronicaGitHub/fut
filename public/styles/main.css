@@ -10,7 +10,7 @@ tr {
 	font-size: 10px;
 }
 tr:hover {
-	background: rgba(104, 200, 212, 0.3);
+	background: rgba(104, 200, 212, 0.7);
 }
 .sold {
 	background: rgba(129, 226, 147, 0.43);
@@ -28,5 +28,5 @@ td, th {
 }
 .selected {
 	background: rgba(104, 200, 212, 0.7);
-	border-left: 7px solid rgb(104, 200, 212);
+	border-left: 7px solid rgb(37, 124, 175);
 }
