@@ -126,10 +126,10 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			    n[el.assetId] = n[el.assetId] || [];
 
 			    el.graphsData = el.graphsData || [[], []];
-			    n[el.assetId].push({ x : el.created, y : el.minPrice });
-			    n[el.assetId].push({ x : el.created, y : el.averagePrice });
+			    // n[el.assetId].push({ x : el.created, y : el.minPrice });
+			    // n[el.assetId].push({ x : el.created, y : el.averagePrice });
 
-			    // n[el.assetId].push(el);
+			    n[el.assetId].push(el);
 			}
 			// console.log(n);
 			this.graphsData = n;
