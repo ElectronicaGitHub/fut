@@ -84,7 +84,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			data1 = [];
 			for (var i in playersAll) {
 				if (playersAll[i].sold) {
-					data0.push({ x : playersAll[i].timeDiff, y : 10, r : 2 });
+					data0.push({ x : playersAll[i].timeDiff, y : 10, r : 4 });
 				} else {
 					data1.push({ x : playersAll[i].timeDiff, y : 10, r : 2 });
 				}
@@ -93,12 +93,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				{
 					label : 'SOLD',
 					data : data0,
-					backgroundColor : 'rgba(129, 226, 147, 0.43)'
+					backgroundColor : 'rgba(129, 226, 147, 0.9)'
 				},
 				{
 					label : 'ACTIVE',
 					data : data1,
-					backgroundColor : 'rgba(100, 50, 47, 0.43)'
+					backgroundColor : 'rgba(100, 50, 47, 0.8)'
 				}
 			]
 		},
