@@ -123,12 +123,12 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 							}
 						}],
 						yAxes : [{ display: false }]
-					}
+					},
                     responsive: true,
                     title:{
                         display:true,
                         text:'Chart.js Bubble Chart'
-                    },
+                    }
                 }
             });
 		}
