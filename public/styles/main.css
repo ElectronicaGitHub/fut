@@ -30,3 +30,6 @@ td, th {
 	background: rgba(104, 200, 212, 0.7);
 	border-left: 7px solid rgb(37, 124, 175);
 }
+.today {
+	border-right: 7px solid rgb(218, 147, 17);
+}

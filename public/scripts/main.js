@@ -34,6 +34,9 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			max : 1000
 		}
 	};
+	$scope.players = $scope.players.map(function (el) {
+		el.today = moment(el.soldTime).format('DDMM') == moment().format('DDMM');
+	});
 	$scope.app = {
 		// state : 'stats',
 		state : 'main',
