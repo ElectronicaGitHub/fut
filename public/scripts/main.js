@@ -88,11 +88,11 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 				if (playersAll[i].sold) {
 					// obj0[playersAll[i].timeDiff] = obj0[playersAll[i].timeDiff] || 2;
 					// obj0[playersAll[i].timeDiff]++;
-					data0.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 1 });
+					data0.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 3 });
 				} else {
 					// obj1[playersAll[i].timeDiff] = obj1[playersAll[i].timeDiff] || 2;
 					// obj1[playersAll[i].timeDiff]++;
-					data1.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 1 });
+					data1.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 3 });
 				}
 			}
 			// for (var i in obj0) {
@@ -135,7 +135,13 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 								labelString: 'Hours'
 							}
 						}],
-						yAxes : [{ display: false }]
+						// yAxes : [{ display: false }]
+						yAxes : [{ 
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'Revenue'
+							} }]
 					},
                     responsive: true,
                     title:{
