@@ -86,20 +86,21 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 			data1 = [];
 			for (var i in playersAll) {
 				if (playersAll[i].sold) {
-					obj0[playersAll[i].timeDiff] = obj0[playersAll[i].timeDiff] || 2;
-					obj0[playersAll[i].timeDiff]++;
+					// obj0[playersAll[i].timeDiff] = obj0[playersAll[i].timeDiff] || 2;
+					// obj0[playersAll[i].timeDiff]++;
+					data0.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 1 });
 				} else {
-					obj1[playersAll[i].timeDiff] = obj1[playersAll[i].timeDiff] || 2;
-					obj1[playersAll[i].timeDiff]++;
-					// data1.push({ x : playersAll[i].timeDiff, y : 2, r : 2 });
+					// obj1[playersAll[i].timeDiff] = obj1[playersAll[i].timeDiff] || 2;
+					// obj1[playersAll[i].timeDiff]++;
+					data1.push({ x : playersAll[i].timeDiff, y : playersAll[i].revenue, r : 1 });
 				}
 			}
-			for (var i in obj0) {
-				data0.push({ x : i, y : 2, r : obj0[i] });
-			}
-			for (var i in obj1) {
-				data1.push({ x : i, y : 2, r : obj1[i] });
-			}
+			// for (var i in obj0) {
+			// 	data0.push({ x : i, y : 2, r : obj0[i] });
+			// }
+			// for (var i in obj1) {
+			// 	data1.push({ x : i, y : 2, r : obj1[i] });
+			// }
 			return [
 				{
 					label : 'SOLD',
