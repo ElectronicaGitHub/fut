@@ -95,7 +95,8 @@ Trader.prototype.startParse = function (players, buyMinNoiseCoef, _CALLBACK) {
 					minCostCount = filteredCosts.filter(function (cost) { return cost == buyPlayerFor; }).length;
 					buyNowPriceOnMarketAvg = futapi.calculateValidPrice(self.findAverage(filteredCosts));
 
-					DataItem.findOne({ assetId : id }, {}, { created : -1 }, function (err, lastItem) {
+					DataItem.find({ assetId : id }).sort({ created : -1 }).limit(1).exec(function (err, lastItem) {
+						lastItem = lastItem[0];
 						if (!lastItem) {
 							save();
 						} else {
