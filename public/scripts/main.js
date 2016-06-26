@@ -42,6 +42,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 		}
 		return el;
 	});
+	$scope.$apply();
 	$scope.app = {
 		// state : 'stats',
 		state : 'main',
