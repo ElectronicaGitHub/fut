@@ -802,6 +802,7 @@ Trader.prototype.buyMin = function (player, BUYMINCALLBACK) {
 					console.log('buyMin::SEARCH QUERY', self.currentStrategyData.getBuyMinObject(player));
 					setTimeout(function () {
 						self.apiClient.search(self.currentStrategyData.getBuyMinObject(player), function (error, response) {
+							if (!response) return cb(null, []);
 							if (!response.auctionInfo) {
 								console.log('buyMin::ERROR, RESPONSE', response);
 								cb(null, []);
