@@ -37,7 +37,7 @@ angular.module('fifatrader', []).controller('fifatrader', ['$scope', '$http', fu
 	$scope.todayPlayers = 0;
 	$scope.players = $scope.players.map(function (el) {
 		el.today = moment(el.soldTime).format('DDMM') == moment().format('DDMM');
-		if (e.todayPlayers) {
+		if (el.todayPlayers) {
 			$scope.todayPlayers++;
 		}
 		return el;
