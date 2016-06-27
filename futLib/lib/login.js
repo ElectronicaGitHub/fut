@@ -298,7 +298,7 @@ module.exports = function(options){
       if(error) return loginDetails.loginCb(error);
 
       loginResponse.sessionData = body;
-      // console.log(' get session :: loginResponse.sessionData', loginResponse);
+      console.log(' get session :: loginResponse', loginResponse);
 
       if(loginResponse.sessionData.sid) return phishing(noCb, customCb);
 
