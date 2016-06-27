@@ -296,11 +296,9 @@ var futapi = function(options){
                         login.getSession(true, cb);
                     }
                 ], function (err, ok) {
-
                     console.log('after expired CallBACK');
-                    sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
+                    return sendRequest(lastSendRequestOptions.url, lastSendRequestOptions.options, lastSendRequestOptions.cb);
                 });
-                return;
                 // }
             }
 
